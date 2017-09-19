@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+/* Colors */
+@black: #333;
+@main: #316D89;
+
+
+/* Global */
+* {
+	padding:0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-family: 'Open Sans', sans-serif;
+}
+section {
+	padding: 0 20px;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+/* animations */
+@keyframes live-indicator-length-animation {0%{-webkit-transform:translateX(-100%)}5%{-webkit-transform:translateX(0%)}10%{-webkit-transform:translateX(100%)}15%{-webkit-transform:translateX(100%)}20%{-webkit-transform:translateX(0%)}25%{-webkit-transform:translateX(-100%)}100%{-webkit-transform:translateX(-100%)}}
+/* Navigation Bar */
+.nav-logo-container {
+    position: fixed;
+    width: 100%;
+    background: white;
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+	padding: 10px 20px;
+	z-index:3;
+	border-bottom: 1px solid #ddd;
+}
+.nav-list {
+	list-style:none;
+}
+.nav-list-item {
+	display:inline-block;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 16px;
+	color: @black;
+}
+.nav-list-item-link {
+	padding: 5px 0;
+	margin: 0 5px;
+	&:hover {
+		color: @main;
+	}
+}
+.logo-container img {
+	width: 175px;
+	&.small {
+		width: 100px;
+	}
+}
+/* Banner */
+
+.banner {
+	height: 600px;
+	height: 90vh;
+	width: 100%;
+	background-size: cover;
+}
+.banner-title {
+    color: white;
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 70px;
+	left: 0;
+}
+
+/* Scores */
+.scores-section {
+	padding: 0;
+	display:-ms-flex;
+	display:-webkit-flex;
+	display:flex;
+	flex-flow: column;
+}
+.competition-list-container {
+	width: 100%;
+	border-bottom: 2px solid #eee;
+}
+.competition-list {
+	list-style:none;
+	display:flex;
+}
+.competition-list-item {
+	border-right: 2px solid #eee;
+    border-top: none;
+    padding: 10px;
+    cursor: pointer;
+    overflow: hidden;
+	width: 200px;
+	background: white;
+	border-bottom: 3px solid rgba(0,0,0,0);
+	&:first-child {
+		border-left: 2px solid #eee	;
+	}
+	&.active, &:hover {
+		border-bottom: 3px solid @main;
+		background: #eee;
+	}
+}
+.scores-tournament-category {
+    display: flex;
+    justify-content: space-between;
+	margin-bottom: 10px;
+}
+.scores-tournament-category-icon {
+	width: 30px;
+	img {
+		width: 100%;
+	}
+}
+.scores-tournament-category-title {
+	font-size: 16px;
+}
+.scores-tournament-name {
+	font-size: 22px;
+}
+.scores-tournament-location {
+	font-size: 14px;
+	color: #666;
+}
+.scores-container {
+	flex:1;
+	max-width: 1000px;
+    margin: auto;
+}
+.scores-header {
+	display:flex;
+	justify-content: space-between;
+	padding: 0px 10px;
+	height: 40px;
+    line-height: 40px;
+}
+.scores-header-competition-title {
+    font-size: 26px;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+.scores-tabs {
+	font-size: 0;
+}
+.scores-tab-title {
+	display: inline-block;
+    border-left: 1px solid rgba(255,255,255,0.5);
+    padding: 0 10px;
+	margin: 0 5px;
+    height: 100%;
+	font-size: 15px;
+    font-weight: 100;
+    text-transform: uppercase;
+	&.active {
+		border-bottom: 2px solid @main;
+	}
+}
+/* Games */
+.games-container {
+	max-width: 100%;
+    margin: auto;
+    text-align: center;
+    text-align-last: left;
+    font-size: 0;
+	margin: 15px 0;
+}
+.game-container {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    font-weight: 100;
+	width: 33.33%;
+}
+.game-time {
+    font-size: 16px;
+    font-weight: 100;
+    padding: 5px 10px;
+    border-bottom: 1px solid #ddd;
+}
+.scores-teams-container {
+    border-right: 1px solid #ddd;
+    padding: 0 10px 0 0;
+	font-size: 18px;
+}
+.scores-team-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+.scores-score {
+    margin: 0 0 0 10px;
+}
+.scores-info-container {
+	padding: 0 20px;
+}
+.scores-end-container {
+	position:relative;
+    margin: 0 10px;
+	font-size: 15px;
+	color: @main;
+	padding: 0 0 3px 0;
+    overflow: hidden;
+	&:after {
+		content:"";
+		position:absolute;
+		bottom: 0px;
+		height: 2px;
+		background: @main;
+		width: 100%;
+		left: 0;
+		-webkit-transform-origin: left;
+		    -webkit-transform: scaleX(0);
+		animation: live-indicator-length-animation 12s 1s infinite alternate cubic-bezier(0.75,0, 0.25, 1);
+	}
+}
