@@ -1,0 +1,34 @@
+<div class='scores-info-container scoreboard-standings' data-scoreboard-section='standings'>
+	<table class='standings-table'>
+		<thead>
+			<th></th>
+			<th>Team</th>
+			<th>GP</th>
+			<th>W</th>
+			<th>L</th>
+			<th class='hidden-phone'>PCT</th>
+			<th class='hidden-phone'>Hammer</th>
+			<th class='hidden-phone'>Steal</th>
+		</thead>
+		<tbody>
+			<% for(var pool in standings.pools) { %>
+				<tr>
+					<td class='standings-pool-header' colspan='8'><%- standings.pools[pool].name %></td>
+				</tr>
+				<% teams = standings.pools[pool].teams;
+				for (var team in teams){ %>
+					<tr>
+						<td class='standings-team-flag standings-table-data'><img src='/images/flags/<%- teams[team].flag %>.png'/></td>
+						<td class='standings-table-data'><%- teams[team].name %></td>
+						<td class='standings-table-data'><%- teams[team].gamesPlayed %></td>
+						<td class='standings-table-data'><%- teams[team].wins %></td>
+						<td class='standings-table-data'><%- teams[team].losses %></td>
+						<td class='standings-table-data'><%- teams[team].percentage %></td>
+						<td class='standings-table-data'><%- teams[team].hammer %></td>
+						<td class='standings-table-data'><%- teams[team].steal %></td>
+					</tr>
+				<% } %>
+			<% } %>
+		</tbody>
+	</table>
+</div>

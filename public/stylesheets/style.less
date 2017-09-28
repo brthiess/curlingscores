@@ -3,6 +3,12 @@
 @black: #333;
 @main: #316D89;
 
+/* Screens */
+@large-desktops:  ~"only screen and (min-width: 1401px)";
+@desktop:   ~"only screen and (max-width: 1400px)";
+@tablets:    ~"only screen and (max-width: 1029px)";
+@mini-tablets:    ~"only screen and (max-width: 719px)";
+@smartphones:    ~"only screen and (max-width: 479px)";
 
 /* Global */
 * {
@@ -13,12 +19,25 @@
 html {
 	font-family: 'Open Sans', sans-serif;
 }
-section {
-	padding: 0 20px;
-}
 a {
 	text-decoration: none;
 	color: inherit;
+}
+table {
+	border-collapse: collapse;
+}
+.section {
+	padding: 40px 20px
+}
+.sub-section {
+	max-width: 1200px;
+    margin: auto;
+}
+.section-header {
+    padding: 20px 30px;
+    background: rgba(255,255,255,0.6);
+    color: #316d89;
+    font-size: 40px;
 }
 /* animations */
 @keyframes live-indicator-length-animation {0%{-webkit-transform:translateX(-100%)}5%{-webkit-transform:translateX(0%)}10%{-webkit-transform:translateX(100%)}15%{-webkit-transform:translateX(100%)}20%{-webkit-transform:translateX(0%)}25%{-webkit-transform:translateX(-100%)}100%{-webkit-transform:translateX(-100%)}}
@@ -77,20 +96,20 @@ a {
 }
 
 /* Scores */
-.scores-section {
+.scores-sub-section {
 	padding: 0;
 	display:-ms-flex;
 	display:-webkit-flex;
 	display:flex;
-	flex-flow: column;
+	background: white;
 }
 .competition-list-container {
-	width: 100%;
 	border-bottom: 2px solid #eee;
 }
 .competition-list {
 	list-style:none;
 	display:flex;
+	flex-flow:column;
 }
 .competition-list-item {
 	border-right: 2px solid #eee;
@@ -115,9 +134,25 @@ a {
 	margin-bottom: 10px;
 }
 .scores-tournament-category-icon {
-	width: 30px;
+	height: 25px;
 	img {
-		width: 100%;
+		height: 100%;
+	}
+}
+/* SCOREBOARD */
+.scores-section {
+	background: #ccc;
+}
+.scores-section-header {
+	background: rgba(255,255,255,0.6);
+}
+.scores-container {
+	flex: 1;
+}
+.scores-container .scores-info-container {
+	display: none;
+	&.active {
+		display: block;
 	}
 }
 .scores-tournament-category-title {
@@ -130,19 +165,15 @@ a {
 	font-size: 14px;
 	color: #666;
 }
-.scores-container {
-	flex:1;
-	max-width: 1000px;
-    margin: auto;
-}
 .scores-header {
 	display:flex;
 	justify-content: space-between;
-	padding: 0px 10px;
+	padding: 0px 20px;
 	height: 40px;
     line-height: 40px;
+	margin-bottom: 30px;
 }
-.scores-header-competition-title {
+.scores-header-title {
     font-size: 26px;
     padding: 5px 0;
     text-transform: uppercase;
@@ -159,6 +190,7 @@ a {
 	font-size: 15px;
     font-weight: 100;
     text-transform: uppercase;
+	cursor:pointer;
 	&.active {
 		border-bottom: 2px solid @main;
 	}
@@ -171,15 +203,23 @@ a {
     text-align-last: left;
     font-size: 0;
 	margin: 15px 0;
+
 }
 .game-container {
     display: inline-flex;
     align-items: center;
     padding: 10px;
     font-weight: 100;
-	width: 33.33%;
+	@media @large-desktops {
+		width: 33.3%;
+	}
+	@media @desktop {
+		width: 50%;
+	}
+	
 }
-.game-time {
+
+.game-time-name {
     font-size: 16px;
     font-weight: 100;
     padding: 5px 10px;
@@ -189,6 +229,7 @@ a {
     border-right: 1px solid #ddd;
     padding: 0 10px 0 0;
 	font-size: 18px;
+	width: 200px;
 }
 .scores-team-container {
     display: flex;
@@ -219,5 +260,30 @@ a {
 		-webkit-transform-origin: left;
 		    -webkit-transform: scaleX(0);
 		animation: live-indicator-length-animation 12s 1s infinite alternate cubic-bezier(0.75,0, 0.25, 1);
+	}
+}
+
+/* standings */
+.standings-table {
+    width: 100%;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+}
+.standings-pool-header {
+	padding: 5px 20px;
+    font-size: 20px;
+    border-top: 1px solid @main;
+    border-bottom: 1px solid @main;
+	text-align: left;	
+}
+.standings-table-data {
+	padding: 10px;	
+	border-bottom: 1px solid #ccc;
+}
+.standings-team-flag {
+	img {
+		width: 70px;
+		height: auto;
 	}
 }
