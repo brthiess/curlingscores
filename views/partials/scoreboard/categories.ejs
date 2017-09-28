@@ -4,9 +4,6 @@
 			<li class='competition-list-item <%= (activeCompetitionId == id ? "active" : "") %>' data-id='<%= id %>' onclick='showCompetition(this, <%= id %>);'>
 				<div class='scores-tournament-category'>
 					<div class='scores-tournament-category-title'><%= competitions[id].category %></div>
-					<div class='scores-tournament-category-icon'>
-						<img src='/images/<%= competitions[id].icon %>'/>
-					</div>
 				</div>
 				<div class='scores-tournament-info'>
 					<div class='scores-tournament-name'><%= competitions[id].name %></div>
