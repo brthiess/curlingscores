@@ -6,7 +6,9 @@
 /* Screens */
 @large-desktops:  ~"only screen and (min-width: 1401px)";
 @desktop:   ~"only screen and (max-width: 1400px)";
+@non-touchscreens: ~"only screen and (min-width: 1030px)";
 @tablets:    ~"only screen and (max-width: 1029px)";
+@tablets-only:    ~"only screen and (max-width: 1029px) and (min-width: 720px)";
 @mini-tablets:    ~"only screen and (max-width: 719px)";
 @smartphones:    ~"only screen and (max-width: 479px)";
 
@@ -19,6 +21,9 @@
 html {
 	font-family: 'Open Sans', sans-serif;
 	padding-top: 80px;
+	@media @smartphones {
+		padding-top: 40px;
+	}
 }
 a {
 	text-decoration: none;
@@ -41,6 +46,57 @@ table {
     color: #316d89;
     font-size: 40px;
 }
+.overflow-arrow {
+    content: "";
+    position: absolute;
+    background: #ddd;
+    width: 35px;
+    height: 100%;
+    opacity: 0.8;
+    top: 0;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 30px;
+	color: #444;
+	&:hover {
+		opacity: 1;
+		cursor: pointer;
+	}
+	@media @smartphones {
+		width: 25px;
+		font-size: 20px;
+	}
+}
+.hidden {
+	display: none;
+}
+.hidden-desktop {
+	@media @non-touchscreens {
+		display: none;
+	}
+}
+.hidden-phone {
+	@media @smartphones {
+		display: none;
+	}
+}
+.hidden-mini-tablets {
+	@media @mini-tablets {
+		display: none !important;
+	}
+}
+.hidden-tablets {
+	@media @tablets {
+		display: none !important;
+	}
+}
+.hidden-tablets-only {
+	@media @tablets-only {
+		display: none !important;
+	}
+}
+
 /* animations */
 @keyframes live-indicator-length-animation {0%{-webkit-transform:translateX(-100%)}5%{-webkit-transform:translateX(0%)}10%{-webkit-transform:translateX(100%)}15%{-webkit-transform:translateX(100%)}20%{-webkit-transform:translateX(0%)}25%{-webkit-transform:translateX(-100%)}100%{-webkit-transform:translateX(-100%)}}
 /* Navigation Bar */
@@ -55,6 +111,10 @@ table {
 	z-index:3;
 	border-bottom: 1px solid #ddd;
 	top: 0;
+}
+.nav-container {
+	display: flex;
+	align-items: center;
 }
 .nav-list {
 	list-style:none;
@@ -73,10 +133,47 @@ table {
 		color: @main;
 	}
 }
-.logo-container img {
-	width: 175px;
-	&.small {
-		width: 100px;
+.mobile-nav-icon {
+	font-size: 20px;
+    border: 1px solid #444;
+    padding: 5px 10px;
+    border-radius: 5px;
+	cursor: pointer;
+	margin: 0 0 0 15px;
+}
+.mobile-nav-container {
+    position: absolute;
+    top: 100%;
+	left: 0;
+	width: 100%;
+	background: #ddd;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+.mobile-nav-list{ 
+	list-style: none;
+	padding: 5px 0;
+}
+.mobile-nav-list-item {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+}
+.mobile-nav-list-item-link {
+    display: block;
+	padding: 5px 0;
+}
+.logo-container {
+	font-size: 0;
+	img {
+		width: 175px;
+		&.small {
+			width: 100px;
+		}
+		@media @smartphones {
+			width: 100px;
+		}
 	}
 }
 /* Banner */
@@ -86,6 +183,7 @@ table {
 	height: 90vh;
 	width: 100%;
 	background-size: cover;
+	background-position: center;
 }
 .banner-title {
     color: white;
@@ -99,17 +197,45 @@ table {
 }
 
 /* Scores */
+/* SCOREBOARD */
+.scores-section {
+	background-color: #ccc;
+	@media @tablets {
+		padding: 0;
+	}
+}
 .scores-sub-section {
 	padding: 0;
 	display:-ms-flex;
 	display:-webkit-flex;
 	display:flex;
 	background: white;
+	@media @tablets {
+		flex-flow: column;
+	}
 }
+.competition-list-container {
+	position: relative;
+	.left-arrow {
+		left: 0;
+	}
+	.right-arrow {
+		right: 0;
+	}
+}
+
 .competition-list {
 	list-style:none;
 	display:flex;
 	flex-flow:column;
+	@media @tablets {
+		flex-flow: row;
+		overflow: auto;
+		&::-webkit-scrollbar {
+			display:none;
+		}
+	}
+	
 }
 .competition-list-item {
 	border-bottom: 1px solid #eee;
@@ -119,21 +245,64 @@ table {
     overflow: hidden;
 	width: 200px;
 	background: white;
-	&.active, &:hover {
+	&:hover {
 		background: @main;
 		color: white;
 		border-bottom: 1px solid lighten(@main, 5%);
+		.scores-tournament-name {
+			color: white;
+		}
+	}
+	@media @tablets {
+	    flex: 0 0 150px;
+		border-right: 1px solid #ccc;
+		&:hover {
+			background: white;
+			color: inherit;
+			border-bottom: none;
+			.scores-tournament-name {
+				color: @main;
+			}
+		}
+	}
+	&.active {
+		background: @main;
+		color: white;
+		border-bottom: 1px solid lighten(@main, 5%);
+		.scores-tournament-name {
+			color: white;
+		}
 	}
 }
 .scores-tournament-category {
     display: flex;
     justify-content: space-between;
 }
-
-/* SCOREBOARD */
-.scores-section {
-	background-color: #ccc;
+.scores-tournament-category-title {
+	font-size: 16px;
+	@media @tablets {
+		font-size: 14px;
+	}
 }
+.scores-tournament-name {
+	font-size: 22px;
+	color: @main;
+	@media @tablets {
+		font-size: 18px;
+	}	
+	@media @mini-tablets {
+		font-size: 16px;
+	}
+}
+.scores-tournament-location {
+	font-size: 14px;
+	font-weight: 100;
+	@media @mini-tablets {
+		font-size: 12px;
+	}
+}
+
+
 .scores-section-header {
 	background: rgba(255,255,255,0.6);
 }
@@ -147,22 +316,17 @@ table {
 		display: block;
 	}
 }
-.scores-tournament-category-title {
-	font-size: 16px;
-}
-.scores-tournament-name {
-	font-size: 22px;
-}
-.scores-tournament-location {
-	font-size: 14px;
-	font-weight: 100;
-}
+
 .scores-header {
 	display:flex;
 	justify-content: space-between;
 	padding: 0px 20px;
     line-height: 40px;
 	margin-bottom: 30px;
+	@media @smartphones {
+		flex-flow: column;
+		text-align: center;
+	}
 }
 .scores-header-title {
     font-size: 26px;
@@ -207,7 +371,14 @@ table {
 	@media @desktop {
 		width: 50%;
 	}
-	
+	@media @mini-tablets {
+		width: 100%;
+		padding: 10px 0;
+		border-bottom: 1px solid #eee;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
 }
 
 .game-time-name {
@@ -221,6 +392,12 @@ table {
     padding: 0 10px 0 0;
 	font-size: 18px;
 	width: 200px;
+	@media @mini-tablets {
+		width: 250px;
+	}
+	@media @smartphones {
+		width: 200px;
+	}
 }
 .scores-team-container {
     display: flex;
@@ -259,21 +436,23 @@ table {
     width: 100%;
     text-align: center;
 }
-.standings-pool-header {
-	padding: 5px 20px;
-    font-size: 20px;
-    border-top: 1px solid @main;
-    border-bottom: 1px solid @main;
-	text-align: left;	
+.standings-table-header {
+	border-bottom: 1px solid #555;
 }
 .standings-table-data {
 	padding: 10px;	
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid #ddd;
+	@media @mini-tablets {
+		padding: 10px 5px;
+	}
 }
 .standings-team-flag {
 	img {
 		width: 70px;
 		height: auto;
+		@media @mini-tablets {
+			width: 50px;
+		}
 	}
 }
 
@@ -282,7 +461,7 @@ footer {
     color: #333;
 }
 .main-footer-section {
-	background-color: white;
+	background-color: #eee;
 	padding: 20px;
 	background-image: url(/images/bg/ice3.png);
 }
@@ -310,12 +489,12 @@ footer {
 }
 .footer-link {
 	color: @main;
-	padding: 2px;
+	padding: 3px 2px;
 	display:block;
 }
 
 .disclaimer {
 	text-align: center;
 	padding: 20px;
-	background-color: #ddd;
+	background-color: #ccc;
 }

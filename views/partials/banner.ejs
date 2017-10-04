@@ -2,14 +2,26 @@
 	<section class='nav-logo-container'>
 		<div class='logo-container'><img src="/images/logo.png"/></div>
 		<nav class='nav-container'>
-			<ul class='nav-list'>
+			<ul class='nav-list hidden-mini-tablets'>
 				<li class='nav-list-item'><a href='/schedule/' class='nav-list-item-link'>Schedule</a></li>
 				<li class='nav-list-item'><a href='/scores/' class='nav-list-item-link'>Scores</a></li>
-				<li class='nav-list-item'><a href='/teams/' class='nav-list-item-link'>Teams</a></li>
+				<li class='nav-list-item hidden-tablets'><a href='/teams/' class='nav-list-item-link'>Teams</a></li>
 				<li class='nav-list-item'><a href='/rankings/' class='nav-list-item-link'>Rankings</a></li>
-				<li class='nav-list-item'><a href='' class='nav-list-item-link'>Players</a></li>
-				<li class='nav-list-item'><a href='' class='nav-list-item-link'>Ice Facilities</a></li>
-				<li class='nav-list-item'><a href='' class='nav-list-item-link'>Contact</a></li>
+				<li class='nav-list-item hidden-tablets'><a href='' class='nav-list-item-link'>Players</a></li>
+				<li class='nav-list-item hidden-tablets'><a href='' class='nav-list-item-link'>Ice Facilities</a></li>
+				<li class='nav-list-item hidden-tablets'><a href='' class='nav-list-item-link'>Contact</a></li>
+			</ul>
+			<div class='mobile-nav-icon hidden-desktop' onclick='toggleMobileMenu(this)'>Menu</div>
+		</nav>
+		<nav class='mobile-nav-container hidden hidden-desktop'>
+			<ul class='mobile-nav-list'>
+				<li class='mobile-nav-list-item hidden-tablets-only'><a href='/schedule/' class='mobile-nav-list-item-link'>Schedule</a></li>
+				<li class='mobile-nav-list-item hidden-tablets-only'><a href='/scores/' class='mobile-nav-list-item-link'>Scores</a></li>
+				<li class='mobile-nav-list-item'><a href='/teams/' class='mobile-nav-list-item-link'>Teams</a></li>
+				<li class='mobile-nav-list-item hidden-tablets-only'><a href='/rankings/' class='mobile-nav-list-item-link'>Rankings</a></li>
+				<li class='mobile-nav-list-item'><a href='' class='mobile-nav-list-item-link'>Players</a></li>
+				<li class='mobile-nav-list-item'><a href='' class='mobile-nav-list-item-link'>Ice Facilities</a></li>
+				<li class='mobile-nav-list-item'><a href='' class='mobile-nav-list-item-link'>Contact</a></li>
 			</ul>
 		</nav>
 	</section>

@@ -10,10 +10,11 @@ $(document).ready(function(){
 
 /* Scoreboard */
 function showCompetition(listItem, competitionId){
+	$('.competition-list-item').removeClass('active');
+	$(listItem).addClass('active');
 	getScoresView(competitionId, function(viewHtml){
 		$('.scores-container').replaceWith(viewHtml);
-		$('.competition-list-item').removeClass('active');
-		$(listItem).addClass('active');
+		
 		currentCompetitionId = competitionId;
 		currentDrawId = $('.scores-container [data-draw-id]').attr('data-draw-id');
 	});
@@ -43,8 +44,39 @@ function showOnScoreboard(section) {
 	$("[data-scoreboard-section=" + section + "]").addClass('active');
 }
 
+function toggleMobileMenu(element) {
+	$('.mobile-nav-container').toggleClass('hidden');
+	toggleHtml(element, 'Close', 'Menu');
+}
 
+function toggleHtml(element, text1, text2) {
+	if($(element).html() == text1) {
+		$(element).html(text2);
+	}
+	else {
+		$(element).html(text1);
+	}
+}
 
+$(document).ready(function(){
+	if($('competition-list').scrollLeft() <= 1){
+		$('.left-arrow').addClass('hidden');
+	}
+	else if ($('.competition-list').length > 0 && ($('competition-list').scrollLeft() + $(window).width()) >= $('.competition-list')[0].scrollWidth) {
+		$('.right-arrow').addClass('hidden');
+	}
+	$('.competition-list').scroll(function(){
+		var scrollLeft = $(this).scrollLeft();
+		if (scrollLeft <= 1){
+			$('.left-arrow').addClass('hidden');
+			$('.right-arrow').removeClass('hidden');
+		}
+		else if ((scrollLeft + $(window).width()) >= $('.competition-list')[0].scrollWidth) {
+			$('.right-arrow').addClass('hidden');
+			$('.left-arrow').removeClass('hidden');
+		}
+	});
+});
 
 /********
 Functions 

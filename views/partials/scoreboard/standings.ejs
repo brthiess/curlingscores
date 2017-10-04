@@ -1,20 +1,17 @@
 <div class='scores-info-container scoreboard-standings' data-scoreboard-section='standings'>
 	<table class='standings-table'>
-		<thead>
-			<th></th>
-			<th>Team</th>
-			<th>GP</th>
-			<th>W</th>
-			<th>L</th>
-			<th class='hidden-phone'>PCT</th>
-			<th class='hidden-phone'>Hammer</th>
-			<th class='hidden-phone'>Steal</th>
-		</thead>
-		<tbody>
-			<% for(var pool in standings.pools) { %>
-				<tr>
-					<td class='standings-pool-header' colspan='8'><%- standings.pools[pool].name %></td>
-				</tr>
+		<% for(var pool in standings.pools) { %>
+			<thead class='standings-table-header'>
+				<th>Pool <%- standings.pools[pool].name %></th>
+				<th>Team</th>
+				<th>GP</th>
+				<th>W</th>
+				<th>L</th>
+				<th class='hidden-phone'>PCT</th>
+				<th class='hidden-phone'>Hammer</th>
+				<th class='hidden-phone'>Steal</th>
+			</thead>
+			<tbody>
 				<% teams = standings.pools[pool].teams;
 				for (var team in teams){ %>
 					<tr>
@@ -23,9 +20,9 @@
 						<td class='standings-table-data'><%- teams[team].gamesPlayed %></td>
 						<td class='standings-table-data'><%- teams[team].wins %></td>
 						<td class='standings-table-data'><%- teams[team].losses %></td>
-						<td class='standings-table-data'><%- teams[team].percentage %></td>
-						<td class='standings-table-data'><%- teams[team].hammer %></td>
-						<td class='standings-table-data'><%- teams[team].steal %></td>
+						<td class='standings-table-data hidden-phone'><%- teams[team].percentage %></td>
+						<td class='standings-table-data hidden-phone'><%- teams[team].hammer %></td>
+						<td class='standings-table-data hidden-phone'><%- teams[team].steal %></td>
 					</tr>
 				<% } %>
 			<% } %>
