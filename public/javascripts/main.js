@@ -95,3 +95,4 @@ function ordinal_suffix_of(i) {
 	}
 	return i + "th";
 }
+

@@ -1,0 +1,18 @@
+<section class='social-section'>
+	<section class='social-container masonry'>
+		<div class='social-title brick'>
+			<h2>Latest Posts</h2>
+		</div>
+		<% for (var post in posts){ %>
+			<div class='social-post brick'>
+				<div class='social-post-type <%- posts[post].type %>' style='background-image: url(/images/<%- posts[post].type%>.jpg);'></div>
+				<div class='social-post-username-timestamp'>
+					<div class='social-post-username'><%- posts[post].username %></div>
+					<div class='social-post-timestamp'><%- functions.timeDifference(new Date(posts[post].timestamp)) %></div>
+				</div>
+				<div class='social-post-content'><%- posts[post].content %></div>
+			</div>
+		<% } %>
+	</section>
+	
+</section>
