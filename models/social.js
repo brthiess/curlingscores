@@ -108,7 +108,6 @@ Social.prototype.data = {};
 
 Social.fetchRecentPosts = function(number){
 	SocialArray.sort(function(a, b){
-		console.log(a.timestamp);
 		return (new Date(a.timestamp) - new Date(b.timestamp));
 	});
 	return SocialArray.slice(0 - number).reverse();

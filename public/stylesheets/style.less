@@ -35,6 +35,28 @@ a {
 table {
 	border-collapse: collapse;
 }
+select {
+    border: none;
+    background: #fff;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    padding: 10px 40px 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border: 1px solid #ccc;
+}
+.select-wrapper {
+	position: relative;
+	display: inline-block;
+	&:after {
+		position: absolute;
+		content: "\f0d7";
+		font: normal normal normal 14px/1 FontAwesome;
+		right: 15px;
+		top: ~"calc(50% - 10px)";
+		font-size: 20px;
+	}
+}
 .section {
 	padding: 40px 20px;
 	background-image: url(/images/bg/ice3.png);
@@ -47,7 +69,9 @@ table {
     padding: 20px 30px;
     background: rgba(255,255,255,0.6);
     color: #316d89;
-    font-size: 40px;
+	h2 {
+		font-size: 40px;
+	}
 }
 .overflow-arrow {
 display:none !important;
@@ -476,7 +500,7 @@ display:none !important;
 .social-container {
 	background: rgba(255,255,255,0.5);
 	padding: 20px;
-	max-width: 1100px;
+	max-width: 1400px;
 	margin: auto;
 }
 .social-title {
@@ -515,6 +539,65 @@ display:none !important;
 	font-size: 14px;
 }
 
+/* rankings */
+.rankings-section {
+	background-color: rgba(214, 149, 149, 0.4);
+	@media @tablets {
+		padding: 0;
+	}
+}
+.rankings-section-header {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	@media @tablets {
+	    box-shadow: inset 0 10px 10px -5px rgba(0,0,0,.4);
+	}
+	@media @mini-tablets {
+		flex-flow: column;
+		align-items: start;
+	}
+}
+.rankings-sub-section {
+	background: white;
+	padding: 40px 20px	;
+	overflow: scroll;
+}
+.rankings-table {
+	width: 100%;
+}
+.rankings-table-header {
+	border-bottom: 2px solid #ccc;
+	padding: 3px 10px;
+	text-align: left;
+	&:last-child {
+		text-align: right;
+	}
+}
+.rankings-select-container {
+	@media @smartphones{
+	    display: flex;
+		flex-flow: column;
+		width: 100%;
+	}
+}
+.rankings-select-wrapper {
+	margin: 5px 0;
+}
+.rankings-select {
+	width: 100%;
+}
+.rankings-table-data {
+	padding: 3px 10px;
+    border-bottom: 1px solid #e3e3e3;
+	&:last-child { 
+		text-align: right;
+	}
+}
+.rankings-table-data-rank {
+	font-weight: bold;
+	font-size: 20px;
+}
 /* masonry */
 .masonry {
     -moz-column-count: 3;

@@ -1,0 +1,50 @@
+<section class='rankings-section section'>
+	<section class='sub-section'>
+		<div class='section-header rankings-section-header'>
+			<h2>Rankings</h2>
+			<div class='rankings-select-container'>
+				<div class='select-wrapper rankings-select-wrapper'>
+					<select class='rankings-select'>
+						<% for(var category in categories.years) { %>
+							<option value='<%- categories.years[category].year %>'><%- categories.years[category].name %></option>
+						<% } %>
+					</select>
+				</div>
+				<div class='select-wrapper rankings-select-wrapper'>
+					<select class='rankings-select'>
+						<% for(var category in categories.categories) { %>
+							<option value='<%- categories.categories[category] %>'><%- 	functions.capitalizeFirstLetter(categories.categories[category]) %></option>
+						<% } %>
+					</select>
+				</div>
+			</div>
+		</div>
+		
+		<div class='rankings-sub-section'>
+			<div class='rankings-points-section'>
+				<table class='rankings-table'>
+					<thead>
+						<th class='rankings-table-header'>Rank</th>
+						<th class='rankings-table-header'>Team</th>
+						<th class='rankings-table-header'>Location</th>
+						<th class='rankings-table-header'>YTD</th>
+						<th class='rankings-table-header'>Total</th>
+					</thead>
+					<tbody>
+						<% for (var team in rankings) { %>
+							<tr>
+								<td class='rankings-table-data rankings-table-data-rank'><%- rankings[team].rank %></td>
+								<td class='rankings-table-data rankings-table-data-name'><%- rankings[team].name %></td>
+								<td class='rankings-table-data rankings-table-data-location'><%- rankings[team].location %></td>
+								<td class='rankings-table-data rankings-table-data-points'><%- rankings[team].ytdPoints.toFixed(3) %></td>
+								<td class='rankings-table-data rankings-table-data-points'><%- rankings[team].totalPoints.toFixed(3) %></td>
+							</tr>
+						<% } %>
+					</tbody>
+				</table>
+			</div>
+			<div class='rankings-money-section'>
+			</div>
+		</div>
+	</section>
+</section>
