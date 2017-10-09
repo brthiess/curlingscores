@@ -96,6 +96,23 @@ display:none !important;
 		font-size: 20px;
 	}
 }
+.tabs {
+	font-size: 0;
+	white-space:nowrap;
+}
+.tab-title {
+	display: inline-block;
+    border-left: 1px solid rgba(255,255,255,0.5);
+    padding: 0 10px;
+	margin: 0 5px;
+	font-size: 15px;
+    font-weight: 100;
+    text-transform: uppercase;
+	cursor:pointer;
+	&.active {
+		border-bottom: 2px solid @main;
+	}
+}
 .hidden {
 	display: none;
 }
@@ -107,6 +124,12 @@ display:none !important;
 .hidden-phone {
 	@media @smartphones {
 		display: none;
+	}
+}
+.visible-phone {
+	display: none;
+	@media @smartphones {
+		display: initial;
 	}
 }
 .hidden-mini-tablets {
@@ -366,23 +389,7 @@ display:none !important;
     padding: 5px 0;
     text-transform: uppercase;
 }
-.scores-tabs {
-	font-size: 0;
-	white-space:nowrap;
-}
-.scores-tab-title {
-	display: inline-block;
-    border-left: 1px solid rgba(255,255,255,0.5);
-    padding: 0 10px;
-	margin: 0 5px;
-	font-size: 15px;
-    font-weight: 100;
-    text-transform: uppercase;
-	cursor:pointer;
-	&.active {
-		border-bottom: 2px solid @main;
-	}
-}
+
 /* Games */
 .games-container {
 	max-width: 100%;
@@ -397,7 +404,6 @@ display:none !important;
     display: inline-flex;
     align-items: center;
     padding: 10px;
-    font-weight: 100;
 	@media @large-desktops {
 		width: 33.3%;
 	}
@@ -560,8 +566,31 @@ display:none !important;
 }
 .rankings-sub-section {
 	background: white;
-	padding: 40px 20px	;
-	overflow: scroll;
+	padding: 10px 20px	;
+	overflow: hidden;
+	@media @smartphones {
+		padding: 10px 0px;
+	}
+}
+.rankings-categories-container {
+    margin-bottom: 20px;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	@media @mini-tablets {
+		flex-flow: column;
+	}
+}
+.rankings-category-year-header {
+	margin: 0 0 10px 0;
+}
+.rankings-category {
+	font-size: 30px;
+}
+.rankings-year {
+	font-size: 20px;
+	font-weight: normal;
+	font-style: italic;
 }
 .rankings-table {
 	width: 100%;
@@ -593,10 +622,29 @@ display:none !important;
 	&:last-child { 
 		text-align: right;
 	}
+	@media @smartphones {
+		font-size: 15px;
+	}
 }
 .rankings-table-data-rank {
 	font-weight: bold;
 	font-size: 20px;
+	@media @smartphones {
+		font-size: 17px;
+	}
+}
+.rankings-table-data-location {
+    color: #666;
+    font-size: 14px;
+	@media @mini-tablets {
+		display: block;
+		font-size: 12px;
+	}
+}
+.rankings-link {
+	display: block;
+    text-align: center;
+    margin: 10px 0 0;
 }
 /* masonry */
 .masonry {

@@ -21,23 +21,30 @@
 		</div>
 		
 		<div class='rankings-sub-section'>
+			<div class='rankings-categories-container'>
+				<h2 class='rankings-category-year-header'><span class='rankings-category'><%- functions.capitalizeFirstLetter(rankings.category) %></span> <span class='rankings-year'> - <%- rankings.yearName %></span></h2>
+				<div class='tabs'>
+					<div class='tab-title active'>Order of Merit</div>
+					<div class='tab-title'>Money</div>
+				</div>
+			</div>
 			<div class='rankings-points-section'>
 				<table class='rankings-table'>
 					<thead>
 						<th class='rankings-table-header'>Rank</th>
 						<th class='rankings-table-header'>Team</th>
-						<th class='rankings-table-header'>Location</th>
 						<th class='rankings-table-header'>YTD</th>
 						<th class='rankings-table-header'>Total</th>
+
 					</thead>
 					<tbody>
-						<% for (var team in rankings) { %>
+						<%
+						for (var team in rankings.rankings) { %>
 							<tr>
-								<td class='rankings-table-data rankings-table-data-rank'><%- rankings[team].rank %></td>
-								<td class='rankings-table-data rankings-table-data-name'><%- rankings[team].name %></td>
-								<td class='rankings-table-data rankings-table-data-location'><%- rankings[team].location %></td>
-								<td class='rankings-table-data rankings-table-data-points'><%- rankings[team].ytdPoints.toFixed(3) %></td>
-								<td class='rankings-table-data rankings-table-data-points'><%- rankings[team].totalPoints.toFixed(3) %></td>
+								<td class='rankings-table-data rankings-table-data-rank'><%- rankings.rankings[team].rank %></td>
+								<td class='rankings-table-data rankings-table-data-name'><%- rankings.rankings[team].name %> <span class='rankings-table-data-location'> <span class='hidden-mini-tablets'>-</span> <%- rankings.rankings[team].location %></span></td>
+								<td class='rankings-table-data rankings-table-data-points'><%- rankings.rankings[team].ytdPoints.toFixed(3) %></td>
+								<td class='rankings-table-data rankings-table-data-points'><%- rankings.rankings[team].totalPoints.toFixed(3) %></td>
 							</tr>
 						<% } %>
 					</tbody>
@@ -45,6 +52,8 @@
 			</div>
 			<div class='rankings-money-section'>
 			</div>
+			<a class='rankings-link' href='/rankings/'>See Full Rankings</a>
 		</div>
+		
 	</section>
 </section>
