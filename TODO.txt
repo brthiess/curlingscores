@@ -7,3 +7,4 @@
 7. Get all pages working
 8. Ability to click on team in rankings board
 9. Pop up modal showing game details when clicking on game container - look at what google does for MLB
+10. Loadings animations for ajax stuff

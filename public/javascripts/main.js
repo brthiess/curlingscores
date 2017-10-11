@@ -78,6 +78,23 @@ $(document).ready(function(){
 	});
 });
 
+function showModalWithGameView(gameId, modalTitle) {
+	showModal(modalTitle);
+	getGameModalView(gameId, function(html){
+		$("#modal-content").html(html);
+	});	
+}
+function showModal(modalTitle){
+	$("#modal-overlay").addClass("visible");
+	$("#modal-text").text(modalTitle);
+	$("body").css("overflow", "hidden");
+	
+}
+function closeModal(){
+	$("#modal-overlay").removeClass("visible");
+	$("body").css("overflow", "");
+}
+
 /********
 Functions 
 *********/

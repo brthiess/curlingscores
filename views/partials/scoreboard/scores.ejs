@@ -4,7 +4,7 @@
 			<div class='game-time-name'><%= functions.formatDate(competition.time, "dddd h:mmtt ") %></div>
 			<% var games = competition.games; 
 			for (var game in games) { %>
-				<div data-game-id='<%= game %>' class='game-container'>
+				<div data-game-id='<%= game %>' class='game-container' onclick="showModalWithGameView(<%- game %>, '<%- games[game].team1 %> vs <%- games[game].team2%>')">
 					<div class='scores-teams-container'>
 						<div class='scores-team-container'>
 							<div class='scores-team-name'>
