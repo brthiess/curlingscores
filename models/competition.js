@@ -5,23 +5,23 @@ var CompetitionArray = {
 				1: {time: new Date("Sun Sep 24 2017 14:00:00 GMT-0600"), 
 					games: {
 					1: {team1: 'Mike Mcewen', team2: 'Brad Jacobs', score1: 3, score2: 4,	 end: '5', over: false},
-					2: {team1: 'John Epping', team2: 'Jake Walker', score1: 9, score2: 2,	 end: '5', over: false},
+					2: {team1: 'John Epping', team2: 'Jason Gunnlaugson', score1: 9, score2: 2,	 end: '5', over: false},
 					3: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 1, score2: 1,	 end: '4', over: false},
 					4: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 4,	 end: '6', over: true},
 					5: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 5,	 end: '5', over: false},
 					6: {team1: 'John Morris', team2: 'Steve Laycock', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 2,	 end: '5', over: false},
-					7: {team1: 'Glenn Howard', team2: 'Peter De Cruz', score1: 2, score2: (Math.floor(Math.random() * 6) + 1  ),	 end: '5', over: false}
+					7: {team1: 'Glenn Howard', team2: 'Steffen Walstad', score1: 2, score2: (Math.floor(Math.random() * 6) + 1  ),	 end: '5', over: false}
 					}
 				},
 				2: {time: new Date("Sun Sep 24 2017 17:00:00 GMT-0600"), 
 					games: {
-					1: {team1: 'Mike Mcewen', team2: 'Brad Jacobs', score1: 2, score2: 4,	 end: '5', over: false},
-					2: {team1: 'John Epping', team2: 'Jake Walker', score1: 9, score2: 2,	 end: '8', over: false},
-					3: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 4,	 end: '4', over: false},
-					4: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: 1, score2: 4,	 end: '6', over: false},
-					5: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 5,	 end: '5', over: false},
-					6: {team1: 'John Morris', team2: 'Steve Laycock', score1: 6, score2: 2,	 end: '5', over: false},
-					7: {team1: 'Pat Simmons', team2: 'Peter De Cruz', score1: 2, score2: 3,	 end: '7', over: true}
+					11: {team1: 'Mike Mcewen', team2: 'Brad Jacobs', score1: 2, score2: 4,	 end: '5', over: false},
+					12: {team1: 'John Epping', team2: 'Jason Gunnlaugson', score1: 9, score2: 2,	 end: '8', over: false},
+					13: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 4,	 end: '4', over: false},
+					14: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: 1, score2: 4,	 end: '6', over: false},
+					15: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 5,	 end: '5', over: false},
+					16: {team1: 'John Morris', team2: 'Steve Laycock', score1: 6, score2: 2,	 end: '5', over: false},
+					17: {team1: 'Pat Simmons', team2: 'Steffen Walstad', score1: 2, score2: 3,	 end: '7', over: true}
 					}
 				}
 			}
@@ -31,13 +31,13 @@ var CompetitionArray = {
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:00:00 GMT-0600"), 
 					games: {
-					1: {team1: 'Shannon Kleibrink', team2: 'Brad Jacobs', score1: (Math.floor(Math.random() * 6) + 1), score2: 4,	 end: '3', over:false},
-					2: {team1: 'John Epping', team2: 'Jake Walker', score1: 1, score2: 2,	 end: '5'},
-					3: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 1,	 end: '4'},
-					4: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 4,	 end: '3'},
-					5: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 5,	 end: '5'},
-					6: {team1: 'John Morris', team2: 'Steve Laycock', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 2,	 end: '8', over: true},
-					7: {team1: 'Glenn Howard', team2: 'Peter De Cruz', score1: 2, score2: (Math.floor(Math.random() * 6) + 1  ),	 end: '3'}
+					21: {team1: 'Shannon Kleibrink', team2: 'Rachel Homan', score1: (Math.floor(Math.random() * 6) + 1), score2: 4,	 end: '3', over:false},
+					22: {team1: 'John Epping', team2: 'Jennifer Jones', score1: 1, score2: 2,	 end: '5'},
+					23: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 1,	 end: '4'},
+					24: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 4,	 end: '3'},
+					25: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 5,	 end: '5'},
+					26: {team1: 'John Morris', team2: 'Steve Laycock', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 2,	 end: '8', over: true},
+					27: {team1: 'Glenn Howard', team2: 'Steffen Walstad', score1: 2, score2: (Math.floor(Math.random() * 6) + 1  ),	 end: '3'}
 					}
 				}
 			}
@@ -47,13 +47,13 @@ var CompetitionArray = {
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:00:00 GMT-0600"), 
 					games: {
-					1: {team1: 'Shannon Kleibrink', team2: 'Brad Jacobs', score1: (Math.floor(Math.random() * 6) + 1), score2: 2,	 end: '5'},
-					2: {team1: 'John Epping', team2: 'Jake Walker', score1: 1, score2: 3,	 end: '5'},
-					3: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 4,	 end: '4'},
-					4: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 1,	 end: '6'},
-					5: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 1,	 end: '5'},
-					6: {team1: 'John Morris', team2: 'Steve Laycock', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 1,	 end: '5'},
-					7: {team1: 'Glenn Howard', team2: 'Peter De Cruz', score1: 2, score2: (Math.floor(Math.random() * 6) + 1  ),	 end: '5'}
+					31: {team1: 'Shannon Kleibrink', team2: 'Rachel Homan', score1: (Math.floor(Math.random() * 6) + 1), score2: 2,	 end: '5'},
+					32: {team1: 'John Epping', team2: 'Jennifer Jones', score1: 1, score2: 3,	 end: '5'},
+					33: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 4,	 end: '4'},
+					34: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 1,	 end: '6'},
+					35: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 1,	 end: '5'},
+					36: {team1: 'John Morris', team2: 'Steve Laycock', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 1,	 end: '5'},
+					37: {team1: 'Glenn Howard', team2: 'Steffen Walstad', score1: 2, score2: (Math.floor(Math.random() * 6) + 1  ),	 end: '5'}
 					}
 				}
 			}
@@ -63,13 +63,13 @@ var CompetitionArray = {
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:30:00 GMT-0600"), 
 					games: {
-					1: {team1: 'Shannon Kleibrink', team2: 'Brad Jacobs', score1: (Math.floor(Math.random() * 6) + 1), score2: 4,	 end: '5'},
-					2: {team1: 'John Epping', team2: 'Jake Walker', score1: 1, score2: 2,	 end: '5'},
-					3: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 1,	 end: '4'},
-					4: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 4,	 end: '6'},
-					5: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 5,	 end: '5'},
-					6: {team1: 'John Morris', team2: 'Steve Laycock', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 2,	 end: '5'},
-					7: {team1: 'Glenn Howard', team2: 'Peter De Cruz', score1: 2, score2: (Math.floor(Math.random() * 6) + 1  ),	 end: '5'}
+					41: {team1: 'Shannon Kleibrink', team2: 'Rachel Homan', score1: (Math.floor(Math.random() * 6) + 1), score2: 4,	 end: '5'},
+					42: {team1: 'John Epping', team2: 'Jennifer Jones', score1: 1, score2: 2,	 end: '5'},
+					43: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 1,	 end: '4'},
+					44: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 4,	 end: '6'},
+					45: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 5,	 end: '5'},
+					46: {team1: 'John Morris', team2: 'Steve Laycock', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 2,	 end: '5'},
+					47: {team1: 'Glenn Howard', team2: 'Steffen Walstad', score1: 2, score2: (Math.floor(Math.random() * 6) + 1  ),	 end: '5'}
 					}
 				}
 			}
@@ -79,13 +79,10 @@ var CompetitionArray = {
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:30:00 GMT-0600"), 
 					games: {
-					1: {team1: 'Shannon Kleibrink', team2: 'Brad Jacobs', score1: (Math.floor(Math.random() * 6) + 1), score2: 4,	 end: '5'},
-					2: {team1: 'John Epping', team2: 'Jake Walker', score1: 1, score2: 2,	 end: '5'},
-					3: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 1,	 end: '4'},
-					4: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 4,	 end: '6'},
-					5: {team1: 'Reid Carruthers', team2: 'Charley Thomas', score1: 4, score2: 5,	 end: '5'},
-					6: {team1: 'John Morris', team2: 'Steve Laycock', score1: (Math.floor(Math.random() * 6) + 1  ), score2: 2,	 end: '5'},
-					7: {team1: 'Glenn Howard', team2: 'Peter De Cruz', score1: 2, score2: (Math.floor(Math.random() * 6) + 1  ),	 end: '5'}
+					51: {team1: 'Thiessen/Thiessen', team2: 'Sweeting/Gushue', score1: (Math.floor(Math.random() * 6) + 1), score2: 4,	 end: '5'},
+					52: {team1: 'Jones/Laing', team2: 'Fry/Miskew', score1: 1, score2: 2,	 end: '5'},
+					53: {team1: 'Thomas/Park', team2: 'Ferguson/Ferguson', score1: 7, score2: 1,	 end: '4'},
+					54: {team1: 'Bottcher/Sauder', team2: 'Ferguson/Ferguson', score1: 7, score2: 1,	 end: '4'}
 					}
 				}
 			}
@@ -454,6 +451,8 @@ var StandingsArray = {
 		}
 	}
 }
+
+
 /*
 End Fake Objects		
 */

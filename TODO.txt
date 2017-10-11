@@ -1,0 +1,9 @@
+1. Add hammer icon 
+2. Add brackets on scoreboard
+3. Get home page new carousel working
+4. Change header so it's more like codrops or that other sports website?
+5. Get rankings ajax working
+6. Footer - break up text onto 2 lines
+7. Get all pages working
+8. Ability to click on team in rankings board
+9. Pop up modal showing game details when clicking on game container - look at what google does for MLB

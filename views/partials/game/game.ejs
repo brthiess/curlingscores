@@ -1,0 +1,43 @@
+<section class='game-details-container'>
+	<section class='linescore'>
+		<table class='linescore-table'>
+			<thead>
+				<th class='linescore-table-header t-left'>Team</th>
+				<th class='linescore-table-header t-left'></th>
+				<% for(var i = 1; i <= game.numberOfEnds; i++) { %>
+					<th class='linescore-table-header t-center'><%- i %></th>
+				<% } %>
+				<th class='linescore-table-header t-center'>Tot</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td class='linescore-table-data t-left no-padding'><%- game.team1.skip %></td>
+					<td class='linescore-table-data t-left'><%- (game.team1Hammer ? "<img class='linescore-hammer' src='/images/hammer.png'/>" : "") %></td>
+					<% for (var i = 0; i < game.numberOfEnds; i++) { %>
+						<td class='linescore-table-data t-center'><%- (i < game.team1Scores.length ? game.team1Scores[i] : "<span class='faded'>X</span>") %></td>
+					<% } %>
+					<td class='linescore-table-data t-center'><strong><%- game.team1Total %></strong></td>
+				</tr>
+				<tr>
+					<td class='linescore-table-data t-left no-padding'><%- game.team2.skip %></td>
+					<td class='linescore-table-data t-left'><%- (game.team2Hammer ? "<img class='linescore-hammer' src='/images/hammer.png'/>" : "") %></td>
+					<% for (var i = 0; i < game.numberOfEnds; i++) { %>
+						<td class='linescore-table-data t-center'><%- (i < game.team2Scores.length ? game.team2Scores[i] : "<span class='faded'>X</span>") %></td>
+					<% } %>
+					<td class='linescore-table-data t-center'><strong><%- game.team2Total %></strong></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+	<section class='game-details-team-container'>
+		<div class='game-details-team'>
+			<% if(game.percentagesAvailable == true) { %>
+				<% include percentages.ejs %>
+			<% } 
+			 else { %>
+				<% include team.ejs %>
+			<% } %>
+		</div>
+		
+	</section>
+</section>
