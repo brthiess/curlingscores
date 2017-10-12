@@ -78,21 +78,57 @@ $(document).ready(function(){
 	});
 });
 
+/*modal*/
+var modalOpen = false;
 function showModalWithGameView(gameId, modalTitle) {
 	showModal(modalTitle);
-	getGameModalView(gameId, function(html){
-		$("#modal-content").html(html);
+	getGameModalView(gameId, function(html, err){
+		if(err == undefined) {
+			$("#modal-content").html(html);
+			if(!modalHistoryShowsItsOpen()) {
+				
+				history.pushState({modal: "open"}, "", "#score");
+			}
+			else {
+				console.log('dont push history');
+			}
+		}
+		else {
+			//error
+		}
 	});	
 }
 function showModal(modalTitle){
 	$("#modal-overlay").addClass("visible");
 	$("#modal-text").text(modalTitle);
 	$("body").css("overflow", "hidden");
-	
+	modalOpen = true;
 }
 function closeModal(){
 	$("#modal-overlay").removeClass("visible");
 	$("body").css("overflow", "");
+	if(modalHistoryShowsItsOpen()){
+		history.back();
+	}
+	modalOpen = false;
+}
+//return true if the current history state suggests that the modal is open
+function modalHistoryShowsItsOpen(){
+	if(history.state !== null && history.state.modal == 'open') {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+window.onpopstate = function(event) {
+	if(modalOpen == true){
+		closeModal();
+	}
+	console.log(history.state);
+	if(modalOpen == false && modalHistoryShowsItsOpen()){
+		showModal('asdf');
+	}
 }
 
 /********

@@ -189,7 +189,7 @@ Rankings.fetchTopRankings = function(number, category, year){
 	newRankingsArray.rankings.forEach(function (ranking, i) {
 		ranking.rank = i + 1;
 	});
-	newRankingsArray.rankings.slice(0, number);
+	newRankingsArray.rankings = newRankingsArray.rankings.slice(0, number);
 	console.log(newRankingsArray);
 	return newRankingsArray;
 }

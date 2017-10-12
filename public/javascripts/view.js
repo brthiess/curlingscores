@@ -19,7 +19,7 @@ function getGameModalView(gameId, callback) {
 			callback(data);
 		},
 		error: function(data){
-			console.log(data);
+			callback(data, false)
 		}
 	});
 }
