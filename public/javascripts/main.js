@@ -12,11 +12,12 @@ $(document).ready(function(){
 function showCompetition(listItem, competitionId){
 	$('.competition-list-item').removeClass('active');
 	$(listItem).addClass('active');
+	$('.scores-container').addClass('loading');
 	getScoresView(competitionId, function(viewHtml){
 		$('.scores-container').replaceWith(viewHtml);
-		
 		currentCompetitionId = competitionId;
 		currentDrawId = $('.scores-container [data-draw-id]').attr('data-draw-id');
+		$('.scores-container').removeClass('loading');
 	});
 }
 
@@ -30,6 +31,9 @@ function refreshDrawScores(){
 				$("[data-game-id='" + game + "']").find("[data-score2]").html(data.games[game].score2);
 				var end = (data.games[game].over ? "Final (" + data.games[game].end + ")" : ordinal_suffix_of(data.games[game].end) + " end");
 				$("[data-game-id='" + game + "']").find("[data-end]").html(end);
+				$("[data-game-id='" + game + "']").find("[data-hammer1]").html((data.games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : ""));
+				$("[data-game-id='" + game + "']").find("[data-hammer2]").html((!data.games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : ""));
+				console.log(data.games[game].team1CurrentHammer);
 			}
 			setTimeout(refreshDrawScores, 10000);
 		});
@@ -82,25 +86,24 @@ $(document).ready(function(){
 var modalOpen = false;
 function showModalWithGameView(gameId, modalTitle) {
 	showModal(modalTitle);
+	modalLoad(true);
 	getGameModalView(gameId, function(html, err){
+		modalLoad(false);
 		if(err == undefined) {
 			$("#modal-content").html(html);
 			if(!modalHistoryShowsItsOpen()) {
-				
-				history.pushState({modal: "open"}, "", "#score");
-			}
-			else {
-				console.log('dont push history');
+				history.pushState({modal: "open", title: modalTitle, gameId: gameId}, "", "#score");
 			}
 		}
 		else {
 			//error
 		}
+		
 	});	
 }
 function showModal(modalTitle){
 	$("#modal-overlay").addClass("visible");
-	$("#modal-text").text(modalTitle);
+	$("#modal-title").text(modalTitle);
 	$("body").css("overflow", "hidden");
 	modalOpen = true;
 }
@@ -110,7 +113,16 @@ function closeModal(){
 	if(modalHistoryShowsItsOpen()){
 		history.back();
 	}
+	$("#modal-content").html("");
 	modalOpen = false;
+}
+function modalLoad(showLoading){
+	if(showLoading){
+		$("#modal-content-container").addClass("loading");
+	}
+	else {
+		$("#modal-content-container").removeClass("loading");
+	}
 }
 //return true if the current history state suggests that the modal is open
 function modalHistoryShowsItsOpen(){
@@ -127,8 +139,22 @@ window.onpopstate = function(event) {
 	}
 	console.log(history.state);
 	if(modalOpen == false && modalHistoryShowsItsOpen()){
-		showModal('asdf');
+		showModalWithGameView(history.state.gameId, history.state.modalTitle);
 	}
+}
+
+/* rankings */
+function updateRankingsTable(number, year, category){
+	$("[data-id='rankings-table']").addClass("loading");
+	getRankingsView(number, year, category, function(data, err){
+		$("[data-id='rankings-table']").removeClass("loading");
+		if(err == undefined){
+			$("[data-id='rankings-table']").replaceWith(data);
+		}
+		else {
+			//error
+		}
+	});
 }
 
 /********

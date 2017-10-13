@@ -1,0 +1,34 @@
+<div data-id='schedule-table' class='general-sub-section'>
+	<div class='general-categories-container'>
+		<h2 class='general-category-year-header'><span class='general-category'><%- functions.capitalizeFirstLetter(schedule.category) %></span> <span class='general-year'> - <%- schedule.yearName %></span></h2>
+		<div class='tabs'>
+			<div class='tab-title active'>Order of Merit</div>
+			<div class='tab-title'>Money</div>
+		</div>
+	</div>
+	<div class='schedule-points-section'>
+		<table class='general-table'>
+			<thead>
+				<th class='schedule-table-header'>Rank</th>
+				<th class='schedule-table-header'>Team</th>
+				<th class='schedule-table-header'>YTD</th>
+				<th class='schedule-table-header'>Total</th>
+
+			</thead>
+			<tbody>
+				<%
+				for (var team in schedule.schedule) { %>
+					<tr>
+						<td class='schedule-table-data schedule-table-data-rank'><%- schedule.schedule[team].rank %></td>
+						<td class='schedule-table-data schedule-table-data-name'><%- schedule.schedule[team].name %> <span class='schedule-table-data-location'> <span class='hidden-mini-tablets'>-</span> <%- schedule.schedule[team].location %></span></td>
+						<td class='schedule-table-data schedule-table-data-points'><%- schedule.schedule[team].ytdPoints.toFixed(3) %></td>
+						<td class='schedule-table-data schedule-table-data-points'><%- schedule.schedule[team].totalPoints.toFixed(3) %></td>
+					</tr>
+				<% } %>
+			</tbody>
+		</table>
+	</div>
+	<div class='schedule-money-section'>
+	</div>
+	<a class='schedule-link' href='/schedule/'>See Full schedule</a>
+</div>

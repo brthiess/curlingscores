@@ -8,5 +8,9 @@ router.get('/scores/:competitionId', viewController.getScoresView);
 /* Get games */
 router.get('/games/:gameId', viewController.getModalGameView);
 
+
+router.get('/rankings/:category/:year/:number?', viewController.getRankingsView);
+
+router.get('/schedule/:category/:year', viewController.getScheduleView);
 module.exports = router;
 

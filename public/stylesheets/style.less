@@ -22,9 +22,9 @@
 }
 html {
 	font-family: 'Open Sans', sans-serif;
-	padding-top: 80px;
+	padding-top: 90px;
 	@media @smartphones {
-		padding-top: 40px;
+		padding-top: 60px;
 	}
 }
 a {
@@ -160,6 +160,68 @@ display:none !important;
 }
 .no-padding {
 	padding: 0 !important;
+}
+.loading {
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		background: blue;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(255,255,255,0.8);
+		background-image: url(/images/loading.svg);
+		background-repeat: no-repeat;
+		background-position: center 40%;
+		background-size: 200px;
+	}
+}
+
+/* General Section Styles */
+.general-section-header {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+	@media @tablets {
+	    box-shadow: inset 0 10px 10px -5px rgba(0,0,0,.4);
+	}
+	@media @mini-tablets {
+		flex-flow: column;
+		align-items: start;
+	}
+}
+.general-sub-section {
+	background: white;
+	padding: 10px 20px	;
+	overflow: hidden;
+	@media @smartphones {
+		padding: 10px 0px;
+	}
+}
+.general-categories-container {
+    margin-bottom: 20px;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	@media @mini-tablets {
+		flex-flow: column;
+	}
+}
+.general-category-year-header {
+	margin: 0 0 10px 0;
+}
+.general-category {
+	font-size: 30px;
+}
+.general-year {
+	font-size: 20px;
+	font-weight: normal;
+	font-style: italic;
+}
+.general-table {
+	width: 100%;
 }
 
 /* animations */
@@ -471,6 +533,13 @@ display:none !important;
     justify-content: space-between;
     margin: 5px 0;
 }
+.scores-team-name {
+	img {//hammer icon
+		width: 15px;
+		vertical-align: middle;
+		margin-left: 5px;
+	}
+}
 .scores-score {
     margin: 0 0 0 10px;
 }
@@ -580,49 +649,7 @@ display:none !important;
 		padding: 0;
 	}
 }
-.rankings-section-header {
-	display: flex;
-	justify-content: space-between;
-    align-items: center;
-	@media @tablets {
-	    box-shadow: inset 0 10px 10px -5px rgba(0,0,0,.4);
-	}
-	@media @mini-tablets {
-		flex-flow: column;
-		align-items: start;
-	}
-}
-.rankings-sub-section {
-	background: white;
-	padding: 10px 20px	;
-	overflow: hidden;
-	@media @smartphones {
-		padding: 10px 0px;
-	}
-}
-.rankings-categories-container {
-    margin-bottom: 20px;
-	display: flex;
-    justify-content: space-between;
-    align-items: center;
-	@media @mini-tablets {
-		flex-flow: column;
-	}
-}
-.rankings-category-year-header {
-	margin: 0 0 10px 0;
-}
-.rankings-category {
-	font-size: 30px;
-}
-.rankings-year {
-	font-size: 20px;
-	font-weight: normal;
-	font-style: italic;
-}
-.rankings-table {
-	width: 100%;
-}
+
 .rankings-table-header {
 	border-bottom: 2px solid #ccc;
 	padding: 3px 10px;
@@ -709,7 +736,7 @@ display:none !important;
 .game-details-container {
 	width: 100%;
     padding: 0 20px;
-    max-width: 1000px;
+    max-width: 800px;
     margin: auto;
 }
 .linescore {
@@ -872,6 +899,12 @@ display:none !important;
 	}
 }
 
+
+/* schedule */
+.schedule-section {
+	background-color: fade(#333, 50%);
+}
+
 /* footer */
 footer {
     color: #333;
@@ -930,17 +963,10 @@ footer {
 /* MODAL */
 #modal {
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	background: white;
 	box-shadow: 0 0 10px;
-	max-width: 800px;
 	width: 100%;
-	height: 90%;
-	@media @mini-tablets {
-		height: 100%;
-	}
+	height: 100%;
 }
 #modal-top-bar {
     height: 80px;
@@ -948,7 +974,6 @@ footer {
 	display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
     color: white;
     font-size: 40px;
 }
@@ -965,7 +990,7 @@ footer {
 		display: block;
 	}	
 }
-#modal-text {
+#modal-title {
 	font-size: 24px;
 	text-align: center;
 	@media @mini-tablets {
@@ -980,6 +1005,7 @@ footer {
 }
 .modal-button {
     cursor: pointer;
+	padding: 18px;
 }
 #modal-content-container {
     height: ~"calc(100% - 80px)"; //Same px and #modal-top-bar

@@ -1,6 +1,7 @@
 var Competition = require('../models/competition.js');
 var Social = require('../models/social.js');
 var Rankings = require('../models/rankings.js');
+var Schedule = require('../models/schedule.js');
 //Home page
 exports.index = function(req, res, next) {
 	var competitions = Competition.fetchCurrentCompetitions();
@@ -14,3 +15,10 @@ exports.index = function(req, res, next) {
 	req.app.set('layout', 'layouts/layout');
 	res.render('index', {competitions: competitions, competition: featuredDraw, activeCompetitionId: featuredCompetitionId, activeDrawId: featuredDraw.drawId, standings: standings, rankings: rankings, categories: rankingsCategories, title: "World Curling Tour", posts: socialMedia});
 };
+
+exports.schedule = function(req, res, next){
+	req.app.set('layout', 'layouts/layout');
+	var schedule = Schedule.fetchSchedule('men', 2018);
+	var scheduleCategories = Schedule.fetchCategories();
+	res.render('schedule', {schedule: schedule, categories: scheduleCategories, title: "Schedule"});
+}

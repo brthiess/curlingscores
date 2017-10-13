@@ -1,5 +1,5 @@
 function getScoresView(competitionId, callback) {
-	$.ajax({
+	setTimeout(function() {$.ajax({
 		method: "GET",
 		url: "/views/scores/" + competitionId,
 		success: function(data) {
@@ -9,10 +9,11 @@ function getScoresView(competitionId, callback) {
 			console.log(data);
 		}
 	});
+	}, 1000);
 }
 
 function getGameModalView(gameId, callback) {
-	$.ajax({
+	setTimeout(function() {$.ajax({
 		method: "GET",
 		url: "/views/games/" + gameId,
 		success: function(data) {
@@ -22,4 +23,19 @@ function getGameModalView(gameId, callback) {
 			callback(data, false)
 		}
 	});
+	}, 2000);
+}
+
+function getRankingsView(number, year, category, callback){
+	setTimeout(function() {$.ajax({
+		method: "GET",
+		url: "/views/rankings/" + category + "/" + year + "/" + number,
+		success: function(data) {
+			callback(data);
+		},
+		error: function(data){
+			callback(data, false)
+		}
+	});
+	}, 500);
 }

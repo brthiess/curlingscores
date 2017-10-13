@@ -1,0 +1,25 @@
+<section class='rankings-section section'>
+	<section class='sub-section'>
+		<div class='section-header general-section-header'>
+			<h2>Rankings</h2>
+			<div class='rankings-select-container'>
+				<div class='select-wrapper rankings-select-wrapper'>
+					<select class='rankings-select' data-id='rankings-year' onchange='updateRankingsTable(20, this.value, $("[data-id=rankings-category]").val())'>
+						<% for(var category in categories.years) { %>
+							<option value='<%- categories.years[category].year %>' <%- (rankings.year == categories.years[category].year ? " selected " : ""); %> ><%- categories.years[category].name %></option>
+						<% } %>
+					</select>
+				</div>
+				<div class='select-wrapper rankings-select-wrapper' >
+					<select class='rankings-select' data-id='rankings-category' onchange='updateRankingsTable(20, $("[data-id=rankings-year]").val(), this.value)'>
+						<% for(var category in categories.categories) { %>
+							<option value='<%- categories.categories[category] %>' <%- (rankings.category == categories.categories[category] ? "selected" : "") %>><%- 	functions.capitalizeFirstLetter(categories.categories[category]) %></option>
+						<% } %>
+					</select>
+				</div>
+			</div>
+		</div>
+		<% include rankings-table %>
+		
+	</section>
+</section>
