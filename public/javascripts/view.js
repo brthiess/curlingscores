@@ -39,3 +39,17 @@ function getRankingsView(number, year, category, callback){
 	});
 	}, 500);
 }
+
+function getScheduleView(year, category, callback){
+	setTimeout(function() {$.ajax({
+		method: "GET",
+		url: "/views/schedule/" + category + "/" + year,
+		success: function(data) {
+			callback(data);
+		},
+		error: function(data){
+			callback(data, false)
+		}
+	});
+	}, 500);
+}

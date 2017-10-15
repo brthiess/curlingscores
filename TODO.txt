@@ -5,3 +5,9 @@
 8. Ability to click on team in rankings board
 9. favicon
 10. Add money to rankings
+11. Fix tables on small smartphones
+12. When reloading schedule page, if you ajaxed to another year/category, if you refresh it should stay on that same category/year
+13. Make the whole schedule row clickable instead of just name?
+14. auto update scores modal
+15. Link to full rankings, make sure it goes to correct category/year
+16. Make sure mixed doubles is working with percentages

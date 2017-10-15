@@ -1,0 +1,18 @@
+<section class='team-section general-section section'>
+	<section class='sub-section'>
+		<div class='section-header general-section-header'>
+			<h2>Teams</h2>
+			<div class='team-select-container'>
+				<div class='select-wrapper team-select-wrapper'>
+					<select class='team-select' data-id='team-year' onchange='updateTeamsTable(this.value)'>
+						<% for(var category in categories) { %>
+							<option value='<%- categories[category].url %>' <%- (currentCategory == categories[category].url ? " selected " : ""); %> ><%- categories[category].name %></option>
+						<% } %>
+					</select>
+				</div>
+			</div>
+		</div>
+		<% include teams-table %>
+		
+	</section>
+</section>

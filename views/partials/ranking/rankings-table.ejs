@@ -30,5 +30,7 @@
 	</div>
 	<div class='rankings-money-section'>
 	</div>
-	<a class='rankings-link' href='/rankings/'>See Full Rankings</a>
+	<% if(typeof showLinkToFullRankings != "undefined") { %>
+		<a class='rankings-link' href='/rankings/'>See Full Rankings</a>
+	<% } %>
 </div>

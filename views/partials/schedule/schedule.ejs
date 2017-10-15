@@ -1,17 +1,17 @@
-<section class='schedule-section section'>
+<section class='schedule-section general-section section'>
 	<section class='sub-section'>
 		<div class='section-header general-section-header'>
 			<h2>Schedule</h2>
 			<div class='schedule-select-container'>
 				<div class='select-wrapper schedule-select-wrapper'>
-					<select class='schedule-select' data-id='schedule-year' onchange='updatescheduleTable(20, this.value, $("[data-id=schedule-category]").val())'>
+					<select class='schedule-select' data-id='schedule-year' onchange='updateScheduleTable(this.value, $("[data-id=schedule-category]").val())'>
 						<% for(var category in categories.years) { %>
 							<option value='<%- categories.years[category].year %>' <%- (schedule.year == categories.years[category].year ? " selected " : ""); %> ><%- categories.years[category].name %></option>
 						<% } %>
 					</select>
 				</div>
 				<div class='select-wrapper schedule-select-wrapper' >
-					<select class='schedule-select' data-id='schedule-category' onchange='updatescheduleTable(20, $("[data-id=schedule-year]").val(), this.value)'>
+					<select class='schedule-select' data-id='schedule-category' onchange='updateScheduleTable($("[data-id=schedule-year]").val(), this.value)'>
 						<% for(var category in categories.categories) { %>
 							<option value='<%- categories.categories[category] %>' <%- (schedule.category == categories.categories[category] ? "selected" : "") %>><%- 	functions.capitalizeFirstLetter(categories.categories[category]) %></option>
 						<% } %>

@@ -1,0 +1,23 @@
+<div data-id='team-table' class='general-sub-section'>
+	<div class='team-points-section'>
+		<table class='general-table'>
+			<thead>
+				<th class="team-table-header"></th>
+				<th class="team-table-header">Tournament</th>
+				<th class="team-table-header hidden-mini-tablets">Champion</th>
+			</thead>
+			<tbody>
+				<% for (var team in teams) { %>
+					<tr>
+						<td class='team-table-data team-table-data-image'>
+							<img src='/images/players/default.png'/>
+						</td>
+						<td class='team-table-data team-table-data-name'>
+							<a class='team-table-data-link' href="/teams/<%- teams[team].teamId %>/"><%- teams[team].name %></a> 
+						</td>
+					</tr>
+				<% } %>
+			</tbody>
+		</table>
+	</div>
+</div>

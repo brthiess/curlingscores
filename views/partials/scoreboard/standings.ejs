@@ -2,21 +2,21 @@
 	<table class='standings-table'>
 		<% for(var pool in standings.pools) { %>
 			<thead class='standings-table-header'>
-				<th>Pool <%- standings.pools[pool].name %></th>
-				<th>Team</th>
-				<th>GP</th>
-				<th>W</th>
-				<th>L</th>
-				<th class='hidden-phone'>PCT</th>
-				<th class='hidden-phone'>Hammer</th>
-				<th class='hidden-phone'>Steal</th>
+				<th class='standings-table-header-item t-left'>Pool <%- standings.pools[pool].name %></th>
+				<th class='standings-table-header-item t-left'>Team</th>
+				<th class='standings-table-header-item'>GP</th>
+				<th class='standings-table-header-item'>W</th>
+				<th class='standings-table-header-item'>L</th>
+				<th class='hidden-phone standings-table-header-item'>PCT</th>
+				<th class='hidden-phone standings-table-header-item'>Hammer</th>
+				<th class='hidden-phone standings-table-header-item'>Steal</th>
 			</thead>
 			<tbody>
 				<% teams = standings.pools[pool].teams;
 				for (var team in teams){ %>
 					<tr>
-						<td class='standings-team-flag standings-table-data'><img src='/images/flags/<%- teams[team].flag %>.png'/></td>
-						<td class='standings-table-data'><%- teams[team].name %></td>
+						<td class='standings-team-flag standings-table-data t-left'><img src='/images/flags/<%- teams[team].flag %>.png'/></td>
+						<td class='standings-table-data t-left'><%- teams[team].name %></td>
 						<td class='standings-table-data'><%- teams[team].gamesPlayed %></td>
 						<td class='standings-table-data'><%- teams[team].wins %></td>
 						<td class='standings-table-data'><%- teams[team].losses %></td>

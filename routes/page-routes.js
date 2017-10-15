@@ -7,4 +7,9 @@ router.get('/', controller.index);
 
 router.get('/schedule', controller.schedule);
 
+router.get('/scores', controller.scores);
+
+router.get('/rankings', controller.rankings);
+router.get('/teams/:category?', controller.teams);
+
 module.exports = router;

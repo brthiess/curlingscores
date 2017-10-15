@@ -171,15 +171,24 @@ display:none !important;
 		width: 100%;
 		top: 0;
 		left: 0;
-		background-color: rgba(255,255,255,0.8);
+		background-color: rgba(255,255,255,0.9);
 		background-image: url(/images/loading.svg);
 		background-repeat: no-repeat;
 		background-position: center 40%;
 		background-size: 200px;
+		@media @smartphones {
+			background-position: center 20%;
+		}
 	}
+	
 }
 
 /* General Section Styles */
+.general-section{
+	@media @tablets {
+		padding: 0;
+	}
+}
 .general-section-header {
 	display: flex;
 	justify-content: space-between;
@@ -197,7 +206,7 @@ display:none !important;
 	padding: 10px 20px	;
 	overflow: hidden;
 	@media @smartphones {
-		padding: 10px 0px;
+		padding: 10px 15px;
 	}
 }
 .general-categories-container {
@@ -441,7 +450,7 @@ display:none !important;
 .scores-container {
 	flex: 1;
 	border-left: 1px solid #ccc;
-	padding: 10px 0 0;
+	padding: 10px 0 40px;
 }
 .scores-container .scores-info-container {
 	display: none;
@@ -485,14 +494,24 @@ display:none !important;
 		background: #eee;
 		cursor: pointer;
 	}
+	
 	@media @large-desktops {
 		width: 33.3%;
 	}
 	@media @desktop {
 		width: 50%;
 	}
+	@media @tablets {
+		&:hover {
+			background: none;
+		}
+		&:active {
+			background: #eee;
+		}
+	}
 	@media @mini-mini-tablets {
 		width: 100%;
+		
 	}
 	@media @smartphones {
 		padding: 10px 0;
@@ -571,9 +590,13 @@ display:none !important;
 .standings-table {
     width: 100%;
     text-align: center;
+	margin-top: -10px;
 }
 .standings-table-header {
 	border-bottom: 1px solid #555;
+}
+.standings-table-header-item {
+	padding-top: 15px;
 }
 .standings-table-data {
 	padding: 10px;	
@@ -645,9 +668,6 @@ display:none !important;
 /* rankings */
 .rankings-section {
 	background-color: rgba(214, 149, 149, 0.4);
-	@media @tablets {
-		padding: 0;
-	}
 }
 
 .rankings-table-header {
@@ -903,6 +923,46 @@ display:none !important;
 /* schedule */
 .schedule-section {
 	background-color: fade(#333, 50%);
+}
+.schedule-table-header {
+	font-size: 20px;
+	border-bottom: 2px solid #ccc;
+	text-align: left;
+}
+.schedule-table-data{
+    border-bottom: 1px solid #ccc;
+	padding: 10px 5px;
+	@media @mini-tablets {
+		font-size: 14px;
+	}
+}
+.schedule-table-data-link {
+    display: block;
+    font-size: 18px;
+	@media @mini-tablets {
+		font-size: 16px;
+	}
+	@media @tiny-smartphones {
+		font-size: 15px;
+	}
+}
+.schedule-table-data-purse {
+    color: #666;
+    font-size: 14px;
+}
+.schedule-table-data-date {
+	white-space: nowrap;
+}
+
+/* teams */
+.team-section {
+	background-color: rgba(50,150,120, 1);
+}
+.team-table-data-image {
+	width: 80px;
+	img {
+		width: 100%;
+	}
 }
 
 /* footer */

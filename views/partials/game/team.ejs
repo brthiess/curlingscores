@@ -1,7 +1,7 @@
 <div class='game-team-details-team-container'>
-	<div class='game-team-details-team <%- (game.team1.type == "Mixed Doubles" ? "mixed-doubles" : "") %>'>
+	<div class='game-team-details-team <%- (game.team1.type == "mixed-doubles" ? "mixed-doubles" : "") %>'>
 		<h3 class='game-team-details-header'>Team <%- game.team1.name %> </h3>
-		<% if (game.team1.type != "Mixed Doubles") { %>
+		<% if (game.team1.category != "mixed-doubles") { %>
 			<div class='game-team-details-player'>
 				<div class='game-team-details-position'>Lead</div>
 				<div class='game-team-details-player-image'><img src='/images/players/default.png'/></div>
@@ -13,12 +13,12 @@
 				<div class='game-team-details-player-name'><%- game.team1.second %></div>
 			</div>
 		<% } %>
-		<div class='game-team-details-player <%- (game.team1.type == "Mixed Doubles" ? "mixed-doubles" : "") %>'>
+		<div class='game-team-details-player <%- (game.team1.type == "mixed-doubles" ? "mixed-doubles" : "") %>'>
 			<div class='game-team-details-position'>Third</div>
 			<div class='game-team-details-player-image'><img src='/images/players/default.png'/></div>
 			<div class='game-team-details-player-name'><%- game.team1.third %></div>
 		</div>
-		<div class='game-team-details-player <%- (game.team1.type == "Mixed Doubles" ? "mixed-doubles" : "") %>'>
+		<div class='game-team-details-player <%- (game.team1.type == "mixed-doubles" ? "mixed-doubles" : "") %>'>
 			<div class='game-team-details-position'>Skip</div>
 			<div class='game-team-details-player-image'><img src='/images/players/default.png'/></div>
 			<div class='game-team-details-player-name'><%- game.team1.skip %></div>
@@ -27,7 +27,7 @@
 	
 	<div class='game-team-details-team <%- (game.team2.type == "Mixed Doubles" ? "mixed-doubles" : "") %>'>
 		<h3 class='game-team-details-header'>Team <%- game.team2.name %> </h3>
-		<% if (game.team2.type != "Mixed Doubles") { %>
+		<% if (game.team2.type != "mixed-doubles") { %>
 			<div class='game-team-details-player'>
 				<div class='game-team-details-position'>Lead</div>
 				<div class='game-team-details-player-image'><img src='/images/players/default.png'/></div>
@@ -39,12 +39,12 @@
 				<div class='game-team-details-player-name'><%- game.team2.second %></div>
 			</div>
 		<% } %>
-		<div class='game-team-details-player <%- (game.team2.type == "Mixed Doubles" ? "mixed-doubles" : "") %>'>
+		<div class='game-team-details-player <%- (game.team2.type == "mixed-doubles" ? "mixed-doubles" : "") %>'>
 			<div class='game-team-details-position'>Third</div>
 			<div class='game-team-details-player-image'><img src='/images/players/default.png'/></div>
 			<div class='game-team-details-player-name'><%- game.team2.third %></div>
 		</div>
-		<div class='game-team-details-player <%- (game.team2.type == "Mixed Doubles" ? "mixed-doubles" : "") %>'>
+		<div class='game-team-details-player <%- (game.team2.type == "mixed-doubles" ? "mixed-doubles" : "") %>'>
 			<div class='game-team-details-position'>Skip</div>
 			<div class='game-team-details-player-image'><img src='/images/players/default.png'/></div>
 			<div class='game-team-details-player-name'><%- game.team2.skip %></div>

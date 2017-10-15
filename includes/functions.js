@@ -138,6 +138,18 @@ module.exports = {
 	},
 	capitalizeFirstLetter : function(string) {
 		return string.charAt(0).toUpperCase() + string.slice(1);
+	},
+	numberWithCommas : function(x) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	},
+	isSameMonth : function(date1, date2){
+		if ((new Date(date1)).getMonth() == (new Date(date2)).getMonth()) {
+			return true;
+			
+		}
+		else {
+			return false;
+		}
 	}
 }
 

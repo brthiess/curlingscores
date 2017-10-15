@@ -28,7 +28,8 @@ exports.getRankingsView = function(req, res, next) {
 }
 
 exports.getScheduleView = function(req, res, next) {
-	var schedule = Ranking.fetchSchedule(req.params.category, req.params.year);
+	var schedule = Schedule.fetchSchedule(req.params.category, req.params.year);
 	req.app.set('layout', false);
-	res.render('partials/schedule', {schedule: schedule});
+	schedule.events = Schedule.convertEventDatesToSimple(schedule.events);
+	res.render('partials/schedule/schedule-table', {schedule: schedule});
 }

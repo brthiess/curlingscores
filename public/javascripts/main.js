@@ -157,6 +157,20 @@ function updateRankingsTable(number, year, category){
 	});
 }
 
+/* schedule */
+function updateScheduleTable(year, category){
+	$("[data-id='schedule-table']").addClass("loading");
+	getScheduleView(year, category, function(data, err){
+		$("[data-id='schedule-table']").removeClass("loading");
+		if(err == undefined){
+			$("[data-id='schedule-table']").replaceWith(data);
+		}
+		else {
+			//error
+		}
+	});
+}
+
 /********
 Functions 
 *********/
