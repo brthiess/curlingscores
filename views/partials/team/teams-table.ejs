@@ -1,23 +1,24 @@
-<div data-id='team-table' class='general-sub-section'>
-	<div class='team-points-section'>
-		<table class='general-table'>
-			<thead>
-				<th class="team-table-header"></th>
-				<th class="team-table-header">Tournament</th>
-				<th class="team-table-header hidden-mini-tablets">Champion</th>
-			</thead>
-			<tbody>
-				<% for (var team in teams) { %>
-					<tr>
-						<td class='team-table-data team-table-data-image'>
-							<img src='/images/players/default.png'/>
-						</td>
-						<td class='team-table-data team-table-data-name'>
-							<a class='team-table-data-link' href="/teams/<%- teams[team].teamId %>/"><%- teams[team].name %></a> 
-						</td>
-					</tr>
-				<% } %>
-			</tbody>
-		</table>
+<div data-id='teams-table' class='general-sub-section'>
+	<div class='teams-container'>
+		<% for (var team in teams) { %>
+			<div class='team-container-wrapper'>
+				
+				<div class='team-container'>
+					<a class='full-link' href="/teams/<%- teams[team].teamId %>/"></a>
+					<div class='team-image'>
+						<img src='/images/players/default.png'/>
+					</div>
+					<div class='team-name'>
+						<a class='team-name-link' href="/teams/<%- teams[team].teamId %>/"><%- teams[team].name %> <span class='team-location'> - <%- teams[team].location %></span></a>
+						<% for (var player in teams[team].players) { %>
+							<div class='team-player'><span class='team-player-position'><%- teams[team].players[player].position %>:</span><%- teams[team].players[player].name%></div>
+						<% } %>
+					</div>
+				</div>
+			</div>
+		<% } %>
+		<% if (teams.length == 0) { %>
+			<p>No Teams Found</p>
+		<% } %>
 	</div>
 </div>

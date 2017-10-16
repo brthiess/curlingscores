@@ -53,3 +53,17 @@ function getScheduleView(year, category, callback){
 	});
 	}, 500);
 }
+
+function getTeamsView(category, callback){
+	setTimeout(function() {$.ajax({
+		method: "GET",
+		url: "/views/teams/" + category + "/",
+		success: function(data) {
+			callback(data);
+		},
+		error: function(data){
+			callback(data, false)
+		}
+	});
+	}, 500);
+}

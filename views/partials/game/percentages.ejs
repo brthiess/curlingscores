@@ -5,26 +5,13 @@
 		<th class='game-team-details-table-header t-center'>PCT</th>
 	</thead>
 	<tbody>
-		<tr>
-			<td class='game-team-details-table-data t-left'><img src='/images/players/default.png'/></td>
-			<td class='game-team-details-table-data t-left'><%- game.team1.lead %><span class='game-team-details-player-position'>Lead</span></td>
-			<td class='game-team-details-table-data t-center'><%- game.team1LeadPercentage %>%</td>
-		</tr>
-		<tr>
-			<td class='game-team-details-table-data t-left'><img src='/images/players/default.png'/></td>
-			<td class='game-team-details-table-data t-left'><%- game.team1.second %><span class='game-team-details-player-position'>Second</span></td>
-			<td class='game-team-details-table-data t-center'><%- game.team1SecondPercentage %>%</td>
-		</tr>
-		<tr>
-			<td class='game-team-details-table-data t-left'><img src='/images/players/default.png'/></td>
-			<td class='game-team-details-table-data t-left'><%- game.team1.third %><span class='game-team-details-player-position'>Third</span></td>
-			<td class='game-team-details-table-data t-center'><%- game.team1ThirdPercentage %>%</td>
-		</tr>
-		<tr>
-			<td class='game-team-details-table-data t-left'><img src='/images/players/default.png'/></td>
-			<td class='game-team-details-table-data t-left'><%- game.team1.skip %><span class='game-team-details-player-position'>Skip</span></td>
-			<td class='game-team-details-table-data t-center'><%- game.team1SkipPercentage %>%</td>
-		</tr>
+		<% for (var player in game.team1.players) { %>
+			<tr>
+				<td class='game-team-details-table-data t-left'><img src='<%- game.team1.players[player].image %>'/></td>
+				<td class='game-team-details-table-data t-left'><%- game.team1.players[player].name %><span class='game-team-details-player-position'><%- game.team1.players[player].position %></span></td>
+				<td class='game-team-details-table-data t-center'><%- Math.floor(Math.random() * 30) + 70   %>%</td>
+			</tr>
+		<% } %>
 	</tbody>
 </table>
 </div>
@@ -36,25 +23,12 @@
 		<th class='game-team-details-table-header t-center'>PCT</th>
 	</thead>
 	<tbody>
-		<tr>
-			<td class='game-team-details-table-data t-left'><img src='/images/players/default.png'/></td>
-			<td class='game-team-details-table-data t-left'><%- game.team2.lead %><span class='game-team-details-player-position'>Lead</span></td>
-			<td class='game-team-details-table-data t-center'><%- game.team2LeadPercentage %>%</td>
-		</tr>
-		<tr>
-			<td class='game-team-details-table-data t-left'><img src='/images/players/default.png'/></td>
-			<td class='game-team-details-table-data t-left'><%- game.team2.second %><span class='game-team-details-player-position'>Second</span></td>
-			<td class='game-team-details-table-data t-center'><%- game.team2SecondPercentage %>%</td>
-		</tr>
-		<tr>
-			<td class='game-team-details-table-data t-left'><img src='/images/players/default.png'/></td>
-			<td class='game-team-details-table-data t-left'><%- game.team2.third %><span class='game-team-details-player-position'>Third</span></td>
-			<td class='game-team-details-table-data t-center'><%- game.team2ThirdPercentage %>%</td>
-		</tr>
-		<tr>
-			<td class='game-team-details-table-data t-left'><img src='/images/players/default.png'/></td>
-			<td class='game-team-details-table-data t-left'><%- game.team2.skip %><span class='game-team-details-player-position'>Skip</span></td>
-			<td class='game-team-details-table-data t-center'><%- game.team2SkipPercentage %>%</td>
-		</tr>
+		<% for (var player in game.team2.players) { %>
+			<tr>
+				<td class='game-team-details-table-data t-left'><img src='<%- game.team2.players[player].image %>'/></td>
+				<td class='game-team-details-table-data t-left'><%- game.team2.players[player].name %><span class='game-team-details-player-position'><%- game.team2.players[player].position %></span></td>
+				<td class='game-team-details-table-data t-center'><%- Math.floor(Math.random() * 30) + 70   %>%</td>
+			</tr>
+		<% } %>
 	</tbody>
 </table>

@@ -1,314 +1,395 @@
 TeamArray = [
 	{
 		name: 'Mcewen',
-		skip: 'Mike Mcewen',
-		third: 'BJ Neufeld',
-		second: 'Matt Wozniak',
-		lead: 'Denni Neufeld',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Mike Mcewen', position: 'Skip', image: 'default.png', throws: 'Right', age: 31, resides: "Edmonton, AB"},
+			{name: 'BJ Neufeld', position: 'Third', image: 'default.png',  throws: 'Right', age: 22, resides: "Calgary, AB"},
+			{name:  'Matt Wozniak', position: 'Second', image: 'default.png',  throws: 'Right', age: 28, resides: "Winnipeg, MB"},
+			{name: 'Denni Neufeld', position: 'Lead', image: 'default.png',  throws: 'Right', age: 24, resides: "Edmonton, AB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 1
+		
 	},
 	{
 		name: 'Jacobs',
-		skip: 'Brad Jacobs',
-		third: 'Ryan Fry',
-		second: 'EJ Harnden',
-		lead: 'Ryan Harnden',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Brad Jacobs', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Ryan Fry', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'EJ Harnden', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Ryan Harnden', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 2
+		
 	},
 	{
 		name: 'Epping',
-		skip: 'John Epping',
-		third: 'Matt Camm',
-		second: 'Patrick Janssen',
-		lead: 'Tim March',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'John Epping', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Matt Camm', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Patrick Janssen', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Tim March', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 3
+		
 	},
 	{
 		name: 'Gushue',
-		skip: 'Brad Gushue',
-		third: 'Mark Nichols',
-		second: 'Brett Gallant',
-		lead: 'Geoff Walker',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Brad Gushue', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Mark Nichols', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Brett Gallant', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Geoff Walker', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 4
+		
 	},
 	{
 		name: 'Carruthers',
-		skip: 'Reid Carruthers',
-		third: 'Braeden Moskowy',
-		second: 'Derek Samalgaski',
-		lead: 'Colin Hodgson',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Reid Carruthers', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Braeden Moskowy', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Derek Samalgaski', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Colin Hodgson', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 5
+		
 	},
 	{
 		name: 'Bottcher',
-		skip: 'Brendan Bottcher',
-		third: 'Darren Moulding',
-		second: 'Brad Thiessen',
-		lead: 'Karrick Martin',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Brendan Bottcher', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Darren Moulding', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Brad Thiessen', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Karrick Martin', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 6
+		
 	},
 	{
 		name: 'Ulsrud',
-		skip: 'Thomas Ulsrud',
-		third: 'Torger Nergaard',
-		second: 'Christopher Svae',
-		lead: 'Haavard Vad Petersson',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Thomas Ulsrud', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Torger Nergaard', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Christopher Svae', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Haavard Vad Petersson', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 7
+		
 	},
 	{
 		name: 'Howard',
-		skip: 'Glenn Howard',
-		third: 'Richard Hart',
-		second: 'David Mathers',
-		lead: 'Scott Howard',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Glenn Howard', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Richard Hart', position: 'Third', image: 'default.png', throws: 'left', age: 27, resides: "Calgary, AB"},
+			{name:  'David Mathers', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Scott Howard', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 8
+		
 	},
 	{
 		name: 'Simmons',
-		skip: 'Pat Simmons',
-		third: 'Colton Lott',
-		second: 'Kyle Doering',
-		lead: 'Robbie Gordon',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Pat Simmons', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Colton Lott', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Kyle Doering', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Robbie Gordon', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 9
+		
 	},
 	 {
 		name: 'Laycock',
-		skip: 'Steve Laycock',
-		third: 'Kirk Muyres',
-		second: 'Matt Dunstone',
-		lead: 'Dallan Muyres',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Steve Laycock', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Kirk Muyres', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Matt Dunstone', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Dallan Muyres', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 10
+		
 	},
 	 {
 		name: 'Koe',
-		skip: 'Kevin Koe',
-		third: 'Marc Kennedy',
-		second: 'Brent Laing',
-		lead: 'Ben Hebert',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Kevin Koe', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Marc Kennedy', position: 'Third', image: 'default.png', throws: 'left', age: 27, resides: "Calgary, AB"},
+			{name:  'Brent Laing', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Ben Hebert', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 11
+		
 	},
 	 {
 		name: 'Heidt',
-		skip: 'Kody Hartung',
-		third: 'Josh Heidt',
-		second: 'Tyler Hartung',
-		lead: 'Kelly Knapp',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Kody Hartung', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Josh Heidt', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Tyler Hartung', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Kelly Knapp', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 12
+		
 	},
 	 {
 		name: 'Balsdon',
-		skip: 'Greg Balsdon',
-		third: 'Don Bowser',
-		second: 'Jonathon Beuk',
-		lead: 'Scott Chadwick',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Greg Balsdon', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Don Bowser', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Jonathon Beuk', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Scott Chadwick', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 13
+		
 	},
 	 {
 		name: 'Edin',
-		skip: 'Niklas Edin',
-		third: 'Oskar Eriksson',
-		second: 'Rasmus Wrana',
-		lead: 'Christoffer Sundgren',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Niklas Edin', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Oskar Eriksson', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Rasmus Wrana', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Christoffer Sundgren', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 14
+		
 	},
 	 {
 		name: 'Smith',
-		skip: 'Kyle Smith',
-		third: 'Thomas Muirhead',
-		second: 'Kyle Waddell',
-		lead: 'Cammy Smith',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Kyle Smith', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Thomas Muirhead', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Kyle Waddell', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Cammy Smith', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 15
+		
 	},
 	 {
 		name: 'Shuster',
-		skip: 'John Shuster',
-		third: 'Tyler George',
-		second: 'Matt Hamilton',
-		lead: 'John Landsteiner',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'John Shuster', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Tyler George', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Matt Hamilton', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'John Landsteiner', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 16
+		
 	},
 	 {
 		name: 'Gunnlaugson',
-		skip: 'Jason Gunnlaugson',
-		third: 'Alex Forrest',
-		second: 'Ian McMillan',
-		lead: 'Connor Njegovan',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Jason Gunnlaugson', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Alex Forrest', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Ian McMillan', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Connor Njegovan', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 17
+		
 	},
 	 {
 		name: 'Morris',
-		skip: 'Jim Cotter',
-		third: 'John Morris',
-		second: 'Katlin Schneider',
-		lead: 'Tyrell Griffith',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Jim Cotter', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'John Morris', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Katlin Schneider', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Tyrell Griffith', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 18
+		
 	},
 	 {
 		name: 'McCormick',
-		skip: 'Heath McCormick',
-		third: 'Christopher Plys',
-		second: 'Korey Dropkin',
-		lead: 'Thomas Howell',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Heath McCormick', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Christopher Plys', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Korey Dropkin', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Thomas Howell', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 19
+		
 	},
 	 {
 		name: 'Walstad',
-		skip: 'Steffen Walstad',
-		third: 'Markus Hoiberg',
-		second: 'Magnus Negrotten',
-		lead: 'Magnus Vagberg',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Steffen Walstad', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Markus Hoiberg', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Magnus Negrotten', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Magnus Vagberg', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 20
+		
 	},
 	 {
 		name: 'Homan',
-		skip: 'Rachel Homan',
-		third: 'Emma Miskew',
-		second: 'Joanne Courtney',
-		lead: 'Lisa Weagle',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Rachel Homan', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Emma Miskew', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Joanne Courtney', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Lisa Weagle', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'women',
+		location: 'Winnipeg, MB',
 		teamId: 21
+		
 	},
 	 {
 		name: 'Kleibrink',
-		skip: 'Shannon Kleibrink',
-		third: 'Sarah Wilkes',
-		second: 'Kalynn Park',
-		lead: 'Alison Thiessen',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Shannon Kleibrink', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Sarah Wilkes', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Kalynn Park', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Alison Thiessen', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'women',
+		location: 'Winnipeg, MB',
 		teamId: 22
+		
 	},
 	 {
 		name: 'Jones',
-		skip: 'Jennifer Jones',
-		third: 'Kaitlyn Lawes',
-		second: 'Jill Officer',
-		lead: 'Dawn Mcewen',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Jennifer Jones', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Kaitlyn Lawes', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Jill Officer', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Dawn Mcewen', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'women',
+		location: 'Winnipeg, MB',
 		teamId: 23
+		
 	},
 	{
 		name: 'Thomas',
-		skip: 'Charley Thomas',
-		third: 'Mick Lizmore',
-		second: 'Brandon Klassen',
-		lead: 'DJ Kidby',
-		location: 'Winnipeg, MB',
+		players: [
+			{name: 'Charley Thomas', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'Mick Lizmore', position: 'Third', image: 'default.png', throws: 'Right', age: 27, resides: "Calgary, AB"},
+			{name:  'Brandon Klassen', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'DJ Kidby', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
 		category: 'men',
+		location: 'Winnipeg, MB',
 		teamId: 24
 	},
 	{
 		name: 'Thiessen/Thiessen',
-		skip: 'Alison Thiessen',
-		third: 'Brad Thiessen',
+		players: [
+			{name: 'Alison Thiessen', position: 'Skip', image: 'default.png', throws: 'Right'},
+			{name: 'Brad Thiessen', position: 'Third', image: 'default.png', throws: 'left'}
+		],
 		location: 'Winnipeg, MB',
 		category: 'mixed-doubles',
 		teamId: 25
 	},
 	{
 		name: 'Thomas/Park',
-		skip: 'Charley Thomas',
-		third: 'Kalynn Park',
-		type: 'Mixed Doubles',
-		location: 'Winnipeg, MB',
-		category: 'mixed-doubles',
-		teamId: 25
-	},	
-	{
-		name: 'Bottcher/Sauder',
-		skip: 'Brendan Bottcher',
-		third: 'Bobby Sauder',
-		type: 'Mixed Doubles',
+		players: [
+			{name: 'Charley Thomas', position: 'Skip', image: 'default.png', throws: 'Right'},
+			{name: 'Kalynn Park', position: 'Third', image: 'default.png', throws: 'Right'}
+		],
 		location: 'Winnipeg, MB',
 		category: 'mixed-doubles',
 		teamId: 26
 	},	
 	{
-		name: 'Homan/Morris',
-		skip: 'Rachel Homan',
-		third: 'John Morris',
-		type: 'Mixed Doubles',
+		name: 'Bottcher/Sauder',
+		players: [
+			{name: 'Brendan Bottcher', position: 'Skip', image: 'default.png', throws: 'Right'},
+			{name: 'Bobby Sauder', position: 'Third', image: 'default.png', throws: 'Right'}
+		],
 		location: 'Winnipeg, MB',
 		category: 'mixed-doubles',
 		teamId: 27
 	},	
 	{
-		name: 'Miskew/Fry',
-		skip: 'Emma Miskew',
-		third: 'Ryan Fry',
-		type: 'Mixed Doubles',
+		name: 'Homan/Morris',
+		players: [
+			{name: 'Rachel Homan', position: 'Skip', image: 'default.png', throws: 'Right'},
+			{name: 'John Morris', position: 'Third', image: 'default.png', throws: 'Right'}
+		],
 		location: 'Winnipeg, MB',
 		category: 'mixed-doubles',
 		teamId: 28
 	},	
 	{
-		name: 'Sweeting/Gushue',
-		skip: 'Val Sweeting',
-		third: 'Brad Gushue',
-		type: 'Mixed Doubles',
-		location: 'Winnipeg, MB',
-		category: 'mixed-doubles',
-		teamId: 32
-	},	
-	{
-		name: 'Laing/Jones',
-		skip: 'Jennifer Jones',
-		third: 'Brent Laing',
-		type: 'Mixed Doubles',
+		name: 'Miskew/Fry',
+		players: [
+			{name: 'Emma Miskew', position: 'Skip', image: 'default.png', throws: 'Right'},
+			{name: 'Ryan Fry', position: 'Third', image: 'default.png', throws: 'Right'}
+		],
 		location: 'Winnipeg, MB',
 		category: 'mixed-doubles',
 		teamId: 29
+	},	
+	{
+		name: 'Sweeting/Gushue',
+		players: [
+			{name: 'Val Sweeting', position: 'Skip', image: 'default.png', throws: 'Right'},
+			{name: 'Brad Gushue', position: 'Third', image: 'default.png', throws: 'Right'}
+		],
+		category: 'Mixed Doubles',
+		location: 'Winnipeg, MB',
+		category: 'mixed-doubles',
+		teamId: 30
+	},	
+	{
+		name: 'Laing/Jones',
+		players: [
+			{name: 'Jennifer Jones', position: 'Skip', image: 'default.png', throws: 'Right'},
+			{name: 'Brent Laing', position: 'Third', image: 'default.png', throws: 'Right'}
+		],
+		location: 'Winnipeg, MB',
+		category: 'mixed-doubles',
+		teamId: 31
 	},
 	{
 		name: 'Ferguson/Ferguson',
-		skip: 'Turd Ferguson',
-		third: 'Turd Ferguson',
-		type: 'Mixed Doubles',
+		players: [
+			{name: 'Turd Ferguson', position: 'Skip', image: 'default.png', throws: 'Right'},
+			{name: 'Turd Ferguson', position: 'Third', image: 'default.png', throws: 'Right'}
+		],
 		location: 'Winnipeg, MB',
 		category: 'mixed-doubles',
-		teamId:30
+		teamId:32
 	}
 ]
 
@@ -325,13 +406,16 @@ CategoriesArray = [
 var Team = function() {};
 Team.prototype.data = {};
 
-Team.fetchTeamById = function(id){
-	return TeamArray[id];
+Team.fetchTeamById = function(teamId){
+	//make this more robust
+	return TeamArray.filter(function(el) {
+		return el.teamId == teamId;
+	})[0];
 }
 Team.fetchTeams = function(category){
 	return TeamArray.filter(function(el) {
 		return el.category == category 
-	})[0];
+	});
 	return TeamArray;
 }
 Team.fetchCategories = function() {

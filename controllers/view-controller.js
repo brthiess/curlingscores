@@ -2,6 +2,7 @@ Competition = require('../models/competition.js');
 var Game = require('../models/game.js');
 var Ranking = require('../models/rankings.js');
 var Schedule = require('../models/schedule.js');
+var Teams = require('../models/team.js');
 //Is given the competition ID and returns the current scores as a view
 exports.getScoresView = function(req, res, next){
 	var competitions = Competition.fetchCurrentCompetitions();
@@ -32,4 +33,10 @@ exports.getScheduleView = function(req, res, next) {
 	req.app.set('layout', false);
 	schedule.events = Schedule.convertEventDatesToSimple(schedule.events);
 	res.render('partials/schedule/schedule-table', {schedule: schedule});
+}
+
+exports.getTeamsView = function(req, res, next){
+	req.app.set('layout', false);
+	var teams = Teams.fetchTeams(req.params.category);
+	res.render('partials/team/teams-table', {teams: teams});
 }

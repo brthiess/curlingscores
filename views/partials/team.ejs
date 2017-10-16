@@ -1,0 +1,27 @@
+<section class='single-team-section'>
+	<div class='single-team-header'>
+		<h2>Team <%- team.name %></h2>
+		<h4><%- team.location %></h4>
+	</div>
+	<div class='single-team-players-container'>
+		<% for(var player in team.players){ %>
+			<div class='single-team-player'>
+				<div class='single-team-player-image'>
+					<img src='/images/players/<%- team.players[player].image %>'/>
+				</div>
+				<div class='single-team-player-info-container'>
+					<div class='single-team-player-name'>
+						<%- team.players[player].name %>
+					</div>
+					<div class='single-team-player-info'>
+						<div class='single-team-player-stat'><span class='single-team-player-info-label'>Position:</span><%- team.players[player].position %></div>
+						<% if(team.players[player].throws != null) { %><div class='single-team-player-stat'><span class='single-team-player-info-label'>Throws:</span><%- team.players[player].throws %></div> <% } %>
+						<% if(team.players[player].resides != null) { %><div class='single-team-player-stat'><span class='single-team-player-info-label'>Resides:</span><%- team.players[player].resides %></div><% } %>
+						<% if(team.players[player].age != null) { %><div class='single-team-player-stat'><span class='single-team-player-info-label'>Age:</span><%- team.players[player].age %></div><% } %>
+						
+					</div>
+				</div>
+			</div>
+		<% } %>
+	</div>
+</section>

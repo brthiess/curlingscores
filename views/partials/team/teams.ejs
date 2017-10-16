@@ -4,7 +4,7 @@
 			<h2>Teams</h2>
 			<div class='team-select-container'>
 				<div class='select-wrapper team-select-wrapper'>
-					<select class='team-select' data-id='team-year' onchange='updateTeamsTable(this.value)'>
+					<select class='team-select' data-id='team-year' onchange='updateTeamsTable(this.value, <%- (typeof replaceHistory !== "undefined" && replaceHistory ? "true" : "false") %>)'>
 						<% for(var category in categories) { %>
 							<option value='<%- categories[category].url %>' <%- (currentCategory == categories[category].url ? " selected " : ""); %> ><%- categories[category].name %></option>
 						<% } %>

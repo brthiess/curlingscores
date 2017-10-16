@@ -20,7 +20,7 @@
 				for (var team in rankings.rankings) { %>
 					<tr>
 						<td class='rankings-table-data rankings-table-data-rank'><%- rankings.rankings[team].rank %></td>
-						<td class='rankings-table-data rankings-table-data-name'><%- rankings.rankings[team].name %> <span class='rankings-table-data-location'> <span class='hidden-mini-tablets'>-</span> <%- rankings.rankings[team].location %></span></td>
+						<td class='rankings-table-data rankings-table-data-name'><a href='/teams/<%- rankings.rankings[team].teamId %>'><%- rankings.rankings[team].name %></a> <span class='rankings-table-data-location'> <span class='hidden-mini-tablets'>-</span> <%- rankings.rankings[team].location %></span></td>
 						<td class='rankings-table-data rankings-table-data-points'><%- rankings.rankings[team].ytdPoints.toFixed(3) %></td>
 						<td class='rankings-table-data rankings-table-data-points'><%- rankings.rankings[team].totalPoints.toFixed(3) %></td>
 					</tr>
@@ -30,7 +30,4 @@
 	</div>
 	<div class='rankings-money-section'>
 	</div>
-	<% if(typeof showLinkToFullRankings != "undefined") { %>
-		<a class='rankings-link' href='/rankings/'>See Full Rankings</a>
-	<% } %>
 </div>

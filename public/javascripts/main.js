@@ -33,7 +33,6 @@ function refreshDrawScores(){
 				$("[data-game-id='" + game + "']").find("[data-end]").html(end);
 				$("[data-game-id='" + game + "']").find("[data-hammer1]").html((data.games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : ""));
 				$("[data-game-id='" + game + "']").find("[data-hammer2]").html((!data.games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : ""));
-				console.log(data.games[game].team1CurrentHammer);
 			}
 			setTimeout(refreshDrawScores, 10000);
 		});
@@ -141,15 +140,19 @@ window.onpopstate = function(event) {
 	if(modalOpen == false && modalHistoryShowsItsOpen()){
 		showModalWithGameView(history.state.gameId, history.state.modalTitle);
 	}
+
 }
 
 /* rankings */
-function updateRankingsTable(number, year, category){
+function updateRankingsTable(number, year, category, replaceHistory){
 	$("[data-id='rankings-table']").addClass("loading");
 	getRankingsView(number, year, category, function(data, err){
 		$("[data-id='rankings-table']").removeClass("loading");
 		if(err == undefined){
 			$("[data-id='rankings-table']").replaceWith(data);
+			if(replaceHistory != null && replaceHistory == true) {
+				history.replaceState({}, "", "/rankings/" + category + "/" + year + "/");
+			}
 		}
 		else {
 			//error
@@ -158,12 +161,31 @@ function updateRankingsTable(number, year, category){
 }
 
 /* schedule */
-function updateScheduleTable(year, category){
+function updateScheduleTable(year, category, replaceHistory){
 	$("[data-id='schedule-table']").addClass("loading");
 	getScheduleView(year, category, function(data, err){
 		$("[data-id='schedule-table']").removeClass("loading");
 		if(err == undefined){
 			$("[data-id='schedule-table']").replaceWith(data);
+			if(replaceHistory != null && replaceHistory == true) {
+				history.replaceState({}, "", "/schedule/" + category + "/" + year + "/");
+			}
+		}
+		else {
+			//error
+		}
+	});
+}
+
+function updateTeamsTable(category, replaceHistory){
+	$("[data-id='teams-table']").addClass("loading");
+	getTeamsView(category, function(data, err){
+		$("[data-id='teams-table']").removeClass("loading");
+		if(err == undefined){
+			$("[data-id='teams-table']").replaceWith(data);
+			if(replaceHistory != null && replaceHistory == true) {
+				history.replaceState({}, "", "/teams/" + category + "/");
+			}
 		}
 		else {
 			//error

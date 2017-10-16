@@ -9,6 +9,7 @@
 @non-touchscreens: ~"only screen and (min-width: 1030px)";
 @tablets:    ~"only screen and (max-width: 1029px)";
 @tablets-only:    ~"only screen and (max-width: 1029px) and (min-width: 720px)";
+@medium-tablets: ~"only screen and (max-width: 850px)";
 @mini-tablets:    ~"only screen and (max-width: 719px)";
 @mini-mini-tablets:    ~"only screen and (max-width: 600px)";
 @smartphones:    ~"only screen and (max-width: 479px)";
@@ -33,6 +34,9 @@ a {
 	&:hover {
 		color: darken(@main, 20%);
 	}
+}
+p {
+	font-size: 18px;
 }
 table {
 	border-collapse: collapse;
@@ -174,13 +178,20 @@ display:none !important;
 		background-color: rgba(255,255,255,0.9);
 		background-image: url(/images/loading.svg);
 		background-repeat: no-repeat;
-		background-position: center 40%;
+		background-position: center 200px;
 		background-size: 200px;
 		@media @smartphones {
-			background-position: center 20%;
+			background-position: center 100px;
 		}
 	}
 	
+}
+.full-link {
+	position: absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
 }
 
 /* General Section Styles */
@@ -717,9 +728,11 @@ display:none !important;
 	}
 }
 .rankings-link {
+    background: white;
+    margin: 0;
+    padding: 10px 0 10px;
 	display: block;
-    text-align: center;
-    margin: 10px 0 0;
+	text-align: center;
 }
 /* masonry */
 .masonry {
@@ -826,7 +839,8 @@ display:none !important;
 .game-team-details-team {
 	font-size: 0;
 	margin-bottom: 30px;
-	width: 50%;
+	width: 100%;
+	padding: 0;
 	display: inline-block;
 	&:first-child { //If you change here, also remember to change &.mixed-doubles
 		padding-right:20px;
@@ -841,10 +855,6 @@ display:none !important;
 		&:last-child {
 			padding-left:0px;
 		}
-	}
-	@media @tablets {
-		width: 100%;
-		padding: 0;
 	}
 	&.mixed-doubles {
 		width: 50%;
@@ -898,12 +908,7 @@ display:none !important;
 		width: 100%;
 		border-radius: 50%;
 	}
-	@media @non-touchscreens {
-		width: 100px;
-	}
-	@media @tablets {
-		width: 110px;
-	}
+	width: 110px;
 	@media @mini-tablets {
 		width: 90px;
 	}
@@ -958,11 +963,138 @@ display:none !important;
 .team-section {
 	background-color: rgba(50,150,120, 1);
 }
-.team-table-data-image {
-	width: 80px;
+.team-image {
+	width: 127px;
 	img {
 		width: 100%;
+		border-radius: 50%;
 	}
+}
+.teams-container {
+	font-size: 0;
+}
+.team-container-wrapper {
+	width: 50%;
+	margin: 15px 0;
+	display:inline-block;
+	text-align: center;
+	@media @medium-tablets {
+		width: 450px;
+		margin: 25px auto;
+		display: block;
+		text-align: left;
+	}
+	@media @smartphones {
+		width: 100%;
+	}
+}
+.team-container {
+	display: inline-flex;
+	position: relative;
+	padding: 20px 30px;
+	text-align: left;
+	&:hover {
+		background: #eee;
+	}
+	@media @smartphones {
+		padding: 0;
+	}
+	@media @tiny-smartphones {
+		flex-flow: column;
+	}
+}
+.team-name {
+	margin: 0 0 0 10px;
+}
+.team-name-link {
+	font-size: 18px;
+	display:block;
+	margin-bottom: 7px;
+	@media @tiny-smartphones {
+		font-size: 16px;
+	}
+}
+.team-location {
+	color: #666;
+	font-size: 14px;
+}
+.team-player {
+	font-size: 15px;
+}
+.team-player-position{
+    color: #666;
+    width: 55px;
+    display: inline-block;
+	font-size: 14px;
+}
+
+/* team */
+.single-team-section {
+	padding: 40px 20px;
+	max-width: 1100px;
+	margin: auto;
+}
+.single-team-header{
+	padding: 0 0 30px;
+	text-align: center;
+	h2 {
+		font-size: 32px;
+	}
+	h4 {
+		font-size: 20px;
+		color: #666;
+	}
+	@media @tablets {
+		text-align:left;
+	}
+}
+.single-team-players-container {
+	font-size: 0;
+}
+.single-team-player {
+    width: 50%;
+    display: inline-flex;
+    padding: 20px;
+	align-items: center;
+	@media @medium-tablets {
+		width :100%;
+	}
+	@media @tiny-smartphones {
+		flex-flow: column;
+		align-items: start;
+	}
+}
+.single-team-player-image {
+    width: 130px;
+	img {
+		width: 100%;
+		border-radius: 50%;
+	}
+	@media @smartphones {
+		width: 110px;
+	}
+}
+.single-team-player-info-container {
+	margin: 0 0 0 10px;
+}
+.single-team-player-name {
+    font-size: 20px;
+	font-weight: bold;
+	@media @smartphones {
+		font-size: 16px;
+	}	
+}
+.single-team-player-info {
+    font-size: 18px;
+    margin-top: 5px;
+	@media @smartphones {
+		font-size: 14px;
+	}
+}
+.single-team-player-info-label {
+    color: #666;
+    width: 80px;
+    display: inline-block;
 }
 
 /* footer */
