@@ -23,9 +23,13 @@ exports.getRankingsView = function(req, res, next) {
 	if(req.params.number == null){
 		req.params.number = 20;
 	}
+	if(req.params.showType == null){
+		req.params.showType = 'oom';
+	}
 	var rankings = Ranking.fetchTopRankings(req.params.number, req.params.category, req.params.year)
+	rankings.showType = req.params.showType;
 	req.app.set('layout', false);
-	res.render('partials/ranking/rankings-table', {rankings: rankings});
+	res.render('partials/ranking/rankings-table', {rankings: rankings, });
 }
 
 exports.getScheduleView = function(req, res, next) {

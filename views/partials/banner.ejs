@@ -1,3 +1,8 @@
-<section class='banner' style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(/images/banner.jpg);'>
-	<h1 class='banner-title'></h1>
+<section class='banner' style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(/images/banner.jpg);'>
+	<% for (var slide in slides) { %>
+		<h2 class='banner-title'><%- slides[slide].title %></h2>
+		<h5 class='banner-subtitle'><%- slides[slide].subtitle %></h5>
+		<a href='banner-button button'><%- slides[slide].buttonTitle %></a>
+	<% } %>
+	
 </section>

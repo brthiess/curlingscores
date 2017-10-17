@@ -9,7 +9,7 @@ router.get('/scores/:competitionId', viewController.getScoresView);
 router.get('/games/:gameId', viewController.getModalGameView);
 
 
-router.get('/rankings/:category/:year/:number?', viewController.getRankingsView);
+router.get('/rankings/:showType/:category/:year/:number?', viewController.getRankingsView);
 
 router.get('/schedule/:category/:year', viewController.getScheduleView);
 

@@ -26,10 +26,10 @@ function getGameModalView(gameId, callback) {
 	}, 2000);
 }
 
-function getRankingsView(number, year, category, callback){
+function getRankingsView(type, number, year, category, callback){
 	setTimeout(function() {$.ajax({
 		method: "GET",
-		url: "/views/rankings/" + category + "/" + year + "/" + number,
+		url: "/views/rankings/" + type + "/" + category + "/" + year + "/" + number,
 		success: function(data) {
 			callback(data);
 		},

@@ -702,6 +702,12 @@ display:none !important;
 .rankings-select {
 	width: 100%;
 }
+.rankings-type-section {
+	display:none;
+	&.active {
+		display: block;
+	}
+}
 .rankings-table-data {
 	padding: 3px 10px;
     border-bottom: 1px solid #e3e3e3;
@@ -1095,6 +1101,23 @@ display:none !important;
     color: #666;
     width: 80px;
     display: inline-block;
+}
+
+
+/* contact */
+.contact-banner {
+	height: 50vh;
+	h1 {
+		top: 29%;
+		@media @mini-tablets{
+			top: 30%;
+			font-size: 50px;
+		}
+		@media @smartphones {
+			font-size: 40px;
+		}
+	}
+	
 }
 
 /* footer */

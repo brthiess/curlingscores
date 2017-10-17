@@ -144,20 +144,28 @@ window.onpopstate = function(event) {
 }
 
 /* rankings */
-function updateRankingsTable(number, year, category, replaceHistory){
+function updateRankingsTable(type, number, year, category, replaceHistory){
 	$("[data-id='rankings-table']").addClass("loading");
-	getRankingsView(number, year, category, function(data, err){
+	getRankingsView(type, number, year, category, function(data, err){
 		$("[data-id='rankings-table']").removeClass("loading");
 		if(err == undefined){
 			$("[data-id='rankings-table']").replaceWith(data);
 			if(replaceHistory != null && replaceHistory == true) {
-				history.replaceState({}, "", "/rankings/" + category + "/" + year + "/");
+				history.replaceState({}, "", "/rankings/" + type + "/" + category + "/" + year + "/");
 			}
 		}
 		else {
 			//error
 		}
 	});
+}
+
+function showOnRankings(type, year, category, replaceHistory ){
+	$("[data-rankings-type]").removeClass('active');
+	$("[data-rankings-type=" + type + "]").addClass('active');
+	if(replaceHistory != null && replaceHistory == true) {
+		history.replaceState({}, "", "/rankings/" + type + "/" + category + "/" + year + "/");
+	}
 }
 
 /* schedule */

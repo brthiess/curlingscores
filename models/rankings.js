@@ -94,7 +94,7 @@ var RankingsArray = [
 			{
 				location: 'British Columbia',
 				name: 'John Morris',
-				money: '',
+				money: 0,
 				totalPoints: 297.393,
 				ytdPoints: 77.990,
 				teamId: 18
@@ -840,18 +840,38 @@ Rankings.prototype.data = {};
 
 Rankings.fetchTopRankings = function(number, category, year){
 	var cloneRankingsArray = JSON.parse(JSON.stringify(RankingsArray.slice(0)));
+	var cloneMoneyArray = JSON.parse(JSON.stringify(RankingsArray.slice(0)));
+	
 	//TODO: Make sure this is more robust when checking for [0]
 	var newRankingsArray = cloneRankingsArray.filter(function(el) {
 		return el.category == category && el.year == year;
 	})[0];
+	var newMoneyArray = cloneRankingsArray.filter(function(el) {
+		return el.category == category && el.year == year;
+	})[0];
 
+	
 	newRankingsArray.rankings.sort(function(a, b){
 		return a.totalPoints - b.totalPoints;
 	}).reverse();
+	newMoneyArray.rankings.sort(function(a,b) {
+		return a.money - b.money;
+	}).reverse();
+	
 	
 	newRankingsArray.rankings.forEach(function (ranking, i) {
 		ranking.rank = i + 1;
 	});
+	newMoneyArray.rankings.forEach(function (ranking, i) {
+		ranking.rank = i + 1;
+		if(ranking.money == ''){
+			ranking.money = 0;
+		}
+	});
+	
+	
+
+	newRankingsArray.money = newMoneyArray.rankings.slice(0, number);
 	newRankingsArray.rankings = newRankingsArray.rankings.slice(0, number);
 	return newRankingsArray;
 }

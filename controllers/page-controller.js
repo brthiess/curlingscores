@@ -2,8 +2,8 @@ var Competition = require('../models/competition.js');
 var Social = require('../models/social.js');
 var Rankings = require('../models/rankings.js');
 var Schedule = require('../models/schedule.js');
-var Teams = require('../models/team.js')
-
+var Teams = require('../models/team.js');
+var Slides = require('../models/slide.js');
 
 //Home page
 exports.index = function(req, res, next) {
@@ -14,9 +14,12 @@ exports.index = function(req, res, next) {
 	var standings = Competition.fetchStandings(featuredCompetitionId);
 	var socialMedia = Social.fetchRecentPosts(10);
 	var rankings = Rankings.fetchTopRankings(20, 'men', 2018);
+	rankings.showType = 'oom';
 	var rankingsCategories = Rankings.fetchCategories();
+	var slides = Slides.getSlides();
+	console.log(slides);
 	req.app.set('layout', 'layouts/layout');
-	res.render('index', {competitions: competitions, competition: featuredDraw, activeCompetitionId: featuredCompetitionId, activeDrawId: featuredDraw.drawId, standings: standings, rankings: rankings, categories: rankingsCategories, showLinkToFullRankings: true, title: "World Curling Tour", posts: socialMedia, numRankings: 20});
+	res.render('index', {competitions: competitions, competition: featuredDraw, activeCompetitionId: featuredCompetitionId, activeDrawId: featuredDraw.drawId, standings: standings, rankings: rankings, categories: rankingsCategories, showLinkToFullRankings: true, title: "World Curling Tour", posts: socialMedia, numRankings: 20, slides: slides});
 };
 
 exports.schedule = function(req, res, next){
@@ -54,7 +57,11 @@ exports.rankings = function(req, res, next){
 	if(req.params.year == null){
 		req.params.year = 2018;
 	}
+	if(req.params.showType == null){
+		req.params.showType = 'oom';
+	}
 	var rankings = Rankings.fetchTopRankings(2000, req.params.category, req.params.year);
+	rankings.showType = req.params.showType;
 	var rankingsCategories = Rankings.fetchCategories();
 	res.render('partials/ranking/rankings', {rankings: rankings, categories: rankingsCategories, replaceHistory: true, numRankings: 1000});
 }
@@ -64,14 +71,18 @@ exports.teams = function(req, res, next){
 		req.params.category = 'men';
 	}
 	req.app.set('layout', 'layouts/layout');
-	req.app.set('layout', 'layouts/layout');
 	var teams = Teams.fetchTeams(req.params.category);
 	var teamCategories = Teams.fetchCategories();
 	res.render('partials/team/teams', {teams: teams, categories: teamCategories, currentCategory: req.params.category, replaceHistory: true});
 }
 
 exports.team = function(req, res, next){
+	req.app.set('layout', 'layouts/layout');
 	var team = Teams.fetchTeamById(req.params.teamId);
-	console.log(req.params.teamId);
 	res.render('partials/team', {team: team});
+}
+
+exports.contact = function(req, res, next){
+	req.app.set('layout', 'layouts/layout');
+	res.render('contact', {title: "Contact WCT"});
 }
