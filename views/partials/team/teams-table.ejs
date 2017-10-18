@@ -6,7 +6,7 @@
 				<div class='team-container'>
 					<a class='full-link' href="/teams/<%- teams[team].teamId %>/"></a>
 					<div class='team-image'>
-						<img src='/images/players/default.png'/>
+						<img src='/images/players/<%- (teams[team].image != null && teams[team].image != "" ? teams[team].image : "default.png"); %>'/>
 					</div>
 					<div class='team-name'>
 						<a class='team-name-link' href="/teams/<%- teams[team].teamId %>/"><%- teams[team].name %> <span class='team-location'> - <%- teams[team].location %></span></a>

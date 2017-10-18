@@ -753,7 +753,7 @@ GameArray = {
 		team2LeadPercentage: 95,
 		team1TotalPercentage: 92,
 		team2TotalPercentage: 85,
-		percentagesAvailable: false
+		percentagesAvailable: true
 	},
 	52: {
 		team1Hammer: true,
@@ -795,7 +795,7 @@ GameArray = {
 		team2LeadPercentage: 95,
 		team1TotalPercentage: 92,
 		team2TotalPercentage: 85,
-		percentagesAvailable: false
+		percentagesAvailable: true
 	},
 	54: {
 		team1Hammer: true,
@@ -816,7 +816,7 @@ GameArray = {
 		team2LeadPercentage: 95,
 		team1TotalPercentage: 92,
 		team2TotalPercentage: 85,
-		percentagesAvailable: false
+		percentagesAvailable: true
 	}
 }
 

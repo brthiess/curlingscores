@@ -1,5 +1,4 @@
 2. Add brackets on scoreboard
-3. Get home page new carousel working
 4. Change header so it's more like codrops or that other sports website?
 7. Get all pages working
 8. Add team ids to rankings
@@ -8,7 +7,8 @@
 13. Make the whole schedule row clickable instead of just name?
 14. auto update scores modal
 15. Link to full rankings, make sure it goes to correct category/year
-16. Make sure mixed doubles is working with percentages
 17. Don't hardcode year in page-controller
-18. Add darkened image to background for twitter section
 19. On rankings page, when you switch category and then choose money or oom, it no longer refreshes url
+20.  Get swipe working on mobile homepage carousel
+21. Teams page on mobile could use slight work
+22. Add ability to select draw on scoreboard

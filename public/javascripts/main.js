@@ -201,6 +201,11 @@ function updateTeamsTable(category, replaceHistory){
 	});
 }
 
+/* slider */
+function showSlide(id){
+	$("[data-slide-id]").removeClass("active");
+	$("[data-slide-id=" + id + "]").addClass("active");
+}
 /********
 Functions 
 *********/

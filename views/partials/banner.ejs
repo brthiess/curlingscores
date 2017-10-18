@@ -1,8 +1,18 @@
-<section class='banner' style='background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url(/images/banner.jpg);'>
-	<% for (var slide in slides) { %>
-		<h2 class='banner-title'><%- slides[slide].title %></h2>
-		<h5 class='banner-subtitle'><%- slides[slide].subtitle %></h5>
-		<a href='banner-button button'><%- slides[slide].buttonTitle %></a>
-	<% } %>
-	
+<section class='banner'>
+	<% var i = 0;
+		for (var slide in slides) { %>
+		<div data-slide-id='<%- slides[slide].newsId %>' class='slide-container slide <%- ( i == 0 ? "active" : "") %> ' style='background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.8)), url(/images/banners/<%- slides[slide].image %>);'>
+			<div class='banner-text-container'>
+				<h2 class='banner-title'><%- slides[slide].title %></h2>
+				<h5 class='banner-subtitle'><%- slides[slide].subtitle %></h5>
+				<div class='banner-button-container'> <a href='news/<%- slides[slide].newsId %>' class='button'><%- slides[slide].buttonTitle %></a></div>
+			</div>
+		</div>
+	<% i++;} %>
+	<div class='slider-buttons-container'>
+	<% var i = 0;
+		for (var slide in slides) { %>
+		<button data-slide-id='<%- slides[slide].newsId %>' type='button' class='slider-button <%- ( i == 0 ? "active" : "") %> ' onclick='showSlide(<%- slides[slide].newsId %>)'></button>
+	<% i++;} %>
+	</div>
 </section>

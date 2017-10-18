@@ -9,7 +9,8 @@ TeamArray = [
 			],
 		category: 'men',
 		location: 'Winnipeg, MB',
-		teamId: 1
+		teamId: 1,
+		image: 'mcewen.jpg'
 		
 	},
 	{
@@ -22,7 +23,8 @@ TeamArray = [
 			],
 		category: 'men',
 		location: 'Winnipeg, MB',
-		teamId: 2
+		teamId: 2,
+		image: 'jacobs.jpg'
 		
 	},
 	{
@@ -35,7 +37,8 @@ TeamArray = [
 			],
 		category: 'men',
 		location: 'Winnipeg, MB',
-		teamId: 3
+		teamId: 3,
+		image: 'epping.jpg'
 		
 	},
 	{
@@ -48,7 +51,8 @@ TeamArray = [
 			],
 		category: 'men',
 		location: 'Winnipeg, MB',
-		teamId: 4
+		teamId: 4,
+		image: 'gushue.jpg'
 		
 	},
 	{
@@ -269,7 +273,8 @@ TeamArray = [
 			],
 		category: 'women',
 		location: 'Winnipeg, MB',
-		teamId: 21
+		teamId: 21,
+		image: 'homan.jpg'
 		
 	},
 	 {
@@ -282,7 +287,8 @@ TeamArray = [
 			],
 		category: 'women',
 		location: 'Winnipeg, MB',
-		teamId: 22
+		teamId: 22,
+		image: 'kleibrink.jpg'
 		
 	},
 	 {
@@ -295,7 +301,8 @@ TeamArray = [
 			],
 		category: 'women',
 		location: 'Winnipeg, MB',
-		teamId: 23
+		teamId: 23,
+		image: 'jones.jpg'
 		
 	},
 	{
