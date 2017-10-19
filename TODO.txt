@@ -9,6 +9,6 @@
 15. Link to full rankings, make sure it goes to correct category/year
 17. Don't hardcode year in page-controller
 19. On rankings page, when you switch category and then choose money or oom, it no longer refreshes url
-20.  Get swipe working on mobile homepage carousel
+20.  Get swipe working on scoreboard
 21. Teams page on mobile could use slight work
 22. Add ability to select draw on scoreboard
