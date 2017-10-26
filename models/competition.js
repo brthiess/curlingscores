@@ -1,5 +1,6 @@
 var CompetitionArray = {
 		1: { 
+			type: "bracket",
 			name: "Tour Challenge", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:00:00 GMT-0600"), 

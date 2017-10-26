@@ -1,0 +1,6 @@
+<% if (competition.type == null || competition.type == "round-robin") { %>
+	<% include standings %>
+<% } 
+else if (competition.type == "bracket") { %>
+	<% include bracket %>
+<% } %>

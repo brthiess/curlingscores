@@ -703,6 +703,7 @@ display:none !important;
 	color: @main;
 	padding: 0 0 3px 0;
     overflow: hidden;
+	
 	&:after {
 		content:"";
 		position:absolute;
@@ -717,6 +718,12 @@ display:none !important;
 	}
 	@media @mini-tablets {
 		font-size: 14px;
+	}
+	&.scores-final {
+		color: #333;
+		&:after {
+			display: none;
+		}
 	}
 }
 

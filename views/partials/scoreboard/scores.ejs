@@ -21,7 +21,7 @@
 							<div data-score2 class='scores-score'><%- games[game].score2 %></div>
 						</div>
 					</div>
-					<div data-end class='scores-end-container'>
+					<div data-end class='scores-end-container <%- (games[game].over ? " scores-final " : "") %>'>
 						<%- (games[game].over ? "Final (" + games[game].end + ")" : functions.ordinal_suffix_of(games[game].end) + " end") %>
 					</div>						
 				</div>
