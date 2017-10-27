@@ -4,11 +4,13 @@
 		<div class='tabs'>
 			<h3 class='tab-title active' data-scoreboard-section='scores' onclick='showOnScoreboard("scores");'>Scores</h3>
 			<h3 class='tab-title' data-scoreboard-section='standings' onclick='showOnScoreboard("standings");'><%- (competition.type == null || competition.type == "round-robin" ? "Standings" : "Bracket") %></h3>
-			<h3 class='tab-title' data-scoreboard-section='bracket' onclick='showOnScoreboard("playoffs");'>Playoffs</h3>
+			<h3 class='tab-title' data-scoreboard-section='playoffs' onclick='showOnScoreboard("playoffs");'>Playoffs</h3>
 		</div>
 	</div>
-	<% include scores %>
-	<% include standing-bracket %>
-	<% include playoffs %>
+	<div class='scores-info-wrapper'>
+		<% include scores %>
+		<% include standing-bracket %>
+		<% include playoffs %>
+	</div>
 	
 </div>

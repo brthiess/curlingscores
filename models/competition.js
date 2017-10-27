@@ -16,7 +16,7 @@ var CompetitionArray = {
 				},
 				2: {time: new Date("Sun Sep 24 2017 17:00:00 GMT-0600"), 
 					games: {
-					11: {team1: 'Mike Mcewen', team2: 'Brad Jacobs', score1: 2, score2: 4,	 end: '5', over: false, team1CurrentHammer: (parseInt((new Date()).getTime()) % 2 == 0)},
+					11: {team1: 'Mike Mcewen', team2: 'Brad Jacobs', score1: 2, score2: 8,	 end: '5', over: true, team1CurrentHammer: (parseInt((new Date()).getTime()) % 2 == 0)},
 					12: {team1: 'John Epping', team2: 'Jason Gunnlaugson', score1: 9, score2: 2,	 end: '8', over: false, team1CurrentHammer: (parseInt((new Date()).getTime()) % 2 == 0)},
 					13: {team1: 'Niklas Edin', team2: 'Kevin Koe', score1: 7, score2: 4,	 end: '4', over: false, team1CurrentHammer: true},
 					14: {team1: 'Brendan Bottcher', team2: 'Brad Gushue', score1: 1, score2: 4,	 end: '6', over: false, team1CurrentHammer: ((new Date()).getTime() % 2 == 0)},
@@ -494,6 +494,7 @@ Competition.fetchCurrentDraw = function(competitionId) {
 			}
 		}
 	}
+	currentDraw.type = CompetitionArray[competitionId].type;
 	currentDraw.name = CompetitionArray[competitionId].name;
 	currentDraw.competitionId = competitionId;
 	currentDraw.drawId = currentDrawId;
