@@ -3,7 +3,7 @@
 8. Add team ids to rankings
 9. get better favicon
 11. Fix tables on small smartphones
-14. auto update scores modal
+14. auto update scores modal -- Do this later
 15. Link to full rankings, make sure it goes to correct category/year
 17. Don't hardcode year in page-controller
 19. On rankings page, when you switch category and then choose money or oom, it no longer refreshes url
@@ -12,3 +12,4 @@
 22. Add ability to select draw on scoreboard
 23. Get Event page working.
 24. Get links on bracket working
+25. Add cursor pointer to slideshow buttons

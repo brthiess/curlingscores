@@ -6,7 +6,9 @@
 				<div class='banner-text-container'>
 					<h2 class='banner-title'><%- slides[slide].title %></h2>
 					<h5 class='banner-subtitle'><%- slides[slide].subtitle %></h5>
-					<div class='banner-button-container'> <a href='news/<%- slides[slide].newsId %>' class='button'><%- slides[slide].buttonTitle %></a></div>
+					<% if (slides[slide].buttonTitle != null && slides[slide].buttonTitle != "") { console.log(slides[slide].buttonTitle); %>
+						<div class='banner-button-container'> <a href='news/<%- slides[slide].newsId %>' class='button'><%- slides[slide].buttonTitle %></a></div>
+					<% } %>
 				</div>
 			</li>
 		<% i++;} %>

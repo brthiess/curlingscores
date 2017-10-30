@@ -1,5 +1,7 @@
 var dateFormat = require('dateformat');
 var functions = require('../includes/functions.js');
+
+var DefaultImage = "default-event.jpg";
 var ScheduleArray = [
 		{
 			category: 'men',
@@ -116,6 +118,19 @@ var ScheduleArray = [
 					champion: 'Jason Gunnlaugson',
 					eventId: 11
 				},
+				
+				{
+					name: 'College Clean Restoration Classic',
+					location: 'Saskatoon, SK',
+					purse: 33000,
+					currency: 'CDN',
+					startDate: 'September 29, 2017',
+					endDate: 'October 2, 2017',
+					champion: 'Colton Flasch',
+					eventId: 12,
+					image: 'flasch.jpg'
+						
+				}
 			]
 		},
 		{
@@ -131,7 +146,7 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'October 6, 2017',
 					champion: 'Rachel Homan',
-					eventId: 12
+					eventId: 44
 				},
 				{
 					name: 'Spider Performance Icebreaker at The Granite',
@@ -348,7 +363,7 @@ var ScheduleArray = [
 					startDate: 'September 21, 2017',
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
-					eventId: 32
+					eventId: 33
 				},
 			]
 		},
@@ -365,7 +380,7 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'August 6, 2017',
 					champion: 'John Morris',
-					eventId: 33
+					eventId: 45
 				},
 				{
 					name: 'Spider Performance Icebreaker at The Granite',
@@ -482,7 +497,7 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'October 6, 2017',
 					champion: 'Rachel Homan',
-					eventId: 12
+					eventId: 55
 				},
 				{
 					name: 'Spider Performance Icebreaker at The Granite',
@@ -492,7 +507,7 @@ var ScheduleArray = [
 					startDate: 'August 25, 2017',
 					endDate: 'August 27, 2017',
 					champion: 'Jennifer Jones',
-					eventId: 13
+					eventId: 56
 				},
 				{
 					name: 'Baden Masters',
@@ -502,7 +517,7 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 3, 2017',
 					champion: 'Val Sweeting',
-					eventId: 14
+					eventId: 57
 				},
 				{
 					name: 'GSOC Tour Challenge Tier 1',
@@ -512,7 +527,7 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
-					eventId: 15
+					eventId: 58
 				},
 				{
 					name: 'Stu Sells Oakville Tankard',
@@ -522,7 +537,7 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
-					eventId: 16
+					eventId: 59
 				},
 				{
 					name: 'GSOC Tour Challenge Tier 2',
@@ -542,7 +557,7 @@ var ScheduleArray = [
 					startDate: 'September 14, 2017',
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
-					eventId: 18
+					eventId: 60
 				},
 				{
 					name: 'King Cash Spiel',
@@ -552,7 +567,7 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
-					eventId: 19
+					eventId: 61
 				},
 				{
 					name: 'Biosteel Oakville Fall Classic',
@@ -562,7 +577,7 @@ var ScheduleArray = [
 					startDate: 'September 8, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
-					eventId: 20
+					eventId: 62
 				},
 				{
 					name: 'AMJ Campbell Shorty Jenkins Classic',
@@ -572,7 +587,7 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
-					eventId: 21
+					eventId: 63
 				},
 				{
 					name: 'Mother Club Fall Curling Classic',
@@ -582,7 +597,7 @@ var ScheduleArray = [
 					startDate: 'September 21, 2017',
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
-					eventId: 22
+					eventId: 64
 				},
 			]
 		},
@@ -599,7 +614,7 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'October 6, 2017',
 					champion: 'Rachel Homan',
-					eventId: 12
+					eventId: 66
 				},
 				{
 					name: 'Spider Performance Icebreaker at The Granite',
@@ -609,7 +624,7 @@ var ScheduleArray = [
 					startDate: 'August 25, 2017',
 					endDate: 'August 27, 2017',
 					champion: 'Jennifer Jones',
-					eventId: 13
+					eventId: 67
 				},
 				{
 					name: 'Baden Masters',
@@ -619,7 +634,7 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 3, 2017',
 					champion: 'Val Sweeting',
-					eventId: 14
+					eventId: 68
 				},
 				{
 					name: 'GSOC Tour Challenge Tier 1',
@@ -629,7 +644,7 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
-					eventId: 15
+					eventId: 69
 				},
 				{
 					name: 'Stu Sells Oakville Tankard',
@@ -639,7 +654,7 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
-					eventId: 16
+					eventId: 70
 				},
 				{
 					name: 'GSOC Tour Challenge Tier 2',
@@ -649,7 +664,7 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
-					eventId: 17
+					eventId: 71
 				},
 				{
 					name: 'AMJ Campbell Shorty Jenkins Classic',
@@ -659,7 +674,7 @@ var ScheduleArray = [
 					startDate: 'September 14, 2017',
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
-					eventId: 18
+					eventId: 73
 				},
 				{
 					name: 'King Cash Spiel',
@@ -669,7 +684,7 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
-					eventId: 19
+					eventId: 74
 				},
 				{
 					name: 'Biosteel Oakville Fall Classic',
@@ -679,7 +694,7 @@ var ScheduleArray = [
 					startDate: 'September 8, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
-					eventId: 20
+					eventId: 75
 				},
 				{
 					name: 'AMJ Campbell Shorty Jenkins Classic',
@@ -689,7 +704,7 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
-					eventId: 21
+					eventId: 76
 				},
 				{
 					name: 'Mother Club Fall Curling Classic',
@@ -699,7 +714,7 @@ var ScheduleArray = [
 					startDate: 'September 21, 2017',
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
-					eventId: 22
+					eventId: 77
 				},
 			]
 		}
@@ -747,6 +762,23 @@ Schedule.fetchCategories = function(){
 	return ScheduleCategories;
 }
 
+Schedule.fetchEvent = function(eventId){
+	for(var s in ScheduleArray){
+		if (ScheduleArray[s].events != null){
+			for(var i = 0; i < ScheduleArray[s].events.length; i++){
+				if(ScheduleArray[s].events[i].eventId == eventId){
+					if (ScheduleArray[s].events[i].image == null){
+						ScheduleArray[s].events[i].image = DefaultImage;
+					}
+					ScheduleArray[s].events[i].dateString = Schedule.getDateString(ScheduleArray[s].events[i].startDate, ScheduleArray[s].events[i].endDate);
+					return ScheduleArray[s].events[i];
+				}
+			}
+		}
+	}
+	return false;
+}
+
 Schedule.convertEventDatesToSimple = function(events) {
 	for(var event in events) {
 		events[event].startDate = dateFormat(new Date(events[event].startDate), "mmm d");
@@ -758,6 +790,17 @@ Schedule.convertEventDatesToSimple = function(events) {
 		}
 	}
 	return events;
+}
+
+Schedule.getDateString = function(startDate, endDate){
+	startDate = dateFormat(new Date(startDate), "mmm d");
+	if (functions.isSameMonth(startDate, endDate)) { 
+		endDate = dateFormat(new Date(endDate), "d, yyyy")
+	}
+	else {
+		endDate = dateFormat(new Date(endDate), "mmm d, yyyy")
+	}
+	return startDate + " - " + endDate;
 }
 
 module.exports = Schedule;

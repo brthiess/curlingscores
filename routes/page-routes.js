@@ -16,4 +16,6 @@ router.get('/teams/:category?', controller.teams);
 
 router.get('/contact', controller.contact);
 
+router.get('/events/:eventId', controller.event);
+
 module.exports = router;

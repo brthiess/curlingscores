@@ -205,9 +205,16 @@ function updateTeamsTable(category, replaceHistory){
 $(document).ready(function() {
 	$(".slide-wrapper").slick({
 		arrows: false,
-		dots: true
+		dots: ($("[data-slide-id]").length > 1 ? true : false)
 	});
 });
+
+/* brackets */
+
+function activateBracket(level){
+	$('[data-bracket-level]').removeClass('active');
+	$('[data-bracket-level=' + level +']').addClass('active');
+}
 /********
 Functions 
 *********/
@@ -226,5 +233,3 @@ function ordinal_suffix_of(i) {
 	return i + "th";
 }
 
-
-/* scoreboard swiping */

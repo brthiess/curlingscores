@@ -488,6 +488,7 @@ display:none !important;
 }
 .competition-list-container {
 	position: relative;
+	flex: 0 0 200px;
 	.left-arrow {
 		left: 0;
 	}
@@ -580,6 +581,10 @@ display:none !important;
 	flex: 1;
 	border-left: 1px solid #ccc;
 	padding: 10px 0 40px;
+	background-color: white;
+	@media @non-touchscreens{
+		width: ~"calc(100% - 200px)";
+	}
 }
 .scores-container .scores-info-container {
 	display: none;
@@ -604,9 +609,13 @@ display:none !important;
     padding: 5px 0;
     text-transform: uppercase;
 }
-.scores-info-container.scores-bracket-wrapper {
-	overflow: scroll;
+.scores-bracket-wrapper {
+	overflow-x: scroll;
 	padding: 0;
+	display:none;
+	&.active {
+		display:block;
+	}
 }
 .scores-bracket-container {
 	min-width: 700px;
@@ -616,13 +625,33 @@ display:none !important;
 	img {
 		display: block;
 	}
-	font {
+	font.teams, font.date{
 		color: #444;
 		display: flex;
 		flex-wrap: wrap;
 		align-items:center;
 		padding: 10px 0 0;
 		min-width: 130px;
+	}
+}
+.bracket-level {
+    display: inline-block;
+    padding: 7px 31px;
+    margin: 0 20px;
+    box-shadow: 0 1px 3px 1px rgba(211,211,211,0.7);
+    background: #f2f2f2;
+	cursor: pointer;
+	&.active {
+		outline: 4px solid #6b9cc3;
+	}
+	@media @mini-tablets {
+		padding: 7px 20px;
+		margin: 0 15px;
+	}
+	@media @smartphones {
+		width: 100%;
+		margin: 7px 0;
+		padding: 10px 20px;
 	}
 }
 .brackets-game-number {
@@ -1276,6 +1305,24 @@ a.teams {
     display: inline-block;
 }
 
+/* event */
+.event-banner {
+	.banner-title {
+		font-size: 40px;
+	}
+	.banner-subtitle {
+		font-size: 25px;
+	}
+}
+.event-section {
+	padding: 50px 20px;
+    background: #f4f4f4;
+	.scores-container {
+		border-left: 0;
+		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	}
+}
+
 
 /* contact */
 .contact-banner {
@@ -1292,6 +1339,8 @@ a.teams {
 	}
 	
 }
+
+
 
 /* footer */
 footer {
