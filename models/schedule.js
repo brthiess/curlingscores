@@ -2,6 +2,37 @@ var dateFormat = require('dateformat');
 var functions = require('../includes/functions.js');
 
 var DefaultImage = "default-event.jpg";
+var DefaultChampions = [
+	{name: 'Colton Flasch', location: 'Saskatoon, SK', year: 2017},
+		{year: 2016	, name: 'Brad Jacobs	', location: 'Sault Ste Marie, NONT'},
+		{year: 2015	, name: 'Mike McEwen	', location: 'Winnipeg, MB'},
+		{year: 2014	, name: 'Mike McEwen	', location: 'Winnipeg, MB'},
+		{year: 2013	, name: 'Jeff Stoughton	', location: 'Winnipeg, MB'},
+		{year: 2012	, name: 'John Epping	', location: 'Toronto, ON'},
+		{year: 2011	, name: 'Mike McEwen	', location: 'Winnipeg, MB'},
+		{year: 2010	, name: 'Dave Elias	', location: 'Winnipeg, MB'},
+		{year: 2009	, name: 'Brad Heidt	', location: 'Kindersley, SK'},
+		{year: 2008	, name: 'Eugene Hritzuk	', location: 'Saskatoon, SK'},
+		{year: 2007	, name: 'Randy Woytowich	', location: 'Saskatoon, SK'},
+		{year: 2006	, name: 'Brian Humble	', location: 'Saskatoon, SK'},
+		{year: 2005	, name: 'Glen Despins	', location: 'Regina, SK'},
+		{year: 2004	, name: 'Randy Ferbey	', location: 'Edmonton, AB'},
+		{year: 2003	, name: 'Scott Coghlan	', location: 'Saskatoon, SK'},
+		{year: 2002	, name: 'Kevin Koe	', location: 'Calgary, AB'},
+		{year: 2001	, name: 'Bruce Korte	', location: 'Saskatoon, SK'},
+		{year: 2000	, name: 'Kevin Park	', location: 'Edmonton, AB'},
+		{year: 1999	, name: 'Glen Despins	', location: 'Regina, SK'},
+		{year: 1998	, name: 'Doug Harcourt	', location: 'Quill Lake, SK'},
+		{year: 1997	, name: 'Doug Harcourt	', location: 'Quill Lake, SK'},
+		{year: 1996	, name: 'Wayne Middaugh	', location: 'Toronto, ON'},
+		{year: 1995	, name: 'Brad Heidt	', location: 'Kerrobert, SK'},
+		{year: 1994	, name: 'Murray McEachern	', location: 'Kronau, SK'},
+		{year: 1993	, name: 'Mickey Pendergast	', location: 'Calgary, AB'},
+		{year: 1992	, name: 'Al Hackner	', location: 'Thunder Bay, ON'},
+		{year: 1979	, name: 'Paul Gowsell	', location: 'Calgary, AB'},
+		{year: 1978	, name: 'Paul Gowsell	', location: 'Calgary, AB'},
+		{year: 1977	, name: 'Paul Gowsell	', location: 'Calgary, AB'}
+]
 var ScheduleArray = [
 		{
 			category: 'men',
@@ -16,7 +47,9 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'August 6, 2017',
 					champion: 'Kim, SooHyuk',
-					eventId: 1
+					eventId: 1,
+					format: 'Triple Knockout',
+					teams: 24,
 				},
 				{
 					name: 'Spider Performance Icebreaker at The Granite',
@@ -26,6 +59,8 @@ var ScheduleArray = [
 					startDate: 'August 25, 2017',
 					endDate: 'August 27, 2017',
 					champion: 'Braden Calvert',
+					format: 'Triple Knockout',
+					teams: 24,
 					eventId: 2
 				},
 				{
@@ -36,6 +71,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 3, 2017',
 					champion: 'Niklas Edin',
+					format: 'Triple Knockout',
+					teams: 24,
 					eventId: 3
 				},
 				{
@@ -46,6 +83,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 4
 				},
 				{
@@ -56,6 +95,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 5
 				},
 				{
@@ -66,6 +107,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 6
 				},
 				{
@@ -76,6 +119,8 @@ var ScheduleArray = [
 					startDate: 'September 14, 2017',
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 7
 				},
 				{
@@ -86,6 +131,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
+					format: 'Round Robin',
+					teams: 16,
 					eventId: 8
 				},
 				{
@@ -96,6 +143,8 @@ var ScheduleArray = [
 					startDate: 'September 8, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 9
 				},
 				{
@@ -106,6 +155,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 10
 				},
 				{
@@ -116,6 +167,8 @@ var ScheduleArray = [
 					startDate: 'September 21, 2017',
 					endDate: 'October 24, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 11
 				},
 				
@@ -127,6 +180,8 @@ var ScheduleArray = [
 					startDate: 'September 29, 2017',
 					endDate: 'October 2, 2017',
 					champion: 'Colton Flasch',
+					format: 'Triple Knockout',
+					teams: 24,
 					eventId: 12,
 					image: 'flasch.jpg'
 						
@@ -146,6 +201,8 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'October 6, 2017',
 					champion: 'Rachel Homan',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 44
 				},
 				{
@@ -156,6 +213,8 @@ var ScheduleArray = [
 					startDate: 'August 25, 2017',
 					endDate: 'August 27, 2017',
 					champion: 'Braden Calvert',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 13
 				},
 				{
@@ -166,6 +225,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 3, 2017',
 					champion: 'Niklas Edin',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 14
 				},
 				{
@@ -176,6 +237,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 15
 				},
 				{
@@ -186,6 +249,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 16
 				},
 				{
@@ -196,6 +261,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 17
 				},
 				{
@@ -206,6 +273,8 @@ var ScheduleArray = [
 					startDate: 'September 14, 2017',
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 18
 				},
 				{
@@ -216,6 +285,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 19
 				},
 				{
@@ -226,6 +297,8 @@ var ScheduleArray = [
 					startDate: 'September 8, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 20
 				},
 				{
@@ -236,6 +309,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 21
 				},
 				{
@@ -246,6 +321,8 @@ var ScheduleArray = [
 					startDate: 'September 21, 2017',
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 22
 				},
 			]
@@ -263,6 +340,8 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'August 6, 2017',
 					champion: 'Kim, SooHyuk',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 23
 				},
 				{
@@ -273,6 +352,8 @@ var ScheduleArray = [
 					startDate: 'August 25, 2017',
 					endDate: 'August 27, 2017',
 					champion: 'Braden Calvert',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 24
 				},
 				{
@@ -283,6 +364,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 3, 2017',
 					champion: 'Niklas Edin',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 25
 				},
 				{
@@ -293,6 +376,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 26
 				},
 				{
@@ -303,6 +388,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 27
 				},
 				{
@@ -313,6 +400,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 28
 				},
 				{
@@ -323,6 +412,8 @@ var ScheduleArray = [
 					startDate: 'September 14, 2017',
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 29
 				},
 				{
@@ -333,6 +424,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 30
 				},
 				{
@@ -343,6 +436,8 @@ var ScheduleArray = [
 					startDate: 'September 8, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 31
 				},
 				{
@@ -353,6 +448,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 32
 				},
 				{
@@ -363,6 +460,8 @@ var ScheduleArray = [
 					startDate: 'September 21, 2017',
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 33
 				},
 			]
@@ -380,6 +479,8 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'August 6, 2017',
 					champion: 'John Morris',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 45
 				},
 				{
@@ -390,6 +491,8 @@ var ScheduleArray = [
 					startDate: 'August 25, 2017',
 					endDate: 'August 27, 2017',
 					champion: 'Braden Calvert',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 34
 				},
 				{
@@ -400,6 +503,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 3, 2017',
 					champion: 'Niklas Edin',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 35
 				},
 				{
@@ -410,6 +515,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 36
 				},
 				{
@@ -420,6 +527,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 37
 				},
 				{
@@ -430,6 +539,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 38
 				},
 				{
@@ -440,6 +551,8 @@ var ScheduleArray = [
 					startDate: 'September 14, 2017',
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 39
 				},
 				{
@@ -450,6 +563,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 40
 				},
 				{
@@ -460,6 +575,8 @@ var ScheduleArray = [
 					startDate: 'September 8, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 41
 				},
 				{
@@ -470,6 +587,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 42
 				},
 				{
@@ -480,6 +599,8 @@ var ScheduleArray = [
 					startDate: 'September 21, 2017',
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 43
 				},
 			]
@@ -497,6 +618,8 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'October 6, 2017',
 					champion: 'Rachel Homan',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 55
 				},
 				{
@@ -507,6 +630,8 @@ var ScheduleArray = [
 					startDate: 'August 25, 2017',
 					endDate: 'August 27, 2017',
 					champion: 'Jennifer Jones',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 56
 				},
 				{
@@ -517,6 +642,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 3, 2017',
 					champion: 'Val Sweeting',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 57
 				},
 				{
@@ -527,6 +654,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 58
 				},
 				{
@@ -537,6 +666,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 59
 				},
 				{
@@ -547,6 +678,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 17
 				},
 				{
@@ -557,6 +690,8 @@ var ScheduleArray = [
 					startDate: 'September 14, 2017',
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 60
 				},
 				{
@@ -567,6 +702,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 61
 				},
 				{
@@ -577,6 +714,8 @@ var ScheduleArray = [
 					startDate: 'September 8, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 62
 				},
 				{
@@ -587,6 +726,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 63
 				},
 				{
@@ -597,6 +738,8 @@ var ScheduleArray = [
 					startDate: 'September 21, 2017',
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 64
 				},
 			]
@@ -614,6 +757,8 @@ var ScheduleArray = [
 					startDate: 'August 3, 2017',
 					endDate: 'October 6, 2017',
 					champion: 'Rachel Homan',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 66
 				},
 				{
@@ -624,6 +769,8 @@ var ScheduleArray = [
 					startDate: 'August 25, 2017',
 					endDate: 'August 27, 2017',
 					champion: 'Jennifer Jones',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 67
 				},
 				{
@@ -634,6 +781,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 3, 2017',
 					champion: 'Val Sweeting',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 68
 				},
 				{
@@ -644,6 +793,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 69
 				},
 				{
@@ -654,6 +805,8 @@ var ScheduleArray = [
 					startDate: 'September 1, 2017',
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 70
 				},
 				{
@@ -664,6 +817,8 @@ var ScheduleArray = [
 					startDate: 'September 5, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 71
 				},
 				{
@@ -674,6 +829,8 @@ var ScheduleArray = [
 					startDate: 'September 14, 2017',
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 73
 				},
 				{
@@ -684,6 +841,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 74
 				},
 				{
@@ -694,6 +853,8 @@ var ScheduleArray = [
 					startDate: 'September 8, 2017',
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 75
 				},
 				{
@@ -704,6 +865,8 @@ var ScheduleArray = [
 					startDate: 'September 15, 2017',
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 76
 				},
 				{
@@ -714,6 +877,8 @@ var ScheduleArray = [
 					startDate: 'September 21, 2017',
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
+					format: 'Round Robin',
+					teams: 24,
 					eventId: 77
 				},
 			]
@@ -771,6 +936,7 @@ Schedule.fetchEvent = function(eventId){
 						ScheduleArray[s].events[i].image = DefaultImage;
 					}
 					ScheduleArray[s].events[i].dateString = Schedule.getDateString(ScheduleArray[s].events[i].startDate, ScheduleArray[s].events[i].endDate);
+					ScheduleArray[s].events[i].champions = DefaultChampions;
 					return ScheduleArray[s].events[i];
 				}
 			}

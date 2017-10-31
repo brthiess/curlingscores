@@ -1317,12 +1317,54 @@ a.teams {
 .event-section {
 	padding: 50px 20px;
     background: #f4f4f4;
+	font-size: 0;
 	.scores-container {
 		border-left: 0;
 		box-shadow: 0 0 10px rgba(0,0,0,0.5);
+		width: 100%;
 	}
 }
-
+.event-main-column {
+	max-width: ~"calc(100% - 360px)";
+	display:inline-block;
+	vertical-align: top;
+}
+.event-secondary-column {
+    margin: 0 0 0 40px;
+    width: 320px;
+    display: inline-block;
+    vertical-align: top;
+}
+.event-information-wrapper {
+	background:white;
+	&:first-child {
+		margin: 0;
+	}
+	margin: 20px 0;
+	box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+.event-information-container {
+    padding: 15px;
+}
+.event-information-header {
+	padding: 15px;
+    background: #456f91;
+    color: white;
+    font-size: 24px;
+}
+.event-information {
+	padding: 5px 0;
+	&:first-child {
+		padding-top: 0;
+	}
+}
+.event-information-label {
+	font-size: 20px;
+}
+.event-information-data {
+	font-size: 17px;
+	font-weight: 300;
+}
 
 /* contact */
 .contact-banner {
