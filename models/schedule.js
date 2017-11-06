@@ -1,5 +1,6 @@
 var dateFormat = require('dateformat');
 var functions = require('../includes/functions.js');
+var Team = require('../models/team.js');
 
 var DefaultImage = "default-event.jpg";
 var DefaultChampions = [
@@ -49,7 +50,7 @@ var ScheduleArray = [
 					champion: 'Kim, SooHyuk',
 					eventId: 1,
 					format: 'Triple Knockout',
-					teams: 24,
+					numTeams: 24,
 				},
 				{
 					name: 'Spider Performance Icebreaker at The Granite',
@@ -60,7 +61,7 @@ var ScheduleArray = [
 					endDate: 'August 27, 2017',
 					champion: 'Braden Calvert',
 					format: 'Triple Knockout',
-					teams: 24,
+					numTeams: 24,
 					eventId: 2
 				},
 				{
@@ -72,7 +73,7 @@ var ScheduleArray = [
 					endDate: 'September 3, 2017',
 					champion: 'Niklas Edin',
 					format: 'Triple Knockout',
-					teams: 24,
+					numTeams: 24,
 					eventId: 3
 				},
 				{
@@ -84,7 +85,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 4
 				},
 				{
@@ -96,7 +97,7 @@ var ScheduleArray = [
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 5
 				},
 				{
@@ -108,7 +109,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 6
 				},
 				{
@@ -120,7 +121,7 @@ var ScheduleArray = [
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 7
 				},
 				{
@@ -132,7 +133,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
 					format: 'Round Robin',
-					teams: 16,
+					numTeams: 16,
 					eventId: 8
 				},
 				{
@@ -144,7 +145,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 9
 				},
 				{
@@ -156,7 +157,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 10
 				},
 				{
@@ -168,7 +169,7 @@ var ScheduleArray = [
 					endDate: 'October 24, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 11
 				},
 				
@@ -181,7 +182,7 @@ var ScheduleArray = [
 					endDate: 'October 2, 2017',
 					champion: 'Colton Flasch',
 					format: 'Triple Knockout',
-					teams: 24,
+					numTeams: 24,
 					eventId: 12,
 					image: 'flasch.jpg'
 						
@@ -202,7 +203,7 @@ var ScheduleArray = [
 					endDate: 'October 6, 2017',
 					champion: 'Rachel Homan',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 44
 				},
 				{
@@ -214,7 +215,7 @@ var ScheduleArray = [
 					endDate: 'August 27, 2017',
 					champion: 'Braden Calvert',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 13
 				},
 				{
@@ -226,7 +227,7 @@ var ScheduleArray = [
 					endDate: 'September 3, 2017',
 					champion: 'Niklas Edin',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 14
 				},
 				{
@@ -238,7 +239,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 15
 				},
 				{
@@ -250,7 +251,7 @@ var ScheduleArray = [
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 16
 				},
 				{
@@ -262,7 +263,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 17
 				},
 				{
@@ -274,7 +275,7 @@ var ScheduleArray = [
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 18
 				},
 				{
@@ -286,7 +287,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 19
 				},
 				{
@@ -298,7 +299,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 20
 				},
 				{
@@ -310,7 +311,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 21
 				},
 				{
@@ -322,7 +323,7 @@ var ScheduleArray = [
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 22
 				},
 			]
@@ -341,7 +342,7 @@ var ScheduleArray = [
 					endDate: 'August 6, 2017',
 					champion: 'Kim, SooHyuk',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 23
 				},
 				{
@@ -353,7 +354,7 @@ var ScheduleArray = [
 					endDate: 'August 27, 2017',
 					champion: 'Braden Calvert',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 24
 				},
 				{
@@ -365,7 +366,7 @@ var ScheduleArray = [
 					endDate: 'September 3, 2017',
 					champion: 'Niklas Edin',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 25
 				},
 				{
@@ -377,7 +378,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 26
 				},
 				{
@@ -389,7 +390,7 @@ var ScheduleArray = [
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 27
 				},
 				{
@@ -401,7 +402,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 28
 				},
 				{
@@ -413,7 +414,7 @@ var ScheduleArray = [
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 29
 				},
 				{
@@ -425,7 +426,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 30
 				},
 				{
@@ -437,7 +438,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 31
 				},
 				{
@@ -449,7 +450,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 32
 				},
 				{
@@ -461,7 +462,7 @@ var ScheduleArray = [
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 33
 				},
 			]
@@ -480,7 +481,7 @@ var ScheduleArray = [
 					endDate: 'August 6, 2017',
 					champion: 'John Morris',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 45
 				},
 				{
@@ -492,7 +493,7 @@ var ScheduleArray = [
 					endDate: 'August 27, 2017',
 					champion: 'Braden Calvert',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 34
 				},
 				{
@@ -504,7 +505,7 @@ var ScheduleArray = [
 					endDate: 'September 3, 2017',
 					champion: 'Niklas Edin',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 35
 				},
 				{
@@ -516,7 +517,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 36
 				},
 				{
@@ -528,7 +529,7 @@ var ScheduleArray = [
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 37
 				},
 				{
@@ -540,7 +541,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 38
 				},
 				{
@@ -552,7 +553,7 @@ var ScheduleArray = [
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 39
 				},
 				{
@@ -564,7 +565,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 40
 				},
 				{
@@ -576,7 +577,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 41
 				},
 				{
@@ -588,7 +589,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 42
 				},
 				{
@@ -600,7 +601,7 @@ var ScheduleArray = [
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 43
 				},
 			]
@@ -619,7 +620,7 @@ var ScheduleArray = [
 					endDate: 'October 6, 2017',
 					champion: 'Rachel Homan',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 55
 				},
 				{
@@ -631,7 +632,7 @@ var ScheduleArray = [
 					endDate: 'August 27, 2017',
 					champion: 'Jennifer Jones',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 56
 				},
 				{
@@ -643,7 +644,7 @@ var ScheduleArray = [
 					endDate: 'September 3, 2017',
 					champion: 'Val Sweeting',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 57
 				},
 				{
@@ -655,7 +656,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 58
 				},
 				{
@@ -667,7 +668,7 @@ var ScheduleArray = [
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 59
 				},
 				{
@@ -679,7 +680,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 17
 				},
 				{
@@ -691,7 +692,7 @@ var ScheduleArray = [
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 60
 				},
 				{
@@ -703,7 +704,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 61
 				},
 				{
@@ -715,7 +716,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 62
 				},
 				{
@@ -727,7 +728,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 63
 				},
 				{
@@ -739,7 +740,7 @@ var ScheduleArray = [
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 64
 				},
 			]
@@ -758,7 +759,7 @@ var ScheduleArray = [
 					endDate: 'October 6, 2017',
 					champion: 'Rachel Homan',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 66
 				},
 				{
@@ -770,7 +771,7 @@ var ScheduleArray = [
 					endDate: 'August 27, 2017',
 					champion: 'Jennifer Jones',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 67
 				},
 				{
@@ -782,7 +783,7 @@ var ScheduleArray = [
 					endDate: 'September 3, 2017',
 					champion: 'Val Sweeting',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 68
 				},
 				{
@@ -794,7 +795,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Brad Gushue',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 69
 				},
 				{
@@ -806,7 +807,7 @@ var ScheduleArray = [
 					endDate: 'September 4, 2017',
 					champion: 'Mouat, Bruce',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 70
 				},
 				{
@@ -818,7 +819,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 71
 				},
 				{
@@ -830,7 +831,7 @@ var ScheduleArray = [
 					endDate: 'September 17, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 73
 				},
 				{
@@ -842,7 +843,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Geall, Sean',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 74
 				},
 				{
@@ -854,7 +855,7 @@ var ScheduleArray = [
 					endDate: 'September 10, 2017',
 					champion: 'Bruce Mouat',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 75
 				},
 				{
@@ -866,7 +867,7 @@ var ScheduleArray = [
 					endDate: 'September 18, 2017',
 					champion: 'Brad Jacobs',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 76
 				},
 				{
@@ -878,7 +879,7 @@ var ScheduleArray = [
 					endDate: 'September 24, 2017',
 					champion: 'Jason Gunnlaugson',
 					format: 'Round Robin',
-					teams: 24,
+					numTeams: 24,
 					eventId: 77
 				},
 			]
@@ -930,11 +931,14 @@ Schedule.fetchCategories = function(){
 Schedule.fetchEvent = function(eventId){
 	for(var s in ScheduleArray){
 		if (ScheduleArray[s].events != null){
+			var currentCategory = ScheduleArray[s].category;
 			for(var i = 0; i < ScheduleArray[s].events.length; i++){
 				if(ScheduleArray[s].events[i].eventId == eventId){
 					if (ScheduleArray[s].events[i].image == null){
 						ScheduleArray[s].events[i].image = DefaultImage;
 					}
+					ScheduleArray[s].events[i].teams = Team.fetchRandomTeams(ScheduleArray[s].numTeams, currentCategory);
+					ScheduleArray[s].events[i].category = currentCategory;
 					ScheduleArray[s].events[i].dateString = Schedule.getDateString(ScheduleArray[s].events[i].startDate, ScheduleArray[s].events[i].endDate);
 					ScheduleArray[s].events[i].champions = DefaultChampions;
 					return ScheduleArray[s].events[i];

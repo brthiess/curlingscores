@@ -428,5 +428,11 @@ Team.fetchTeams = function(category){
 Team.fetchCategories = function() {
 	return CategoriesArray;
 }
+Team.fetchRandomTeams = function(number, category){
+	var TeamArrayCategoryFiltered = TeamArray.filter(function(el) {
+		return el.category == category 
+	});
+	return TeamArrayCategoryFiltered.slice(number);
+}
 
 module.exports = Team;

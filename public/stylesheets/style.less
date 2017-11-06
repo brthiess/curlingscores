@@ -138,6 +138,12 @@ display:none !important;
 		display: initial;
 	}
 }
+.visible-tablets {
+	display:none !important;
+	@media @tablets {
+		display: block !important;
+	}
+}
 .hidden-mini-tablets {
 	@media @mini-tablets {
 		display: none !important;
@@ -1312,36 +1318,56 @@ a.teams {
 	}
 	.banner-subtitle {
 		font-size: 25px;
+		display:block;
 	}
 }
 .event-section {
 	padding: 50px 20px;
     background: #f4f4f4;
 	font-size: 0;
-	.scores-container {
+	.scores-container-container, .teams-table-container {
 		border-left: 0;
 		box-shadow: 0 0 10px rgba(0,0,0,0.5);
 		width: 100%;
+		margin: 0 0 40px;
+	}
+	.scores-container {
+		width: 100%;
+	}
+	.game-container {
+		@media @tablets {
+			width: 100%;
+		}
+	}
+	.team-container-wrapper {
+		width: 400px;
 	}
 }
 .event-main-column {
 	max-width: ~"calc(100% - 360px)";
 	display:inline-block;
 	vertical-align: top;
+	@media @tablets {
+		max-width: 100%;
+	}
 }
 .event-secondary-column {
     margin: 0 0 0 40px;
     width: 320px;
     display: inline-block;
     vertical-align: top;
+	@media @tablets {
+		width: 100%;
+		margin: 0;
+	}
 }
 .event-information-wrapper {
 	background:white;
-	&:first-child {
-		margin: 0;
-	}
-	margin: 20px 0;
+	margin: 0 0 40px;
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
+	&:first-child {
+		margin-top: 0;
+	}
 }
 .event-information-container {
     padding: 15px;
@@ -1353,9 +1379,42 @@ a.teams {
     font-size: 24px;
 }
 .event-information {
-	padding: 5px 0;
+	padding: 9px 0 0 35px;
+	position: relative;
 	&:first-child {
 		padding-top: 0;
+	}
+	&:before {
+		font-family: FontAwesome;
+		font-style: normal;
+		font-weight: normal;
+		text-decoration: inherit;
+		font-size: 25px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		color: @main;
+	}
+	&.event-information-location:before {
+		content: "\f041";
+	}
+	&.event-information-calendar:before {
+		content: "\f073";
+	}
+	&.event-information-purse:before {
+		content: "\f0d6";
+	}
+	&.event-information-format:before {
+		content: "\f0ca";
+	}
+	&.event-information-teams:before {
+		content: "\f0c0";
+	}
+	&.event-information-champion:before {
+		content: "\f091";
 	}
 }
 .event-information-label {
@@ -1364,6 +1423,28 @@ a.teams {
 .event-information-data {
 	font-size: 17px;
 	font-weight: 300;
+}
+.event-champion {
+	display:flex;
+	padding: 5px 0 0;
+}
+.event-champion-year {
+	display: flex;
+    align-items: center;
+    font-size: 20px;
+    margin: 0 10px 0 0;
+}
+.event-champion-name-location {
+	margin: 0 0 0 10px;
+}
+.event-champion-location {
+	font-size: 15px;
+	color: #666;
+	display: flex;
+    flex-flow: column;
+}
+.event-champion-name {
+	font-size: 16px;
 }
 
 /* contact */

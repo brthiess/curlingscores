@@ -91,6 +91,5 @@ exports.event = function(req, res, next){
 	req.app.set('layout', 'layouts/layout');
 	event = Schedule.fetchEvent(req.params.eventId);
 	competition = Competition.fetchCurrentDraw(req.params.eventId);
-
-	res.render('partials/event', {event: event, competition: competition, slides: new Array({title: event.name, subtitle: event.dateString, image: event.image}), title: event.name});
+	res.render('partials/event', {event: event, competition: competition, slides: new Array({title: event.name, subtitle: event.dateString, image: event.image}), teams: event.teams,  title: event.name});
 }

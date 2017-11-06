@@ -1,41 +1,29 @@
-<section class='event-information-wrapper'>
-	<div class='event-information-header'>
-		<%- event.name %>
+<h2 class='event-information-header'>
+	<%- event.name %>
+</h2>
+<div class='event-information-container'>
+	<div class='event-information event-information-location'>
+		<label class='event-information-label'>Location</label>
+		<div class='event-information-data'><%- event.location %></div>
 	</div>
-	<div class='event-information-container'>
-		<div class='event-information'>
-			<label class='event-information-label'>Location</label>
-			<div class='event-information-data'><%- event.location %></div>
-		</div>
-		<div class='event-information'>
-			<label class='event-information-label'>Date</label>
-			<div class='event-information-data'><%- event.dateString %></div>
-		</div>
-		<div class='event-information'>
-			<label class='event-information-label'>Purse</label>
-			<div class='event-information-data'>$<%- functions.numberWithCommas(event.purse) %> - (<%- event.currency %>)</div>
-		</div>
-		<div class='event-information'>
-			<label class='event-information-label'>Format</label>
-			<div class='event-information-data'><%- event.format %></div>
-		</div>
-		<div class='event-information'>
-			<label class='event-information-label'>Teams</label>
-			<div class='event-information-data'><%- event.teams %></div>
-		</div>
-		<div class='event-information'>
-			<label class='event-information-label'>Champion</label>
-			<div class='event-information-data'><%- event.champion %></div>
-		</div>
+	<div class='event-information event-information-calendar'>
+		<label class='event-information-label'>Date</label>
+		<div class='event-information-data'><%- event.dateString %></div>
 	</div>
-</section>
-<section class='event-information-wrapper'>
-	<div class='event-information-header'>
-		Past Champions
+	<div class='event-information event-information-purse'>
+		<label class='event-information-label'>Purse</label>
+		<div class='event-information-data'>$<%- functions.numberWithCommas(event.purse) %> - (<%- event.currency %>)</div>
 	</div>
-	<div class='event-information'>
-		<% for (var champion in event.champions) { %>
-			<%- event.champions[champion].name %>
-		<% } %>
+	<div class='event-information event-information-format'>
+		<label class='event-information-label'>Format</label>
+		<div class='event-information-data'><%- event.format %></div>
 	</div>
-</section>
+	<div class='event-information event-information-teams'>
+		<label class='event-information-label'>Teams</label>
+		<div class='event-information-data'><%- event.numTeams %></div>
+	</div>
+	<div class='event-information event-information-champion'>
+		<label class='event-information-label'>Champion</label>
+		<div class='event-information-data'><%- event.champion %></div>
+	</div>
+</div>
