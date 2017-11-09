@@ -1,5 +1,6 @@
 var AllCompetitionArray = {
 	1: { 
+			id: 1,
 			type: "bracket",
 			name: "Hokkaido Bank Curling Classic", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -28,6 +29,7 @@ var AllCompetitionArray = {
 			}
 		}, 
 		2: { 
+			id: 2,
 			name: "Spider Performance Icebreaker at The Granite", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:00:00 GMT-0600"), 
@@ -44,6 +46,7 @@ var AllCompetitionArray = {
 			}
 		}, 
 		3: { 
+			id: 3,
 			name: "Baden Masters", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:00:00 GMT-0600"), 
@@ -60,6 +63,7 @@ var AllCompetitionArray = {
 			}
 		}, 
 		4: { 
+			id: 4,
 			name: "GSOC Tour Challenge Tier 1", category : "Men's", icon : "4-man-team.png", location: 'Edmonton, AB', id: 1,
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:30:00 GMT-0600"), 
@@ -76,6 +80,7 @@ var AllCompetitionArray = {
 			}
 		}, 
 		99: { 
+			id: 99,
 			name: "Service Expert's Mixed Doubles Classic",  category : "Mixed Double's", icon : "2-man-team.png", location: 'Sherwood Park, AB', id: 1,
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:30:00 GMT-0600"), 
@@ -89,6 +94,7 @@ var AllCompetitionArray = {
 			}
 		},
 		5: { 
+			id: 5,
 			type: "bracket",
 			name: "Stu Sells Oakville Tankard", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -117,6 +123,7 @@ var AllCompetitionArray = {
 			}
 		},
 		6: { 
+			id: 6,
 			type: "bracket",
 			name: "GSOC Tour Challenge Tier 2", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -145,6 +152,7 @@ var AllCompetitionArray = {
 			}
 		},
 		7: { 
+			id: 7,
 			type: "bracket",
 			name: "AMJ Campbell Shorty Jenkins Classic", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -173,6 +181,7 @@ var AllCompetitionArray = {
 			}
 		},
 		8: { 
+			id: 8,
 			type: "bracket",
 			name: "King Cash Spiel", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -201,6 +210,7 @@ var AllCompetitionArray = {
 			}
 		},
 		9: { 
+			id: 9,
 			type: "bracket",
 			name: "Biosteel Oakville Fall Classic", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -229,6 +239,7 @@ var AllCompetitionArray = {
 			}
 		},
 		10: { 
+			id: 10,
 			type: "bracket",
 			name: "AMJ Campbell Shorty Jenkins Classic", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -257,6 +268,7 @@ var AllCompetitionArray = {
 			}
 		},
 		11: { 
+			id: 11,
 			type: "bracket",
 			name: "Mother Club Fall Curling Classic", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -285,6 +297,7 @@ var AllCompetitionArray = {
 			}
 		},
 		12: { 
+			id: 12,
 			type: "bracket",
 			name: "College Clean Restoration Classic", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -313,6 +326,7 @@ var AllCompetitionArray = {
 			}
 		},
 		44: { 
+			id: 44,
 			type: "bracket",
 			name: "Hokkaido Bank Curling Classic", category : "Women's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -341,6 +355,7 @@ var AllCompetitionArray = {
 			}
 		},
 		13: { 
+			id: 13,
 			type: "bracket",
 			name: "Spider Performance Icebreaker at The Granite", category : "Women's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -371,6 +386,7 @@ var AllCompetitionArray = {
 };
 var CompetitionArray = {
 		1: { 
+			id: 1,
 			type: "bracket",
 			name: "Tour Challenge", category : "Men's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
@@ -399,6 +415,7 @@ var CompetitionArray = {
 			}
 		}, 
 		2: { 
+			id: 2,
 			name: "Tour Challenge", category : "Women's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:00:00 GMT-0600"), 
@@ -415,6 +432,7 @@ var CompetitionArray = {
 			}
 		}, 
 		3: { 
+			id: 3,
 			name: "HDF Shootout", category : "Women's", icon : "4-man-team.png", location: 'Regina, SK', id: 1,
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:00:00 GMT-0600"), 
@@ -431,6 +449,7 @@ var CompetitionArray = {
 			}
 		}, 
 		4: { 
+			id: 4,
 			name: "HDF Shootout", category : "Women's", icon : "4-man-team.png", location: 'Edmonton, AB', id: 1,
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:30:00 GMT-0600"), 
@@ -447,6 +466,7 @@ var CompetitionArray = {
 			}
 		}, 
 		5: { 
+			id: 5,
 			name: "Service Expert's Mixed Doubles Classic",  category : "Mixed Double's", icon : "2-man-team.png", location: 'Sherwood Park, AB', id: 1,
 			draws: {
 				1: {time: new Date("Sun Sep 24 2017 14:30:00 GMT-0600"), 
@@ -850,6 +870,9 @@ Competition.fetchCurrentCompetitions = function(){
 	return CompetitionArray;
 }
 
+Competition.fetchAllDraws = function(competitionId){
+	return AllCompetitionArray[competitionId].draws;
+}
 //Return current draw of given competition ID
 Competition.fetchCurrentDraw = function(competitionId) {
 	var closestDate = new Date('Sun Sep 24 1990 14:17:44 GMT-0600');
@@ -869,6 +892,7 @@ Competition.fetchCurrentDraw = function(competitionId) {
 	currentDraw.name = AllCompetitionArray[competitionId].name;
 	currentDraw.competitionId = competitionId;
 	currentDraw.drawId = currentDrawId;
+	currentDraw.draws = Competition.fetchAllDraws(competitionId);
 	return currentDraw;
 }
 

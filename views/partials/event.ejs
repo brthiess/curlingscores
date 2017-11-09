@@ -1,27 +1,23 @@
 <div class='event-banner'>
 	<% include banner %>
 </div>
+<section class='event-information-banner'>
+	<% include event-information %>
+</section>
 <section class='event-section'>
-	<div class='event-main-column'>
-		<section class='event-information-wrapper visible-tablets'>
-			<% include event-information %>
-		</section>
-		<div class='scores-container-container'>
-			<h2 class='event-information-header'>Scores</h2>
-			<% include scoreboard/scores-all %>
-		</div>
-		<div class='teams-table-container'>
-			<h2 class='event-information-header'>Teams</h2>
-			<% include team/teams-table %>
-		</div>
+	<div class='scores-container-container'>
+		<h2 class='event-information-header'>Scores</h2>
+		<% include scoreboard/scores-all %>
 	</div>
-	<div class='event-secondary-column'>
-		<section class='event-information-wrapper hidden-tablets '>
-			<% include event-information %>
-		</section>
-		<section class='event-information-wrapper'>
-			<% include event-champions %>
-		</section>
+	<div class='teams-table-container'>
+		<h2 class='event-information-header'>Teams</h2>
+		<% include team/teams-table %>
 	</div>
+	<section class='event-main-column'>
+		<% include event-gallery %>
+	</section>
+	<section class='event-secondary-column'>
+		<% include event-champions %>
+	</section>
 </section>
 </section>

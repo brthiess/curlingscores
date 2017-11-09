@@ -13,7 +13,7 @@ function showCompetition(listItem, competitionId){
 	$('.competition-list-item').removeClass('active');
 	$(listItem).addClass('active');
 	$('.scores-container').addClass('loading');
-	getScoresView(competitionId, function(viewHtml){
+	getScoresView(competitionId, null, function(viewHtml){
 		$('.scores-container').replaceWith(viewHtml);
 		currentCompetitionId = competitionId;
 		currentDrawId = $('.scores-container [data-draw-id]').attr('data-draw-id');
@@ -198,6 +198,17 @@ function updateTeamsTable(category, replaceHistory){
 		else {
 			//error
 		}
+	});
+}
+
+function updateDrawId(competitionId, drawId){
+	console.log(competitionId, drawId);
+	getScoresView(competitionId, drawId, function(viewHtml){
+		
+		$('.scores-container').replaceWith(viewHtml);
+		currentCompetitionId = competitionId;
+		currentDrawId = $('.scores-container [data-draw-id]').attr('data-draw-id');
+		$('.scores-container').removeClass('loading');
 	});
 }
 

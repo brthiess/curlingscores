@@ -397,7 +397,20 @@ TeamArray = [
 		location: 'Winnipeg, MB',
 		category: 'mixed-doubles',
 		teamId:32
-	}
+	},
+	{
+		name: 'deConinck Smith',
+		players: [
+			{name: 'Carl deConinck Smith', position: 'Skip', image: 'default.png', throws: 'Right', age: 33, resides: "Edmonton, AB"},
+			{name: 'John Smith', position: 'Third', image: 'default.png', throws: 'left', age: 27, resides: "Calgary, AB"},
+			{name:  'Jake Smith', position: 'Second', image: 'default.png', throws: 'Right', age: 40, resides: "Edmonton, AB"},
+			{name: 'Ben Smith', position: 'Lead', image: 'default.png', throws: 'Right', age: 33, resides: "Winnipeg, MB"},
+			],
+		category: 'men',
+		location: 'Winnipeg, MB',
+		teamId: 33
+		
+	},
 ]
 
 CategoriesArray = [

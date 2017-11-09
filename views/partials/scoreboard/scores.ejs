@@ -1,32 +1,39 @@
 <div class='scores-info-container active' data-scoreboard-section='scores'>
 	<div class='scores'>
 		<div data-draw-id='<%- competition.drawId %>' class='games-container'>
-			<div class='game-time-name'><%- functions.formatDate(competition.time, "dddd h:mmtt ") %></div>
-			<% var games = competition.games; 
-			for (var game in games) { %>
-				<div data-game-id='<%- game %>' class='game-container' onclick="showModalWithGameView(<%- game %>, '<%- games[game].team1 %> vs <%- games[game].team2%>')">
-					<div class='scores-teams-container'>
-						<div class='scores-team-container'>
-							<div class='scores-team-name'>
-								<%- games[game].team1 %> 
-								<span data-hammer1><%- (games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : "") %></span>
+			<div class='select-wrapper scores-draw-wrapper'>
+				<select class='game-time-name' onchange="updateDrawId(<%- competition.competitionId %>, $(this).val());">
+					<% for (var draw in competition.draws) { %>
+						<option value='<%- draw %>' class='game-time-name-option' <%- (draw == competition.drawId ? "selected" : "") %>><%- functions.formatDate(competition.draws[draw].time, "dddd h:mmtt ") %></option>
+					<% } %>
+				</select>
+			</div>
+			<div class='scores-games-wrapper'>
+				<% var games = competition.games; 
+				for (var game in games) { %>
+					<div data-game-id='<%- game %>' class='game-container' onclick="showModalWithGameView(<%- game %>, '<%- games[game].team1 %> vs <%- games[game].team2%>')">
+						<div class='scores-teams-container'>
+							<div class='scores-team-container'>
+								<div class='scores-team-name'>
+									<%- games[game].team1 %> 
+									<span data-hammer1><%- (games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : "") %></span>
+								</div>
+								<div data-score1 class='scores-score'><%- games[game].score1 %> </div>
 							</div>
-							<div data-score1 class='scores-score'><%- games[game].score1 %> </div>
-						</div>
-						<div class='scores-team-container'>
-							<div class='scores-team-name'>
-								<%- games[game].team2 %>
-								<span data-hammer2><%- (!games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : "") %></span>
+							<div class='scores-team-container'>
+								<div class='scores-team-name'>
+									<%- games[game].team2 %>
+									<span data-hammer2><%- (!games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : "") %></span>
+								</div>
+								<div data-score2 class='scores-score'><%- games[game].score2 %></div>
 							</div>
-							<div data-score2 class='scores-score'><%- games[game].score2 %></div>
 						</div>
+						<div data-end class='scores-end-container <%- (games[game].over ? " scores-final " : "") %>'>
+							<%- (games[game].over ? "Final (" + games[game].end + ")" : functions.ordinal_suffix_of(games[game].end) + " end") %>
+						</div>						
 					</div>
-					<div data-end class='scores-end-container <%- (games[game].over ? " scores-final " : "") %>'>
-						<%- (games[game].over ? "Final (" + games[game].end + ")" : functions.ordinal_suffix_of(games[game].end) + " end") %>
-					</div>						
-				</div>
-			<%}%>
-			
+				<%}%>
+			</div>
 		</div>
 	</div>
 </div>

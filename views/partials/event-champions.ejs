@@ -1,9 +1,9 @@
 <h2 class='event-information-header'>
 	Past Champions
 </h2>
-<div class='event-information-container'>
+<div class='event-information-wrapper'>
 	<% for (var champion in event.champions) { %>
-		<div class='event-information event-champion'>
+		<div class='event-champion'>
 			<p class='event-champion-year'><%- event.champions[champion].year %></p>
 			<div class='event-champion-name-location'>
 				<p class='event-champion-name'><%- event.champions[champion].name %></p>

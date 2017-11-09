@@ -61,6 +61,7 @@ select {
 		right: 15px;
 		top: ~"calc(50% - 10px)";
 		font-size: 20px;
+		pointer-events: none;
 	}
 }
 .section {
@@ -404,6 +405,7 @@ display:none !important;
 		border-radius: 50%;
 		opacity: 0.6;
 		outline: none;
+		cursor: pointer;
 	}
 }
 .banner-text-container {
@@ -494,7 +496,6 @@ display:none !important;
 }
 .competition-list-container {
 	position: relative;
-	flex: 0 0 200px;
 	.left-arrow {
 		left: 0;
 	}
@@ -639,6 +640,9 @@ display:none !important;
 		padding: 10px 0 0;
 		min-width: 130px;
 	}
+	.teams {
+		font-size: 17px;
+	}
 }
 .bracket-level {
     display: inline-block;
@@ -647,6 +651,7 @@ display:none !important;
     box-shadow: 0 1px 3px 1px rgba(211,211,211,0.7);
     background: #f2f2f2;
 	cursor: pointer;
+	font-size: 17px;
 	&.active {
 		outline: 4px solid #6b9cc3;
 	}
@@ -729,12 +734,11 @@ a.teams {
 		}
 	}
 }
-
+.scores-draw-wrapper {
+	margin: 0 0 10px 0;
+}
 .game-time-name {
     font-size: 16px;
-    font-weight: 100;
-    padding: 5px 10px;
-    border-bottom: 1px solid #ddd;
 }
 .scores-teams-container {
     border-right: 1px solid #ddd;
@@ -1342,13 +1346,16 @@ a.teams {
 	.team-container-wrapper {
 		width: 400px;
 	}
+	@media @mini-tablets {
+		padding: 50px 0;
+	}
 }
 .event-main-column {
-	max-width: ~"calc(100% - 360px)";
+	width: ~"calc(100% - 360px)";
 	display:inline-block;
 	vertical-align: top;
 	@media @tablets {
-		max-width: 100%;
+		width: 100%;
 	}
 }
 .event-secondary-column {
@@ -1364,13 +1371,31 @@ a.teams {
 .event-information-wrapper {
 	background:white;
 	margin: 0 0 40px;
+	padding: 10px 20px;
 	box-shadow: 0 0 10px rgba(0,0,0,.3);
 	&:first-child {
 		margin-top: 0;
 	}
 }
+.event-information-banner {
+	background: @main;
+}
 .event-information-container {
     padding: 15px;
+	display: flex;
+    justify-content: space-around;
+    color: white;
+	max-width: 1200px;
+    margin: auto;
+	@media @tablets {
+		flex-flow: column;
+	}
+}
+.event-information {
+	text-align: center;
+	@media @tablets {
+		margin-bottom: 15px;
+	}
 }
 .event-information-header {
 	padding: 15px;
@@ -1378,51 +1403,25 @@ a.teams {
     color: white;
     font-size: 24px;
 }
-.event-information {
-	padding: 9px 0 0 35px;
-	position: relative;
-	&:first-child {
-		padding-top: 0;
-	}
-	&:before {
-		font-family: FontAwesome;
-		font-style: normal;
-		font-weight: normal;
-		text-decoration: inherit;
-		font-size: 25px;
-		position: absolute;
-		left: 0;
-		top: 0;
-		height: 100%;
-		display: flex;
-		align-items: center;
-		color: @main;
-	}
-	&.event-information-location:before {
-		content: "\f041";
-	}
-	&.event-information-calendar:before {
-		content: "\f073";
-	}
-	&.event-information-purse:before {
-		content: "\f0d6";
-	}
-	&.event-information-format:before {
-		content: "\f0ca";
-	}
-	&.event-information-teams:before {
-		content: "\f0c0";
-	}
-	&.event-information-champion:before {
-		content: "\f091";
-	}
-}
 .event-information-label {
-	font-size: 20px;
+    font-size: 17px;
+    opacity: 0.7;
+	@media @tablets {
+		font-size: 19px;
+	}
+	@media @smartphones {
+		font-size: 16px;
+	}
 }
 .event-information-data {
-	font-size: 17px;
-	font-weight: 300;
+	font-size: 20px;
+	font-weight: 500;
+	@media @tablets {
+		font-size: 22px;
+	}
+	@media @smartphones {
+		font-size: 18px;
+	}
 }
 .event-champion {
 	display:flex;

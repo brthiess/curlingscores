@@ -1,7 +1,7 @@
-function getScoresView(competitionId, callback) {
+function getScoresView(competitionId, drawId, callback) {
 	setTimeout(function() {$.ajax({
 		method: "GET",
-		url: "/views/scores/" + competitionId,
+		url: "/views/scores/" + competitionId + (drawId != null ? "/" + drawUd : ""),
 		success: function(data) {
 			callback(data);
 		},

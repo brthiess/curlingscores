@@ -1,0 +1,10 @@
+<% if (event.gallery != undefined && event.gallery.length > 0) {  %>
+	<h2 class='event-information-header'>
+		Gallery
+	</h2>
+	<div class='event-information-wrapper'>
+		<% for (var picture in event.gallery) { %>
+				<div class='event-picture'><img src='/images/event-pictures/<% event.gallery[picture] %>'/></div>
+		<% } %>
+	</div>
+<% } %>
