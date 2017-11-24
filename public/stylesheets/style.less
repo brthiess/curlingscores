@@ -21,12 +21,14 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+
 html {
 	font-family: 'Open Sans', sans-serif;
-	padding-top: 90px;
-	@media @smartphones {
-		padding-top: 60px;
-	}
+	padding-top: 60px;
+}
+body:after{
+	content: url(/images/loading.svg);
+	display:none;
 }
 a {
 	text-decoration: none;
@@ -160,6 +162,9 @@ display:none !important;
 		display: none !important;
 	}
 }
+.overflow-hidden {
+	overflow: hidden;
+}
 .t-left {
 	text-align: left;
 }
@@ -282,7 +287,7 @@ display:none !important;
 @keyframes live-indicator-length-animation {0%{-webkit-transform:translateX(-100%)}5%{-webkit-transform:translateX(0%)}10%{-webkit-transform:translateX(100%)}15%{-webkit-transform:translateX(100%)}20%{-webkit-transform:translateX(0%)}25%{-webkit-transform:translateX(-100%)}100%{-webkit-transform:translateX(-100%)}}
 /* Navigation Bar */
 .nav-logo-container {
-    position: fixed;
+	position: fixed;
     width: 100%;
     background: white;
 	display: flex;
@@ -324,16 +329,25 @@ display:none !important;
 	margin: 0 0 0 15px;
 }
 .mobile-nav-container {
-    position: absolute;
-    top: 100%;
-	left: 0;
-	width: 100%;
-	background: #ddd;
-	box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    position: fixed;
+    top: 90px;
+    bottom: 0;
+    z-index: 99;
+    background: #f3f3f3;
+    left: 0;
+    width: 100%;
+	height: ~"calc(100vh - 90px)";
+	@media @smartphones {
+		top: 60px;
+		height: ~"calc(100vh - 60px)";
+	}
 }
 .mobile-nav-list{ 
-	list-style: none;
-	padding: 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+	height: 100%;
+	background: darken(@main, 25%);
+	padding: 20px;
 }
 .mobile-nav-list-item {
     font-weight: 700;
@@ -341,18 +355,66 @@ display:none !important;
     font-size: 18px;
     color: #333;
     text-align: center;
+    flex: 0 0 25%;
+	@media @mini-tablets {
+		flex: 0 0 50%;
+	}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	
 }
 .mobile-nav-list-item-link {
-    display: block;
-	padding: 5px 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+	color: white;
+	&:hover {
+		color: white;
+	}
+	@media @smartphones {
+		font-size: 16px;
+	}
+}
+.fa.mobile-nav-list-item-link-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 44px;
+    color: darken(@main, 25%);
+	margin-bottom: 7px;
+	&.white {
+		background: white;
+	}
+	&.green {
+		background: #53a253;
+	}
+	&.blue {
+		background: #6277ec;
+	}
+	&.grey {
+		background: #888;
+	}
+	&.orange {
+		background: #FF9800;
+	}
+	&.red {
+		background: #F44336;
+	}
+	@media @smartphones {
+		font-size: 34px;
+		width: 80px;
+		height: 80px
+	}
 }
 .logo-container {
 	font-size: 0;
 	img {
 		width: 175px;
-		&.small {
-			width: 100px;
-		}
 		@media @smartphones {
 			width: 100px;
 		}
@@ -893,6 +955,11 @@ a.teams {
 .rankings-section {
 	background-color: rgba(180, 149, 149, 0.4);
 }
+.rankings-table {
+	@media @tiny-smartphones {
+		padding: 10px 5px;
+	}
+}
 
 .rankings-table-header {
 	border-bottom: 2px solid #ccc;
@@ -900,6 +967,9 @@ a.teams {
 	text-align: left;
 	&:last-child {
 		text-align: right;
+	}
+	@media @tiny-smartphones {
+		padding: 3px 5px;
 	}
 }
 .rankings-select-container {
@@ -929,6 +999,9 @@ a.teams {
 	}
 	@media @smartphones {
 		font-size: 15px;
+	}
+	@media @tiny-smartphones {
+		font-size: 14px;
 	}
 }
 .rankings-table-data-rank {
@@ -1036,7 +1109,6 @@ a.teams {
 	border-bottom: 1px solid #ddd;
 	img {
 		width: 50px;
-		border-radius: 50%;
 	}
 }
 .game-team-details-player-position{
@@ -1119,7 +1191,6 @@ a.teams {
     margin: auto;
 	img {
 		width: 100%;
-		border-radius: 50%;
 	}
 	width: 110px;
 	@media @mini-tablets {
@@ -1171,6 +1242,14 @@ a.teams {
 }
 .schedule-table-data-date {
 	white-space: nowrap;
+}
+.schedule-select-wrapper {
+	@media @smartphones {
+		width: 100%;
+		select {
+			width: 100%;
+		}
+	}
 }
 
 /* teams */
@@ -1286,7 +1365,6 @@ a.teams {
     width: 130px;
 	img {
 		width: 100%;
-		border-radius: 50%;
 	}
 	@media @smartphones {
 		width: 110px;

@@ -18,6 +18,20 @@ exports.getScoresView = function(req, res, next){
 	res.render('partials/scoreboard/scores-all', {competition: featuredCompetition, standings: standings});
 }
 
+exports.getScoresGamesView = function(req, res, next){
+	var featuredCompetition;
+	if(req.params.drawId != undefined){
+		featuredCompetition = Competition.fetchDrawScoresByDrawId(req.params.competitionId, req.params.drawId);
+	}
+	else {
+		featuredCompetition = Competition.fetchCurrentDraw(req.params.competitionId);
+	}
+	req.app.set('layout', false);
+	res.render('partials/scoreboard/scores-games', {competition: featuredCompetition});
+}
+
+
+
 //Is given the game ID and returns the game details as a view
 exports.getModalGameView = function(req, res, next) {
 	var game = Game.fetchGameById(req.params.gameId);

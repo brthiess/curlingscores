@@ -846,7 +846,7 @@ Rankings.fetchTopRankings = function(number, category, year){
 	var newRankingsArray = cloneRankingsArray.filter(function(el) {
 		return el.category == category && el.year == year;
 	})[0];
-	var newMoneyArray = cloneRankingsArray.filter(function(el) {
+	var newMoneyArray = cloneMoneyArray.filter(function(el) {
 		return el.category == category && el.year == year;
 	})[0];
 
@@ -869,8 +869,6 @@ Rankings.fetchTopRankings = function(number, category, year){
 		}
 	});
 	
-	
-
 	newRankingsArray.money = newMoneyArray.rankings.slice(0, number);
 	newRankingsArray.rankings = newRankingsArray.rankings.slice(0, number);
 	return newRankingsArray;

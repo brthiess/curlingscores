@@ -1,4 +1,4 @@
-<div data-id='rankings-table' class='general-sub-section'>
+<div data-id='rankings-table' class='general-sub-section rankings-table'>
 	<div class='general-categories-container'>
 		<h2 class='general-category-year-header'><span class='general-category'><%- functions.capitalizeFirstLetter(rankings.category) %></span> <span class='general-year'> - <%- rankings.yearName %></span></h2>
 		<div class='tabs'>
@@ -41,7 +41,7 @@
 				for (var team in rankings.money) { %>
 					<tr>
 						<td class='rankings-table-data rankings-table-data-rank'><%- rankings.money[team].rank %></td>
-						<td class='rankings-table-data rankings-table-data-name'><a href='/teams/<%- rankings.money[team].teamId %>'><%- rankings.rankings[team].name %></a> <span class='rankings-table-data-location'> <span class='hidden-mini-tablets'>-</span> <%- rankings.rankings[team].location %></span></td>
+						<td class='rankings-table-data rankings-table-data-name'><a href='/teams/<%- rankings.money[team].teamId %>'><%- rankings.money[team].name %></a> <span class='rankings-table-data-location'> <span class='hidden-mini-tablets'>-</span> <%- rankings.money[team].location %></span></td>
 						<td class='rankings-table-data rankings-table-data-points'>$<%- functions.numberWithCommas(rankings.money[team].money); %></td>
 					</tr>
 				<% } %>

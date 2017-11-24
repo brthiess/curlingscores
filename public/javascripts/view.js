@@ -1,7 +1,7 @@
 function getScoresView(competitionId, drawId, callback) {
-	setTimeout(function() {$.ajax({
+	$.ajax({
 		method: "GET",
-		url: "/views/scores/" + competitionId + (drawId != null ? "/" + drawUd : ""),
+		url: "/views/scores/" + competitionId + (drawId != null ? "/" + drawId : ""),
 		success: function(data) {
 			callback(data);
 		},
@@ -9,11 +9,23 @@ function getScoresView(competitionId, drawId, callback) {
 			console.log(data);
 		}
 	});
-	}, 1000);
+}
+
+function getScoresGamesView(competitionId, drawId, callback) {
+	setTimeout(function(){$.ajax({
+		method: "GET",
+		url: "/views/scores/draws/" + competitionId + (drawId != null ? "/" + drawId : ""),
+		success: function(data) {
+			callback(data);
+		},
+		error: function(data){
+			console.log(data);
+		}
+	});}, 500);
 }
 
 function getGameModalView(gameId, callback) {
-	setTimeout(function() {$.ajax({
+	$.ajax({
 		method: "GET",
 		url: "/views/games/" + gameId,
 		success: function(data) {
@@ -23,11 +35,10 @@ function getGameModalView(gameId, callback) {
 			callback(data, false)
 		}
 	});
-	}, 2000);
 }
 
 function getRankingsView(type, number, year, category, callback){
-	setTimeout(function() {$.ajax({
+	$.ajax({
 		method: "GET",
 		url: "/views/rankings/" + type + "/" + category + "/" + year + "/" + number,
 		success: function(data) {
@@ -37,11 +48,10 @@ function getRankingsView(type, number, year, category, callback){
 			callback(data, false)
 		}
 	});
-	}, 500);
 }
 
 function getScheduleView(year, category, callback){
-	setTimeout(function() {$.ajax({
+	$.ajax({
 		method: "GET",
 		url: "/views/schedule/" + category + "/" + year,
 		success: function(data) {
@@ -51,11 +61,10 @@ function getScheduleView(year, category, callback){
 			callback(data, false)
 		}
 	});
-	}, 500);
 }
 
 function getTeamsView(category, callback){
-	setTimeout(function() {$.ajax({
+	$.ajax({
 		method: "GET",
 		url: "/views/teams/" + category + "/",
 		success: function(data) {
@@ -65,5 +74,4 @@ function getTeamsView(category, callback){
 			callback(data, false)
 		}
 	});
-	}, 500);
 }

@@ -1,4 +1,3 @@
-4. Change header so it's more like codrops or that other sports website?
 9. get better favicon
 11. Fix tables on small smartphones
 14. auto update scores modal -- Do this later
@@ -7,6 +6,3 @@
 19. On rankings page, when you switch category and then choose money or oom, it no longer refreshes url
 20.  XXXXXX--------- Get swipe working on scoreboard  -------XXXXX
 21. Teams page on mobile could use slight work
-22. Add ability to select draw on scoreboard
-23. Fix schedule page scoreboard bracket
-24. Fix rankings order

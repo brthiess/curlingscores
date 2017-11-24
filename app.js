@@ -13,6 +13,9 @@ var views = require('./routes/view-routes');
 
 var app = express();
 
+
+//app.listen(8080, '0.0.0.0');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

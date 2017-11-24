@@ -1,13 +1,3 @@
-$(document).ready(function(){
-	$(window).scroll(function (event) {
-		var y = $(this).scrollTop();
-		if (y >= 400)
-		  $('.logo-container img').addClass('small');
-		else
-		  $('.logo-container img').removeClass('small');
-	});
-});
-
 /* Scoreboard */
 function showCompetition(listItem, competitionId){
 	$('.competition-list-item').removeClass('active');
@@ -49,6 +39,7 @@ function showOnScoreboard(section) {
 
 function toggleMobileMenu(element) {
 	$('.mobile-nav-container').toggleClass('hidden');
+	$('body').toggleClass('overflow-hidden');
 	toggleHtml(element, 'Close', 'Menu');
 }
 
@@ -202,13 +193,12 @@ function updateTeamsTable(category, replaceHistory){
 }
 
 function updateDrawId(competitionId, drawId){
-	console.log(competitionId, drawId);
-	getScoresView(competitionId, drawId, function(viewHtml){
-		
-		$('.scores-container').replaceWith(viewHtml);
+	$('.scores-info-container').addClass('loading');
+	getScoresGamesView(competitionId, drawId, function(viewHtml){
+		$('.scores-games-wrapper').replaceWith(viewHtml);
 		currentCompetitionId = competitionId;
 		currentDrawId = $('.scores-container [data-draw-id]').attr('data-draw-id');
-		$('.scores-container').removeClass('loading');
+		$('.scores-info-container').removeClass('loading');
 	});
 }
 

@@ -3,6 +3,7 @@ var router = express.Router();
 
 var viewController = require("../controllers/view-controller.js");
 /* GET scores */
+router.get('/scores/draws/:competitionId/:drawId?', viewController.getScoresGamesView);
 router.get('/scores/:competitionId/:drawId?', viewController.getScoresView);
 
 /* Get games */
