@@ -1,4 +1,3 @@
-9. get better favicon
 11. Fix tables on small smartphones
 14. auto update scores modal -- Do this later
 15. Link to full rankings, make sure it goes to correct category/year
