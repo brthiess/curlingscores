@@ -11,6 +11,7 @@ var index = require('./routes/page-routes');
 var data = require('./routes/data-routes');
 var views = require('./routes/view-routes');
 
+
 var app = express();
 
 
@@ -29,6 +30,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('layout', 'layouts/layout');
+
+// Make our db accessible to our router
+app.use(function(req,res,next){
+    next();
+});
 
 app.use('/', index);
 app.use('/data', data);
