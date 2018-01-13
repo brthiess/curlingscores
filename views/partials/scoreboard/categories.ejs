@@ -1,12 +1,12 @@
 <div class='competition-list-container'>
 	<ul class='competition-list'>
 		<% for(var id in competitions) {%>
-			<li class='competition-list-item <%= (activeCompetitionId == id ? "active" : "") %>' data-id='<%= id %>' onclick='showCompetition(this, <%= id %>);'>
+			<li class='competition-list-item <%= //(activeCompetitionId == id ? "active" : "") %>' data-id='<%= id %>' onclick='showCompetition(this, <%= id %>);'>
 				<div class='scores-tournament-category'>
-					<div class='scores-tournament-category-title'><%= competitions[id].category %></div>
+					<div class='scores-tournament-category-title'><%= competitions[id].division %></div>
 				</div>
 				<div class='scores-tournament-info'>
-					<div class='scores-tournament-name'><%= competitions[id].name %></div>
+					<div class='scores-tournament-name'><%= competitions[id].displayName %></div>
 					<div class='scores-tournament-location'><%= competitions[id].location %></div>
 				</div>
 			</li>
@@ -16,6 +16,6 @@
 	<div class='right-arrow overflow-arrow hidden-desktop'><span class='fa fa-chevron-right'></span></div>
 </div>
 <script>
-	currentCompetitionId = <%= activeCompetitionId %>;
-	currentDrawId = <%= activeDrawId %>;
+	currentCompetitionId = <%= //activeCompetitionId %>;
+	currentDrawId = <%=// activeDrawId %>;
 </script>

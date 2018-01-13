@@ -576,7 +576,6 @@ display:none !important;
 }
 .competition-list-container {
 	position: relative;
-	margin: 0 0 30px;
 }
 
 .competition-list {
@@ -614,11 +613,24 @@ display:none !important;
 	@media @smartphones {
 		width: 80%;
 	}
-	&:hover, &.active {
+	&.active {
 		outline: 5px solid @main;
 	}
+	&:hover {
+		background: #f5f5f5;
+		.box-shadow-hover;
+	}
 	@media @large-desktops {
-		width: ~"calc(16.66% - 10px)";
+		width: ~"calc(14.29% - 10px)";
+		&:nth-child(7n + 1) {
+			margin-left: 0;
+		}
+		&:nth-child(7n) {
+			margin-right: 0;
+		}
+	}
+	@media @desktop-only {
+		width: ~"calc(16.66% - 17px)";
 		&:nth-child(6n + 1) {
 			margin-left: 0;
 		}
@@ -626,7 +638,7 @@ display:none !important;
 			margin-right: 0;
 		}
 	}
-	@media @desktop-only {
+	@media @laptops-only {
 		width: ~"calc(20% - 16px)";
 		&:nth-child(5n + 1) {
 			margin-left: 0;
@@ -635,21 +647,12 @@ display:none !important;
 			margin-right: 0;
 		}
 	}
-	@media @laptops-only {
+	@media @tablets {
 		width: ~"calc(25% - 15px)";
 		&:nth-child(4n + 1) {
 			margin-left: 0;
 		}
 		&:nth-child(4n) {
-			margin-right: 0;
-		}
-	}
-	@media @tablets {
-		width: ~"calc(33% - 12px)";
-		&:nth-child(3n + 1) {
-			margin-left: 0;
-		}
-		&:nth-child(3n) {
 			margin-right: 0;
 		}
 	}
@@ -675,10 +678,13 @@ display:none !important;
 	}
 }
 .scores-tournament-name {
-	font-size: 22px;
+	font-size: 18px;
 	color: @main;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
 	@media @tablets {
-		font-size: 18px;
+		font-size: 17px;
 	}	
 	@media @mini-tablets {
 		font-size: 16px;
@@ -860,7 +866,7 @@ a.teams {
 .scores-teams-container {
     border-right: 1px solid #ddd;
     padding: 0 10px 0 0;
-	font-size: 18px;
+	font-size: 17px;
 	width: 209px;
 	@media @laptops{
 		width: 260px;
@@ -881,6 +887,9 @@ a.teams {
     margin: 5px 0;
 }
 .scores-team-name {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 	img {//hammer icon
 		opacity: 0.7;
 		width: 15px;

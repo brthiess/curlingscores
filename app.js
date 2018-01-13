@@ -6,6 +6,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://admin:gH2366bt@ds249787.mlab.com:49787/curling')
+  .then(() =>  console.log('connection succesful'))
+  .catch((err) => console.error(err));
 
 var index = require('./routes/page-routes');
 var data = require('./routes/data-routes');
