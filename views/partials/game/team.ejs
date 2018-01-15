@@ -1,23 +1,27 @@
 <div class='game-team-details-team-container'>
-	<div class='game-team-details-team <%- (game.team1.category == "mixed-doubles" ? "mixed-doubles" : "") %>'>
-		<h3 class='game-team-details-header'>Team <%- game.team1.name %> </h3>
-		<% for (var player in game.team1.players) { %>
-			<div class='game-team-details-player <%- (game.team1.category == "mixed-doubles" ? "mixed-doubles" : "") %>'>
-				<div class='game-team-details-position'><%- game.team1.players[player].position %></div>
-				<div class='game-team-details-player-image'><img src='/images/players/<%- game.team1.players[player].image %>'/></div>
-				<div class='game-team-details-player-name'><%- game.team1.players[player].name %></div>
-			</div>
+	<div class='game-team-details-team <%- (game.division == "mixed-doubles" ? "mixed-doubles" : "") %>'>
+		<h3 class='game-team-details-header'>Team <%- game.homeTeamDisplayName %> </h3>
+		<% if (game.team1 != null) { %>
+			<% for (var player in game.team1.players) { %>
+				<div class='game-team-details-player <%- (game.division == "mixed-doubles" ? "mixed-doubles" : "") %>'>
+					<div class='game-team-details-position'><%- game.team1.players[player].position %></div>
+					<div class='game-team-details-player-image'><img src='/images/players/<%- game.team1.players[player].image %>'/></div>
+					<div class='game-team-details-player-name'><%- game.team1.players[player].name %></div>
+				</div>
+			<% } %>
 		<% } %>
 	</div>
 	
-	<div class='game-team-details-team <%- (game.team2.category == "mixed-doubles" ? "mixed-doubles" : "") %>'>
-		<h3 class='game-team-details-header'>Team <%- game.team2.name %> </h3>
-		<% for (var player in game.team2.players) { %>
-			<div class='game-team-details-player <%- (game.team2.category == "mixed-doubles" ? "mixed-doubles" : "") %>'>
-				<div class='game-team-details-position'><%- game.team2.players[player].position %></div>
-				<div class='game-team-details-player-image'><img src='/images/players/<%- game.team2.players[player].image %>'/></div>
-				<div class='game-team-details-player-name'><%- game.team2.players[player].name %></div>
-			</div>
+	<div class='game-team-details-team <%- (game.division == "mixed-doubles" ? "mixed-doubles" : "") %>'>
+		<h3 class='game-team-details-header'>Team <%- game.awayTeamDisplayName %> </h3>
+		<% if (game.team2 != null){ %>
+			<% for (var player in game.team2.players) { %>
+				<div class='game-team-details-player <%- (game.division == "mixed-doubles" ? "mixed-doubles" : "") %>'>
+					<div class='game-team-details-position'><%- game.team2.players[player].position %></div>
+					<div class='game-team-details-player-image'><img src='/images/players/<%- game.team2.players[player].image %>'/></div>
+					<div class='game-team-details-player-name'><%- game.team2.players[player].name %></div>
+				</div>
+			<% } %>
 		<% } %>
 	</div>
 </div>

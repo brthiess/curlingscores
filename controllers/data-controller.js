@@ -1,5 +1,12 @@
-Competition = require('../models/competition.js');
+var Event = require('../models/event');
+
+
 exports.getCompetitionDraw = function(req, res, next){
-	var drawScores = Competition.fetchDrawScoresByDrawId(req.params.competitionId, req.params.drawId);
-	res.json(drawScores);
+	var events = Event.fetchDrawScoresByDrawId(req.params.competitionId, req.params.drawId, function(drawScores) {
+		if (drawScores != null){
+			req.app.set('layout', false)
+			res.json(drawScores);
+		}
+	});
+
 }

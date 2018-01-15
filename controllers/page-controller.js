@@ -1,28 +1,17 @@
-var mongoose = require("mongoose");
 var Event = require('../models/event');
 
-var EventController = {};
 
 //Home page
 exports.index = function(req, res, next) {
-	Event.find({}).exec(function (err, events) {
-		if (err) {
-			console.log("Error:", err);
+	var events = Event.fetchAllCurrentEvents(function(events) {
+		if (events != null && events.length > 0){
+			var activeEventId = events[0].eventId;
 		}
-		else {
-			res.render("index", {competitions: events});
-		}
+		req.app.set('layout', 'layouts/layout');
+		res.render("index", {competitions: events,
+							 activeCompetitionId: activeEventId,
+							 asyncScoreboardLoading: true
+							});
 	});
-	
-	/*
-	var competitions = Competition.fetchCurrentCompetitions();
-	//Get current games for first competition in array
-	var featuredCompetitionId = Object.keys(competitions)[0];
-	var featuredDraw = Competition.fetchCurrentDraw(featuredCompetitionId);
-	var standings = Competition.fetchStandings(featuredCompetitionId);
-	
-	req.app.set('layout', 'layouts/layout');
-	res.render('index', {competitions: competitions, competition: featuredDraw, activeCompetitionId: featuredCompetitionId, activeDrawId: featuredDraw.drawId, standings: standings, title: "CurlingScores"});
-	*/
 };
 

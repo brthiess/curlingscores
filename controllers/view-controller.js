@@ -1,21 +1,20 @@
-Competition = require('../models/competition.js');
-var Game = require('../models/game.js');
-var Ranking = require('../models/rankings.js');
-var Schedule = require('../models/schedule.js');
-var Teams = require('../models/team.js');
+var Event = require('../models/event');
+
 //Is given the competition ID and returns the current scores as a view
 exports.getScoresView = function(req, res, next){
-	var competitions = Competition.fetchCurrentCompetitions();
-	var featuredCompetition;
-	if(req.params.drawId != undefined){
-		featuredCompetition = Competition.fetchDrawScoresByDrawId(req.params.competitionId, req.params.drawId);
-	}
-	else {
-		featuredCompetition = Competition.fetchCurrentDraw(req.params.competitionId);
-	}
-	var standings = Competition.fetchStandings(req.params.competitionId);
+	var events = Event.fetchCurrentDrawByEventId(req.params.competitionId, function(event) {
+		req.app.set('layout', false)
+		res.render("partials/scoreboard/scores-all", {competition: event, asyncScoreboardLoading: false	});
+	});
+}
+
+//Is given the game ID and returns the game details as a view
+exports.getModalGameView = function(req, res, next) {
+	var game = Event.fetchGameById(req.params.gameId);
+	console.log(game);
 	req.app.set('layout', false);
-	res.render('partials/scoreboard/scores-all', {competition: featuredCompetition, standings: standings});
+	res.render('partials/game/game', {game: game});
+
 }
 
 exports.getScoresGamesView = function(req, res, next){
@@ -30,14 +29,6 @@ exports.getScoresGamesView = function(req, res, next){
 	res.render('partials/scoreboard/scores-games', {competition: featuredCompetition});
 }
 
-
-
-//Is given the game ID and returns the game details as a view
-exports.getModalGameView = function(req, res, next) {
-	var game = Game.fetchGameById(req.params.gameId);
-	req.app.set('layout', false);
-	res.render('partials/game/game', {game: game});
-}
 
 exports.getRankingsView = function(req, res, next) {
 	if(req.params.number == null){

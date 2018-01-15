@@ -1,4 +1,4 @@
-function getDrawScoresJSON(competitionId, drawId, callback){
+function getDrawScoresJSON(competitionId, drawId, callback, error){
 	$.ajax({
 		url: '/data/scores/' + competitionId + '/' + drawId,
 		dataType: 'json',
@@ -6,8 +6,7 @@ function getDrawScoresJSON(competitionId, drawId, callback){
 			callback(data);
 		},
 		error: function(data){
-			console.log('error');
-			console.log(data);
+			error(data);
 		}
 	});
 }

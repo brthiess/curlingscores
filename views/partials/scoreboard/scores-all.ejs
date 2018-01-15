@@ -1,15 +1,27 @@
-<div class='scores-container' data-competition-id='<%= competition.competitionId %>'>
-	<div class='scores-header'>
-		<h2 class='scores-header-title'><%= competition.name %></h2> 
-		<div class='tabs'>
-			<h3 class='tab-title active' data-scoreboard-section='scores' onclick='showOnScoreboard("scores");'>Scores</h3>
-			<!--<h3 class='tab-title' data-scoreboard-section='standings' onclick='showOnScoreboard("standings");'><%- (competition.type == null || competition.type == "round-robin" ? "Standings" : "Bracket") %></h3>
-			<h3 class='tab-title' data-scoreboard-section='playoffs' onclick='showOnScoreboard("playoffs");'>Playoffs</h3>-->
+<div class='scores-container' data-competition-id='<%= (asyncScoreboardLoading ? "" : competition.eventId) %>'>
+	
+	<!--Load Async-->
+	<% if (asyncScoreboardLoading) { %>
+		<script>
+			$(document).ready(function(){
+				showCompetition(<%= activeCompetitionId %>);
+			});
+		</script>
+	<% }
+	else { %>
+		<!-- Load Sync -->
+		<div class='scores-header'>
+			<h2 class='scores-header-title'><%= competition.displayName %></h2> 
+			<div class='tabs'>
+				<h3 class='tab-title active' data-scoreboard-section='scores' onclick='showOnScoreboard("scores");'>Scores</h3>
+				<!--<h3 class='tab-title' data-scoreboard-section='standings' onclick='showOnScoreboard("standings");'><%- (competition.type == null || competition.type == "round-robin" ? "Standings" : "Bracket") %></h3>
+				<h3 class='tab-title' data-scoreboard-section='playoffs' onclick='showOnScoreboard("playoffs");'>Playoffs</h3>-->
+			</div>
 		</div>
-	</div>
-	<div class='scores-info-wrapper'>
-		<% include scores %>
-		<% //include standing-bracket %>
-		<% //include playoffs %>
-	</div>
+		<div class='scores-info-wrapper'>
+			<% include scores %>
+			<% //include standing-bracket %>
+			<% //include playoffs %>
+		</div>
+	<% } %>
 </div>

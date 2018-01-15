@@ -1,7 +1,7 @@
 /* Scoreboard */
-function showCompetition(listItem, competitionId){
+function showCompetition(competitionId){
 	$('.competition-list-item').removeClass('active');
-	$(listItem).addClass('active');
+	$('.competition-list-item[data-id=' + competitionId + ']').addClass('active');
 	$('.scores-container').addClass('loading');
 	getScoresView(competitionId, null, function(viewHtml){
 		$('.scores-container').replaceWith(viewHtml);
@@ -12,24 +12,32 @@ function showCompetition(listItem, competitionId){
 }
 
 function refreshDrawScores(){
-	if(currentCompetitionId !== null && currentDrawId !== null && currentCompetitionId > 0 && currentDrawId > 0){
+	if(currentCompetitionId !== null &&  typeof(currentDrawId) != 'undefined' && currentDrawId !== null && currentDrawId != "" && currentCompetitionId > 0){
 		console.log('refreshing scores');
 		getDrawScoresJSON(currentCompetitionId, currentDrawId, function(data){
+			data = data[0];
 			for (var game in data.games){
-				
-				$("[data-game-id='" + game + "']").find("[data-score1]").html(data.games[game].score1);
-				$("[data-game-id='" + game + "']").find("[data-score2]").html(data.games[game].score2);
-				var end = (data.games[game].over ? "Final (" + data.games[game].end + ")" : ordinal_suffix_of(data.games[game].end) + " end");
-				$("[data-game-id='" + game + "']").find("[data-end]").html(end);
-				$("[data-game-id='" + game + "']").find("[data-hammer1]").html((data.games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : ""));
-				$("[data-game-id='" + game + "']").find("[data-hammer2]").html((!data.games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : ""));
+				if(data.games[game].statusText != "Upcoming") {
+					$("[data-game-id='" + data.games[game].gameId + "']").find("[data-score1]").html(data.games[game].homeScore);
+					$("[data-game-id='" + data.games[game].gameId + "']").find("[data-score2]").html(data.games[game].awayScore);
+					var end = (data.games[game].statusText.indexOf("Final") !== -1 ? "Final (" + data.games[game].currentEnd + ")" : ordinal_suffix_of(data.games[game].currentEnd) + " end");
+					$("[data-game-id='" + data.games[game].gameId + "']").find("[data-end]").html(end);
+					$("[data-game-id='" + data.games[game].gameId + "']").find("[data-hammer1]").html((data.games[game].homeHammer ? "<img src='/images/hammer.png'/>" : ""));
+					$("[data-game-id='" + data.games[game].gameId + "']").find("[data-hammer2]").html((data.games[game].awayHammer ? "<img src='/images/hammer.png'/>" : ""));
+					if(data.games[game].statusText.indexOf("Final") !== -1) {
+						$("[data-game-id='" + data.games[game].gameId + "']").find("[data-end]").addClass("scores-final");
+					}
+				}
 			}
-			setTimeout(refreshDrawScores, 10000);
+			setTimeout(refreshDrawScores, 100000);
+		}, function(err){
+			console.log("Error refreshing scores for " + currentDrawId);
+			setTimeout(refreshDrawScores, 100000);
 		});
 	}
 	else {
 		console.log('try again');
-		setTimeout(refreshDrawScores, 10000);
+		setTimeout(refreshDrawScores, 100000);
 	}
 }
 function showOnScoreboard(section) {
@@ -202,13 +210,6 @@ function updateDrawId(competitionId, drawId){
 	});
 }
 
-/* slider */
-$(document).ready(function() {
-	$(".slide-wrapper").slick({
-		arrows: false,
-		dots: ($("[data-slide-id]").length > 1 ? true : false)
-	});
-});
 
 /* brackets */
 

@@ -21,6 +21,7 @@ var EventSchema = new Schema({
 		displayName:String, 
 		drawName:String, 
 		startsAt: Number, 
+		drawId: String,
 		games: [{
 			gameId:Number,
 			awayTeamId:Number,
@@ -57,49 +58,39 @@ var featured = get_source_at("http://159.203.35.195/featured");
 
 for(var eventIter in featured.data){
 	var drawInfo = get_source_at("http://159.203.35.195/events/" + featured.data[eventIter].eventId + "/draws");
-	
-	var eventTemp;
-	
-	var eventTemp = Event.findOne({ 'eventId': featured.data[eventIter].eventId }) 
-	if(eventTemp == null){
-		console.log('new event!');
-		eventTemp = new Event({
-			eventId: featured.data[eventIter].eventId,
-			endDate: featured.data[eventIter].endDate,
-			startDate: featured.data[eventIter].startDate,
-			displayName: featured.data[eventIter].displayName,
-			division: featured.data[eventIter].division,
-			location: featured.data[eventIter].location,
-			draws: drawInfo
-		})
+	for(var draw in drawInfo){
+		drawInfo[draw].drawId = Buffer.from(drawInfo[draw].drawName).toString('base64');
 	}
-	else {
-		console.log('old event');
-	}
+
 	
+	var update = {	eventId: featured.data[eventIter].eventId,
+					endDate: featured.data[eventIter].endDate,
+					startDate: featured.data[eventIter].startDate,
+					displayName: featured.data[eventIter].displayName,
+					location: featured.data[eventIter].location,
+					draws: drawInfo
+	}
 	var query = {'eventId':featured.data[eventIter].eventId};
 	
-	Event.findOneAndUpdate(query, eventTemp, {upsert:true}, function(err, doc){
+	Event.findOneAndUpdate(query, update, {upsert:true}, function(err, event){
 		if (err) console.log(err);
 		else{
-			console.log("succesfully saved");
+			console.log("\n/*********Updated Event ******/");
+			console.log(event);
 		}
 	});
 }
 
 schedule = get_source_at("http://159.203.35.195/schedule");
-console.log(schedule);
+
 for(var eventIter in schedule){
-	console.log("update event division");
-	console.log(schedule[eventIter].division);
-	console.log(schedule[eventIter].eventId);
-	Event.update({ 'eventId': schedule[eventIter].eventId }, { $set: { division: schedule[eventIter].division }}, function(err){
+	Event.update({ 'eventId': schedule[eventIter].eventId }, { $set: { "division": schedule[eventIter].division }}, function(err, doc){
 		if(err) {
 			console.log(err);
 		}
 		else {
-			console.log("success update");
+			
 		}
 	});
 }
-process.exit()
+

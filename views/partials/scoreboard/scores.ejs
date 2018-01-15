@@ -1,10 +1,10 @@
 <div class='scores-info-container active' data-scoreboard-section='scores'>
 	<div class='scores'>
-		<div data-draw-id='<%- competition.drawId %>' class='games-container'>
+		<div data-draw-id='<%- competition.currentDrawId %>' class='games-container'>
 			<div class='select-wrapper scores-draw-wrapper'>
-				<select class='game-time-name' onchange="updateDrawId(<%- competition.competitionId %>, $(this).val());">
-					<% for (var draw in competition.draws) { %>
-						<option value='<%- draw %>' class='game-time-name-option' <%- (draw == competition.drawId ? "selected" : "") %>><%- functions.formatDate(competition.draws[draw].time, "dddd h:mmtt ") %></option>
+				<select class='game-time-name' onchange="updateDrawId(<%- competition.eventId %>, $(this).val());">
+					<% for (var i = 0; i < competition.draws.length; i++){ %>
+						<option value='<%- competition.draws[i].drawId %>' class='game-time-name-option' <%- (competition.draws[i].drawId == competition.currentDrawId ? "selected" : "") %>><%- functions.formatDate(new Date(competition.draws[i].startsAt * 1000), "dddd h:mmtt ") %> - <%- competition.draws[i].displayName %> </option>
 					<% } %>
 				</select>
 			</div>
@@ -12,3 +12,6 @@
 		</div>
 	</div>
 </div>
+<script>
+	currentDrawId = "<%= (typeof(competition.currentDrawId) != "undefined" ? competition.currentDrawId : "") %>";
+</script>

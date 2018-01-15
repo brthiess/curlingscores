@@ -11,20 +11,20 @@
 			</thead>
 			<tbody>
 				<tr>
-					<td class='linescore-table-data t-left no-padding'><%- game.team1.name %></td>
-					<td class='linescore-table-data t-left'><%- (game.team1Hammer ? "<img class='linescore-hammer' src='/images/hammer.png'/>" : "") %></td>
+					<td class='linescore-table-data t-left no-padding'><%- game.homeTeamDisplayName %></td>
+					<td class='linescore-table-data t-left'><%- (game.homeHammer ? "<img class='linescore-hammer' src='/images/hammer.png'/>" : "") %></td>
 					<% for (var i = 0; i < game.numberOfEnds; i++) { %>
-						<td class='linescore-table-data t-center'><%- (i < game.team1Scores.length ? game.team1Scores[i] : "<span class='faded'>X</span>") %></td>
+						<td class='linescore-table-data t-center'><%- (i < game.homeScores.length ? game.homeScores[i] : "<span class='faded'>X</span>") %></td>
 					<% } %>
-					<td class='linescore-table-data t-center'><strong><%- game.team1Total %></strong></td>
+					<td class='linescore-table-data t-center'><strong><%- game.homeTotal %></strong></td>
 				</tr>
 				<tr>
-					<td class='linescore-table-data t-left no-padding'><%- game.team2.name %></td>
-					<td class='linescore-table-data t-left'><%- (game.team2Hammer ? "<img class='linescore-hammer' src='/images/hammer.png'/>" : "") %></td>
+					<td class='linescore-table-data t-left no-padding'><%- game.awayTeamDisplayName %></td>
+					<td class='linescore-table-data t-left'><%- (game.awayHammer ? "<img class='linescore-hammer' src='/images/hammer.png'/>" : "") %></td>
 					<% for (var i = 0; i < game.numberOfEnds; i++) { %>
-						<td class='linescore-table-data t-center'><%- (i < game.team2Scores.length ? game.team2Scores[i] : "<span class='faded'>X</span>") %></td>
+						<td class='linescore-table-data t-center'><%- (i < game.awayScores.length ? game.awayScores[i] : "<span class='faded'>X</span>") %></td>
 					<% } %>
-					<td class='linescore-table-data t-center'><strong><%- game.team2Total %></strong></td>
+					<td class='linescore-table-data t-center'><strong><%- game.awayTotal %></strong></td>
 				</tr>
 			</tbody>
 		</table>

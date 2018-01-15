@@ -1,3 +1,5 @@
+var request = require("request");
+
 module.exports = {
 	ordinal_suffix_of: function(i) {
 		var j = i % 10,
@@ -150,6 +152,28 @@ module.exports = {
 		else {
 			return false;
 		}
+	},
+	divisionToProperTitle : function(division){
+		divisionEnum = {
+			"men" : {properName : "Men's"},
+			"women" : {properName : "Women's"}
+		};
+		if (divisionEnum[division] != null) {
+			return divisionEnum[division].properName;
+		}
+		else {
+			return division;
+		}
+	},
+	getSourceAt: function(url){
+		var source;
+		request({ url:url,json:true}, function (error, response, body) {
+			source = body;
+		});
+		while(source === undefined) {
+		  require('deasync').runLoopOnce();
+		}
+		return source;
 	}
 }
 

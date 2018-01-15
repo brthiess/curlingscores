@@ -561,6 +561,11 @@ display:none !important;
 
 /* Scores */
 /* SCOREBOARD */
+.no-games-text {
+    text-align: center;
+    color: #111;
+    font-weight: 100;
+}
 .scores-section-header {
 	background: rgba(255,255,255,0.6);
 	@media @tablets {
@@ -846,13 +851,6 @@ a.teams {
 			background: #eee;
 		}
 	}
-	@media @smartphones {
-		padding: 10px 0;
-		border-bottom: 1px solid #eee;
-		&:last-child {
-			border-bottom: none;
-		}
-	}
 }
 .scores-draw-wrapper {
 	margin: 0 0 10px 0;
@@ -869,7 +867,7 @@ a.teams {
 	font-size: 17px;
 	width: 209px;
 	@media @laptops{
-		width: 260px;
+		width: 255px;
 	}
 	@media @medium-tablets {
 		width: 209px;
@@ -926,7 +924,7 @@ a.teams {
 	@media @mini-tablets {
 		font-size: 14px;
 	}
-	&.scores-final {
+	&.scores-final, &.scores-upcoming {
 		color: #333;
 		&:after {
 			display: none;

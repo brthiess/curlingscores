@@ -1,25 +1,25 @@
 <div class='scores-games-wrapper'>
-	<% var games = competition.games; 
-	for (var game in games) { %>
-		<div data-game-id='<%- game %>' class='game-container' onclick="showModalWithGameView(<%- game %>, '<%- games[game].team1 %> vs <%- games[game].team2%>')">
+	<% var games = competition.currentGames; 
+	for (var i = 0; i < games.length; i++) { %>
+		<div data-game-id='<%- games[i].gameId %>' class='game-container' onclick="showModalWithGameView(<%- games[i].gameId %>, '<%- games[i].homeTeamDisplayName %> vs <%- games[i].awayTeamDisplayName %>')">
 			<div class='scores-teams-container'>
 				<div class='scores-team-container'>
 					<div class='scores-team-name'>
-						<%- games[game].team1 %> 
-						<span data-hammer1><%- (games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : "") %></span>
+						<%- games[i].homeTeamShortName %> 
+						<span data-hammer1><%- (games[i].homeHammer ? "<img src='/images/hammer.png'/>" : "") %></span>
 					</div>
-					<div data-score1 class='scores-score'><%- games[game].score1 %> </div>
+					<div data-score1 class='scores-score'><%- games[i].homeScore %> </div>
 				</div>
 				<div class='scores-team-container'>
 					<div class='scores-team-name'>
-						<%- games[game].team2 %>
-						<span data-hammer2><%- (!games[game].team1CurrentHammer ? "<img src='/images/hammer.png'/>" : "") %></span>
+						<%- games[i].awayTeamShortName %>
+						<span data-hammer2><%- (games[i].awayHammer ? "<img src='/images/hammer.png'/>" : "") %></span>
 					</div>
-					<div data-score2 class='scores-score'><%- games[game].score2 %></div>
+					<div data-score2 class='scores-score'><%- games[i].awayScore %></div>
 				</div>
 			</div>
-			<div data-end class='scores-end-container <%- (games[game].over ? " scores-final " : "") %>'>
-				<%- (games[game].over ? "Final (" + games[game].end + ")" : functions.ordinal_suffix_of(games[game].end) + " end") %>
+			<div data-end class='scores-end-container <%- (games[i].statusText.indexOf("Final") !== -1 ? " scores-final " : (games[i].statusText.indexOf("Upcoming") !== -1 ? "scores-upcoming" : "")) %>'>
+				<%- (games[i].statusText.indexOf("Upcoming") !== -1 ? functions.formatDate(competition.currentDrawTime, "dddd h:mmtt ") : (games[i].statusText.indexOf("Final") !== -1 ? "Final (" + games[i].currentEnd + ")" : functions.ordinal_suffix_of(games[i].currentEnd) + " end")) %>
 			</div>						
 		</div>
 	<%}%>
